@@ -1,6 +1,5 @@
 # Dependencies
 node_modules/
-package-lock.json
 yarn.lock
 
 # Build output
@@ -45,11 +44,7 @@ temp/
 *.bak
 *.cache
 
-# Game data (optional - include if you want to version control)
-data/*.json
-
-# Uncomment if you don't want to track game data:
-# data/
+# Game data IS version controlled: the templates in data/ are part of the game design
 
 # Asset cache
 assets/cache/

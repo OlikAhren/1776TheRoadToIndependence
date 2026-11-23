@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "description": "Template structure for delegate definitions - to be populated with full historical data",
+  "delegates": [
+    {
+      "id": "delegate_001",
+      "name": "Richard Henry Lee",
+      "colony": "Virginia",
+      "position": {
+        "value": 0.65,
+        "range": [0.3, 0.9]
+      },
+      "traits": ["principle-driven", "influential", "volatile"],
+      "motivations": ["state sovereignty", "religious freedom", "family legacy"],
+      "relationships": {},
+      "vulnerabilities": ["family financial stability", "personal honor"],
+      "public_stance": "Pro-Independence",
+      "private_stance": "Hesitant"
+    }
+  ],
+  "notes": [
+    "Complete all 13 colony delegates",
+    "Populate relationships matrix",
+    "Add archetype classifications",
+    "Include historical quotes where available"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "description": "Template structure for colony definitions - to be populated with full historical data",
+  "colonies": [
+    {
+      "id": "colony_001",
+      "name": "Massachusetts",
+      "population": 370000,
+      "military_strength": 8000,
+      "economic_output": 75000,
+      "sentiment": 0.72,
+      "representative_count": 2,
+      "key_cities": ["Boston", "Cambridge", "Salem"],
+      "governor": "Thomas Gage (loyalist)",
+      "revolutionary_leaders": ["Samuel Adams", "John Hancock"],
+      "resources": {
+        "militia_quality": "High",
+        "supply_lines": "Vulnerable",
+        "port_access": "Excellent"
+      }
+    }
+  ],
+  "notes": [
+    "Complete all 13 colonies with historical accuracy",
+    "Set sentiment values based on historical records",
+    "Populate delegate associations",
+    "Define resource contribution levels"
+  ]
+}

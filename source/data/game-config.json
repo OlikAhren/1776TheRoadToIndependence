@@ -1,0 +1,151 @@
+{
+  "version": "1.0.0",
+  "gameTitle": "1776: The Road To Independence",
+  "defaultDifficulty": "medium",
+  "maxTurns": 8,
+  "turnDurationDays": 7,
+  
+  "difficultySettings": {
+    "easy": {
+      "name": "Common Sense",
+      "description": "Tutorial-friendly, forgiving penalties",
+      "baseAP": 4,
+      "baseIP": 8,
+      "startingReputation": 70,
+      "eventFrequencyModifier": 0.5,
+      "defectionRiskModifier": 0.5,
+      "gracePeriodColonies": 2,
+      "autoSaveEnabled": true,
+      "tutorialHintsAlwaysVisible": true
+    },
+    "medium": {
+      "name": "Don't Tread on Me",
+      "description": "Balanced challenge, historical accuracy",
+      "baseAP": 3,
+      "baseIP": 5,
+      "startingReputation": 50,
+      "eventFrequencyModifier": 1.0,
+      "defectionRiskModifier": 1.0,
+      "gracePeriodColonies": 0,
+      "autoSaveEnabled": false,
+      "tutorialHintsAlwaysVisible": false
+    },
+    "hard": {
+      "name": "The British are Coming",
+      "description": "Tight constraints, harsh punishments",
+      "baseAP": 2,
+      "baseIP": 3,
+      "startingReputation": 40,
+      "eventFrequencyModifier": 1.25,
+      "defectionRiskModifier": 1.5,
+      "gracePeriodColonies": 0,
+      "autoSaveEnabled": false,
+      "tutorialHintsAlwaysVisible": false,
+      "suppliesDegradeFactor": 2.0,
+      "timeDeadlineReductionDays": 2,
+      "scandalAccumulationFactor": 2.0,
+      "intelligenceCostModifier": 1.5
+    },
+    "extreme": {
+      "name": "Join or Die",
+      "description": "Minimal resources, maximum complexity",
+      "baseAP": 1,
+      "baseIP": 2,
+      "startingReputation": 30,
+      "eventFrequencyModifier": 1.75,
+      "defectionRiskModifier": 3.0,
+      "gracePeriodColonies": 0,
+      "autoSaveEnabled": false,
+      "tutorialHintsAlwaysVisible": false,
+      "suppliesStartingAmount": 0.5,
+      "turnDurationDays": 5,
+      "scandalTolerance": 0,
+      "noSafetyNets": true
+    }
+  },
+  
+  "gameModes": {
+    "historical": {
+      "name": "Historical Mode",
+      "enabled": true,
+      "fixedTimeline": true,
+      "accurateEvents": true,
+      "educationalAnnotations": false
+    },
+    "sandbox": {
+      "name": "The Altered States",
+      "enabled": true,
+      "fixedTimeline": false,
+      "accurateEvents": false,
+      "customScenarios": true,
+      "alternateHistory": true
+    },
+    "educational": {
+      "name": "Educational Mode",
+      "enabled": true,
+      "fixedTimeline": true,
+      "accurateEvents": true,
+      "educationalAnnotations": true,
+      "quizCheckpoints": true,
+      "teacherDashboard": true
+    }
+  },
+  
+  "victoryConditions": {
+    "congressionalApproval": 9,
+    "unanimousSupportRequired": false,
+    "documentCompletenessMinimum": 80,
+    "documentCompletenessOptimal": 95,
+    "finalTurn": 8
+  },
+  
+  "failureConditions": {
+    "loyalistCoupThreshold": 70,
+    "delegationCollapseCount": 4,
+    "maxTurnsWithoutApproval": 8
+  },
+  
+  "resources": {
+    "actionPoints": {
+      "maxCarryover": 2,
+      "perTurnBase": 3,
+      "actions": {
+        "privateMeeting": 1,
+        "publicSpeech": 2,
+        "committeeWork": "1-3",
+        "emergencyAction": "4-8"
+      }
+    },
+    "influencePoints": {
+      "maxStorage": 20,
+      "perTurnBase": 5,
+      "cumulative": true,
+      "actions": {
+        "buyIntelligence": "2-5",
+        "fundCampaign": "3-10",
+        "politicalPromise": "5-15",
+        "establishNetwork": "10-20"
+      }
+    },
+    "supplies": {
+      "unitsPer100Copies": 50,
+      "unitsPer100Pamphlets": 5,
+      "pressNetworkCost": 100,
+      "emergencyMultiplier": 2.0
+    }
+  },
+  
+  "timeline": {
+    "startDate": "1776-06-07",
+    "endDate": "1776-08-02",
+    "keyDates": {
+      "leeResolution": "1776-06-07",
+      "committeeOfFive": "1776-06-11",
+      "jeffersonDraftSubmitted": "1776-06-28",
+      "congressDebate": "1776-07-01",
+      "independenceVote": "1776-07-02",
+      "declarationAdopted": "1776-07-04",
+      "formalSigning": "1776-08-02"
+    }
+  }
+}
