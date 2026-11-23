@@ -1,0 +1,778 @@
+{
+  "delegates": [
+    {
+      "id": "nh_josiah_bartlett",
+      "name": "Josiah Bartlett",
+      "colony": "New Hampshire",
+      "supportLevel": 82,
+      "profile": "Pragmatic",
+      "overview": "He was a prominent physician and the first delegate to vote for independence after the roll call. He later served as the Chief Justice and Governor of New Hampshire. Motivated by a desire to secure local medical autonomy and relief from aggressive British taxation, he was an unflinching patriot who organized state militia defenses.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nh_william_whipple",
+      "name": "William Whipple",
+      "colony": "New Hampshire",
+      "supportLevel": 76,
+      "profile": "Principle driven",
+      "overview": "A former sea captain and merchant, he served as a brigadier general in the New Hampshire militia. Famously challenged by his enslaved servant Prince about fighting for freedom while denying it to others, Whipple freed Prince and fought valiantly at Saratoga. He was driven by a deep sense of military duty and a evolving philosophy of universal human liberty.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nh_matthew_thornton",
+      "name": "Matthew Thornton",
+      "colony": "New Hampshire",
+      "supportLevel": 71,
+      "profile": "Conservative",
+      "overview": "He was an Irish-born physician who served as a surgeon in the colonial militia. He was elected to the Continental Congress late and actually signed the document months later in November 1776. Driven primarily by an urgent need to secure a stable, lawful government for his community, he authored New Hampshire's first post-colonial constitution.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ma_john_hancock",
+      "name": "John Hancock",
+      "colony": "Massachusetts",
+      "supportLevel": 100,
+      "profile": "Social influencer",
+      "overview": "As President of the Continental Congress, he famously affixed his bold signature first in the center of the document. The British accused John Hancock of smuggling in 1768 after Crown Customs officials seized his merchant sloop, the 'Liberty' alleging that he unloaded a cargo of Madeira wine without paying required customs or obtaining proper permits. The Crown sued Hancock in a naval court without a jury facing penalties up to £9,000. Future President John Adams acted as his defense lawyer and argued that the naval court violated colonial rights under the Magna Carta by denying trial by jury. The Crown's Advocate General dropped and retracted the charges against Hancock due to a lack of sufficient evidence.\n\nAfter being seized by British authorities, the sloop Liberty was converted into a Royal Navy armed vessel HMS Liberty that aggressively intercept local merchant ships for customs and trade violations. Outraged by the ship's heavy-handed enforcement and arrogance, a mob of Rhode Island residents boarded the Liberty, cut her mooring cables, let her drift ashore onto Goat Island, set her ablaze, threw her cannons into the harbor, and destroyed her small boats in July of 1769.\n\nHancock used his immense wealth as a merchant to bankroll the early rebellion and Sons of Liberty. He was motivated by deep resistance to British customs enforcement and a passionate desire to lead a unified, independent nation.",
+      "committeeOfFive": false,
+      "continentalCongressPresident": true
+    },
+    {
+      "id": "ma_samuel_adams",
+      "name": "Samuel Adams",
+      "colony": "Massachusetts",
+      "supportLevel": 92,
+      "profile": "Principle driven",
+      "overview": "He was the master political organizer of the Boston Tea Party and the architect of the Committees of Correspondence. He fiercely rejected British parliamentary supremacy years before most delegates considered separation. He was purely motivated by ideological devotion to personal liberty and republican virtues, viewing British rule as inherently corrupt.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ma_john_adams",
+      "name": "John Adams",
+      "colony": "Massachusetts",
+      "supportLevel": 100,
+      "profile": "Principle driven",
+      "overview": "Known as the \"Atlas of Independence,\" he forcefully debated in favor of the declaration on the floor of Congress. He served on the Committee of Five that drafted the text and later became the second U.S. President. He was motivated by a strict legal philosophy regarding constitutional rights and an unshakeable belief that America was destined for self-governance.",
+      "committeeOfFive": true
+    },
+    {
+      "id": "ma_elbridge_gerry",
+      "name": "Elbridge Gerry",
+      "colony": "Massachusetts",
+      "supportLevel": 79,
+      "profile": "Constituency first",
+      "overview": "A powerful merchant, he specialized in securing supply lines and funding for the Continental Army. While he supported independence to protect colonial commerce, his hyper-vigilance against centralized power later made him refuse to sign the U.S. Constitution. His motivations were always anchored in defending civil liberties and the direct interests of his local merchant constituents.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ma_robert_treat_paine",
+      "name": "Robert Treat Paine",
+      "colony": "Massachusetts",
+      "supportLevel": 73,
+      "profile": "Pragmatic",
+      "overview": "He served as the lead prosecutor in the Boston Massacre trial, demonstrating a rigid devotion to the rule of law. In Congress, he focused on practical defense matters, acting as the chairman of the committee that supplied gunpowder to the troops. He was motivated by the realistic understanding that a military conflict was unavoidable and required organized legal backing.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ri_stephen_hopkins",
+      "name": "Stephen Hopkins",
+      "colony": "Rhode Island",
+      "supportLevel": 88,
+      "profile": "Social influencer",
+      "overview": "A former governor of Rhode Island, he was a respected elder statesman who famously stated, \"My hand trembles, but my heart does not,\" due to a nervous affliction. He wrote early, influential pamphlets attacking British taxation policies. He was motivated by a lifetime of defending Rhode Island's unique traditions of religious freedom and corporate autonomy.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ri_william_ellery",
+      "name": "William Ellery",
+      "colony": "Rhode Island",
+      "supportLevel": 83,
+      "profile": "Pragmatic",
+      "overview": "A skilled lawyer and merchant, he replaced a deceased delegate right before the vote and dedicated himself to naval affairs. He stood close to the signing table specifically to watch the expressions of his fellow delegates as they signed what could be their death warrants. He was motivated by a practical desire to build a strong American maritime defense against British trade blocks.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ct_roger_sherman",
+      "name": "Roger Sherman",
+      "colony": "Connecticut",
+      "supportLevel": 100,
+      "profile": "Pragmatic",
+      "overview": "The only person to sign all four major founding documents of the United States, he was a member of the Committee of Five. He rose from humble beginnings as a cordwainer to become a brilliant legal mind. He was motivated by a deeply rooted New England pragmatism, prioritizing legal clarity, fiscal responsibility, and legislative compromise.",
+      "committeeOfFive": true
+    },
+    {
+      "id": "ct_samuel_huntington",
+      "name": "Samuel Huntington",
+      "colony": "Connecticut",
+      "supportLevel": 84,
+      "profile": "Moderate",
+      "overview": "A self-made lawyer who eventually served as the President of the Continental Congress during the adoption of the Articles of Confederation. He pursued a quiet, steady course of judicial and legislative service rather than radical rhetoric. His motivations centered on establishing a legally sound, organized administration that could withstand British retaliation.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ct_william_williams",
+      "name": "William Williams",
+      "colony": "Connecticut",
+      "supportLevel": 95,
+      "profile": "Principle driven",
+      "overview": "A Harvard-educated theologian turned merchant, he sacrificed his own personal funds to back the Continental Army's paper currency. He wrote fierce essays condemning the religious and political overreach of the British Crown. He was motivated by a strict Puritan worldview that framed the American revolution as a righteous struggle against tyranny.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ct_oliver_wolcott",
+      "name": "Oliver Wolcott",
+      "colony": "Connecticut",
+      "supportLevel": 90,
+      "profile": "Pragmatic",
+      "overview": "A military commander who simultaneously served as a political delegate and a major general in the Connecticut militia. He missed the July debates due to illness but returned to sign the engrossed document later. He was motivated by a practical focus on military defense and security, famously melting down a pulled-down statue of King George III into bullets.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ny_william_floyd",
+      "name": "William Floyd",
+      "colony": "New York",
+      "supportLevel": 68,
+      "profile": "Constituency first",
+      "overview": "A wealthy landowner on Long Island, he had to flee with his family when the British invaded and occupied his estate. He remained resolute in Congress despite losing his property for seven years. He was motivated by a fierce determination to protect the territorial sovereignty and domestic security of New York families.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ny_philip_livingston",
+      "name": "Philip Livingston",
+      "colony": "New York",
+      "supportLevel": 63,
+      "profile": "Conservative",
+      "overview": "A wildly prosperous merchant and philanthropist who initially sought reconciliation to preserve New York's vital trade networks. He reluctantly backed independence only when it became clear that the British would not negotiate on taxation. He was motivated by a conservative desire to maintain social stability and safeguard the commercial elite from economic collapse.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ny_francis_lewis",
+      "name": "Francis Lewis",
+      "colony": "New York",
+      "supportLevel": 75,
+      "profile": "Pragmatic",
+      "overview": "A Welsh-born merchant whose home was completely destroyed and his wife imprisoned by the British due to his political stance. He used his deep knowledge of international trade to source vital military supplies for the Continental Army. His primary motivation was the pragmatic realization that economic independence was the only path forward for American merchants.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ny_lewis_morris",
+      "name": "Lewis Morris",
+      "colony": "New York",
+      "supportLevel": 80,
+      "profile": "Social influencer",
+      "overview": "The lord of a massive manorial estate, he was warned by his half-brother that signing would cost him his fortune, to which he replied, \"Damn the consequences, give me the pen.\" He lost his home and forests to British destruction shortly after signing. He was motivated by a fierce sense of elite civic obligation and personal honor.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nj_richard_stockton",
+      "name": "Richard Stockton",
+      "colony": "New Jersey",
+      "supportLevel": 58,
+      "profile": "Conservative",
+      "overview": "A wealthy jurist and trustee of Princeton who initially sought a moderate path of compromise within the British legal framework. He ultimately voted for independence when British military hostility made peace impossible, though he was later captured and brutally imprisoned by the British. His motivations were tied to a conservative defense of American property rights and legal security.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nj_john_witherspoon",
+      "name": "John Witherspoon",
+      "colony": "New Jersey",
+      "supportLevel": 88,
+      "profile": "Principle driven",
+      "overview": "The Scottish-born president of Princeton University and the only active clergyman to sign the Declaration. When a fellow delegate argued that America was not yet ripe for independence, Witherspoon famously responded that it was \"not only ripe for the measure, but in danger of rotting for the want of it.\" He was motivated by a Presbyterian theology that naturally resisted absolute monarchy and championed civil liberty.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nj_francis_hopkinson",
+      "name": "Francis Hopkinson",
+      "colony": "New Jersey",
+      "supportLevel": 85,
+      "profile": "Social influencer",
+      "overview": "A talented author, poet, and lawyer who used his sharp wit and satirical essays to mock British authority and rally public support. He was also a gifted designer who later helped design the American flag and early continental currency. He was motivated by a creative vision for a distinct, self-reliant American cultural and political identity.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nj_john_hart",
+      "name": "John Hart",
+      "colony": "New Jersey",
+      "supportLevel": 80,
+      "profile": "Constituency first",
+      "overview": "A traditional farmer and local politician known to his neighbors as \"Honest John\" for his integrity. When the British invaded New Jersey shortly after the signing, he was forced to flee into the woods and live in caves while his farm was ravaged and his wife died. He was motivated by a direct duty to protect his agrarian community from destructive British troop quartering and military overreach.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nj_abraham_clark",
+      "name": "Abraham Clark",
+      "colony": "New Jersey",
+      "supportLevel": 90,
+      "profile": "Principle driven",
+      "overview": "A surveyor and lawyer affectionately dubbed the \"Poor Man's Counselor\" because he frequently defended poor citizens for free. He strongly advocated for democratic reforms and fought against aristocratic privilege within the emerging nation. He was motivated by a deeply egalitarian belief that independence must serve the common man rather than just wealthy landowners.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_robert_morris",
+      "name": "Robert Morris",
+      "colony": "Pennsylvania",
+      "supportLevel": 35,
+      "profile": "Conservative",
+      "overview": "Known as the \"Financier of the Revolution,\" he actually voted against the resolution for independence on July 2, believing it was premature and economically ruinous. However, he voluntarily abstained from the July 4 vote so Pennsylvania could present a unified front, and he later signed the document anyway. He was motivated by an intense pragmatism regarding global commerce and the monumental task of personally bankrolling the continental war effort.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_benjamin_rush",
+      "name": "Benjamin Rush",
+      "colony": "Pennsylvania",
+      "supportLevel": 95,
+      "profile": "Principle driven",
+      "overview": "A pioneering physician, social reformer, and close friend to both Thomas Jefferson and John Adams. He was a radical opponent of slavery and an early champion of public education and medical component reforms. He was motivated by an idealistic vision of a highly enlightened, virtuous American republic free from the moral corruptions of the Old World.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_benjamin_franklin",
+      "name": "Benjamin Franklin",
+      "colony": "Pennsylvania",
+      "supportLevel": 100,
+      "profile": "Social influencer",
+      "overview": "Franklin was an internationally revered scientist, diplomat, and elder statesman who helped Jefferson polish the draft of the Declaration. Having spent decades in London trying to broker peace, he realized earlier than most that Britain would never treat Americans as equals. He was motivated by a global perspective on American potential and used his massive international influence to eventually secure the French alliance.\n\nHis diverse innovations shaped early American society, beginning with his highly successful print shop that produced The Pennsylvania Gazette and Poor Richard's Almanac. He proved lightning was electrical and freely gifted inventions like the lightning rod and bifocals to the public. Franklin later modernized communication across the colonies by establishing efficient mail routes as America's first Postmaster General. He championed paper currency, introducing advanced anti-counterfeiting techniques like leaf-printing and specialized security inks. Finally, Franklin co-founded the reform society that conceptualized the modern penitentiary system, advocating for spiritual rehabilitation over brutal public punishment.",
+      "committeeOfFive": true
+    },
+    {
+      "id": "pa_john_morton",
+      "name": "John Morton",
+      "colony": "Pennsylvania",
+      "supportLevel": 75,
+      "profile": "Moderate",
+      "overview": "A respected jurist of Finnish descent who cast the critical, tie-breaking vote within the Pennsylvania delegation to favor independence. He faced immense pressure from his conservative neighbors and friends who opposed the split, which deeply stressed him before his early death in 1777. His primary motivation was achieving political consensus and ensuring Pennsylvania did not isolate itself from the other colonies.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_george_clymer",
+      "name": "George Clymer",
+      "colony": "Pennsylvania",
+      "supportLevel": 85,
+      "profile": "Pragmatic",
+      "overview": "A quiet merchant who was appointed to Congress specifically to replace a conservative delegate who refused to support independence. He served on early committees handling continental finance and treasury operations, enduring the total destruction of his home by British troops. He was motivated by a practical merchant's understanding that British imperial trade monopolies were strangling American economic growth.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_james_smith",
+      "name": "James Smith",
+      "colony": "Pennsylvania",
+      "supportLevel": 85,
+      "profile": "Constituency first",
+      "overview": "An Irish-born lawyer who successfully organized the first volunteer militia company in Pennsylvania's western frontier. He fiercely represented the interests of backcountry settlers who felt neglected by both the British crown and the wealthy Philadelphia elite. He was motivated by a frontier desire for self-defense, territorial security, and local representation.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_george_taylor",
+      "name": "George Taylor",
+      "colony": "Pennsylvania",
+      "supportLevel": 80,
+      "profile": "Pragmatic",
+      "overview": "An Irish immigrant who arrived as an indentured servant and rose to become a highly successful ironmaster. He was brought into Congress late to fill vacancies left by anti-independence delegates and focused entirely on manufacturing ammunition for the war. His motivations were purely pragmatic, centered on utilizing industrial manufacturing to achieve self-reliance from British goods.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_james_wilson",
+      "name": "James Wilson",
+      "colony": "Pennsylvania",
+      "supportLevel": 65,
+      "profile": "Moderate",
+      "overview": "A brilliant legal theorist who originally hesitated on independence because his constituents in Pennsylvania were deeply divided on the matter. He refused to vote for separation until he received clear feedback from his district, ultimately helping to swing the state's vote. He was motivated by a strict adherence to constitutional law and the belief that government power must strictly originate from the consent of the governed.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_george_ross",
+      "name": "George Ross",
+      "colony": "Pennsylvania",
+      "supportLevel": 75,
+      "profile": "Moderate",
+      "overview": "A lawyer who served the crown as a prosecutor before switching his allegiance to the patriot cause as British policies grew more heavy-handed. He was highly regarded for his diplomatic skills in negotiating treaties with Native American tribes on the frontier. He was motivated by a desire to preserve legal stability and protect provincial borders during the chaotic transition to statehood.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "de_caesar_rodney",
+      "name": "Caesar Rodney",
+      "colony": "Delaware",
+      "supportLevel": 100,
+      "profile": "Principle driven",
+      "overview": "Famous for his dramatic, 80-mile overnight horse ride through a thunderstorm to Philadelphia to cast Delaware's tie-breaking vote for independence. He did this while suffering from severe asthma and facial skin cancer, prioritizing political duty over his personal health. He was motivated by an unshakeable commitment to colonial unity and a fierce personal opposition to British military tyranny.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "de_george_read",
+      "name": "George Read",
+      "colony": "Delaware",
+      "supportLevel": 28,
+      "profile": "Conservative",
+      "overview": "The only delegate to sign the Declaration of Independence after explicitly voting against the initial resolution on July 2. He feared that the colonies were entirely unprepared for war with a global superpower and that a premature split would lead to widespread devastation. He signed the document out of a conservative desire to maintain political unity once the majority had ruled.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "de_thomas_mckean",
+      "name": "Thomas McKean",
+      "colony": "Delaware",
+      "supportLevel": 95,
+      "profile": "Principle driven",
+      "overview": "A fiery lawyer who personally sent for Caesar Rodney to break the Delaware delegation's tie and later served in the military during the war. He was an outspoken critic of British taxes from the time of the Stamp Act Congress and championed radical separation. He was motivated by an absolute refusal to compromise on what he viewed as the natural rights of American citizens.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "md_samuel_chase",
+      "name": "Samuel Chase",
+      "colony": "Maryland",
+      "supportLevel": 90,
+      "profile": "Social influencer",
+      "overview": "A boisterous, aggressive political leader nicknamed \"Old Bacon Face\" due to his fierce debating style. He led radical protests with the Sons of Liberty in Maryland, successfully turning public opinion away from the royal government. He was motivated by a populist drive to dismantle colonial aristocratic systems and enforce aggressive resistance to British taxation.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "md_william_paca",
+      "name": "William Paca",
+      "colony": "Maryland",
+      "supportLevel": 85,
+      "profile": "Constituency first",
+      "overview": "A wealthy lawyer of Italian descent who used his own considerable fortune to supply and clothe Maryland troops. He initially held back on advocating for independence until the Maryland convention formally removed its restrictions on the delegation. He was motivated by a deep sense of accountability to his home province and a desire to ensure local governance remained securely in American hands.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "md_thomas_stone",
+      "name": "Thomas Stone",
+      "colony": "Maryland",
+      "supportLevel": 50,
+      "profile": "Moderate",
+      "overview": "A quiet, deeply reluctant delegate who preferred diplomatic reconciliation and rarely spoke during the loud, aggressive congressional debates. He wanted to avoid war at all costs, largely because his beloved wife was extremely ill and he wished to stay home to care for her. He ultimately signed the document out of a pragmatic realization that Britain had closed all paths to peaceful negotiation.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "md_charles_carroll",
+      "name": "Charles Carroll",
+      "colony": "Maryland",
+      "supportLevel": 95,
+      "profile": "Principle driven",
+      "overview": "The only Roman Catholic signer and the wealthiest man in the entire Continental Congress. Because Catholics were barred from voting or holding office under British law, he risked more personal fortune and freedom than almost anyone else by signing. He was motivated by a profound desire to secure full religious freedom and equal civic rights for American Catholics.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "va_george_wythe",
+      "name": "George Wythe",
+      "colony": "Virginia",
+      "supportLevel": 95,
+      "profile": "Principle driven",
+      "overview": "America's first law professor and a revered mentor to Thomas Jefferson, Henry Clay, and John Marshall. He was a radical legal scholar who argued early on that the British Parliament had absolutely no lawful authority over the colonies. He was motivated by a pure, lifelong commitment to classical republican philosophy and the intellectual foundations of human liberty.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "va_richard_henry_lee",
+      "name": "Richard Henry Lee",
+      "colony": "Virginia",
+      "supportLevel": 100,
+      "profile": "Social influencer",
+      "overview": "He officially introduced the famous \"Lee Resolution\" to Congress in June 1776, declaring that the colonies \"are, and of right ought to be, free and independent States.\" He was a master orator who coordinated across state lines to unite northern and southern factions against the crown. He was motivated by a passionate desire to see America fully integrated into the global community as a sovereign power.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "va_thomas_jefferson",
+      "name": "Thomas Jefferson",
+      "colony": "Virginia",
+      "supportLevel": 100,
+      "profile": "Principle driven",
+      "overview": "The principal author of the Declaration of Independence who penned the immortal words regarding \"Life, Liberty and the Pursuit of Happiness.\" His intellectual contributions shaped global democratic movements. He was motivated by Enlightenment philosophy and a vision of an agrarian republic free from hereditary monarchies.\n\nOver his lifetime, he collected a massive personal library of roughly 7,000 books, which he later sold to Congress to rebuild the Library of Congress. Jefferson was literate and fluent in seven languages. Jefferson was a passionate inventor and tinkerer, designing and improving innovations such as the swivel chair, a letter-copying polygraph, and a scientifically advanced iron moldboard plow. He secured the Louisiana Purchase as the third U.S. President, and founded the University of Virginia.\n\nHis initial draft of the Declaration featured a controversial anti-slavery clause, historically regarded as a \"29th grievance,\" which strongly condemned King George III for perpetuating the transatlantic slave trade. Jefferson vehemently accused the British monarch of waging a \"cruel war against human nature itself\" by captivating and forcing people into slavery. Ultimately, the Continental Congress removed this entire paragraph to maintain a unified front among the colonies. By cutting the passage, the founders prioritized timely political consensus over addressing slavery, leaving the final document with only 27 official grievances and the subject to be tabled for later debates.",
+      "committeeOfFive": true
+    },
+    {
+      "id": "va_benjamin_harrison",
+      "name": "Benjamin Harrison",
+      "colony": "Virginia",
+      "supportLevel": 80,
+      "profile": "Pragmatic",
+      "overview": "A physically massive, booming planter who served as the Chairman of the Committee of the Whole during the intense independence debates. He famously brought levity to the grim signing by joking to Elbridge Gerry that his heavy weight would cause him to die quickly if they were hanged for treason. He was motivated by a practical sense of Southern planter solidarity and legislative duty.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "va_thomas_nelson",
+      "name": "Thomas Nelson Jr.",
+      "colony": "Virginia",
+      "supportLevel": 90,
+      "profile": "Constituency first",
+      "overview": "A wealthy merchant and planter who later served as Governor of Virginia and commander of its state militia. During the Siege of Yorktown, he famously ordered American troops to fire on his own beautiful mansion because British General Cornwallis was using it as a headquarters. He was motivated by an absolute willingness to sacrifice his personal wealth to defend Virginia soil from occupation.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "va_francis_lightfoot_lee",
+      "name": "Francis Lightfoot Lee",
+      "colony": "Virginia",
+      "supportLevel": 90,
+      "profile": "Moderate",
+      "overview": "The quieter brother of Richard Henry Lee, he preferred working diligently on low-profile congressional committees rather than giving grand, theatrical speeches. He was instrumental in helping frame the future Articles of Confederation and securing crucial agricultural supply chains. He was motivated by a quiet, steady patriotism and a desire to build functional governance behind the scenes.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "va_carter_braxton",
+      "name": "Carter Braxton",
+      "colony": "Virginia",
+      "supportLevel": 45,
+      "profile": "Conservative",
+      "overview": "A highly wealthy planter and merchant who openly criticized the rush toward independence in pamphlets, favoring a British-style aristocratic government instead. He feared that sudden democracy would result in mob rule and anarchy, threatening the economic stability of the South. He signed the document reluctantly to avoid total political isolation, subsequently losing his entire fortune to British naval raids.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nc_william_hooper",
+      "name": "William Hooper",
+      "colony": "North Carolina",
+      "supportLevel": 75,
+      "profile": "Moderate",
+      "overview": "A Harvard-educated lawyer who had previously aligned with the royal governor to crush a populist agrarian uprising known as the Regulator Movement. He initially hoped for reconciliation but grew radicalized when British troops began attacking southern coastal towns. He was motivated by a desire to preserve structured legal order and protect his property from British naval destruction.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nc_joseph_hewes",
+      "name": "Joseph Hewes",
+      "colony": "North Carolina",
+      "supportLevel": 65,
+      "profile": "Pragmatic",
+      "overview": "A successful merchant who effectively operated as the first de facto Secretary of the Navy, securing and outfitting ships for the fledgling continental fleet. As a devout Quaker, he wrestled deeply with the violent implications of a war for independence before finally embracing it. He was motivated by a practical understanding that American shipping lines could never thrive under restrictive British maritime laws.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "nc_john_penn",
+      "name": "John Penn",
+      "colony": "North Carolina",
+      "supportLevel": 90,
+      "profile": "Constituency first",
+      "overview": "A self-educated lawyer who moved from Virginia to North Carolina and quickly became a champion for the political rights of frontier farmers. He was noted for his incredibly amiable, peacemaking personality, once defusing a duel challenge from a political rival by sharing a dinner table with him. He was motivated by a strong desire to see agrarian, middle-class families gain direct democratic representation.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "sc_edward_rutledge",
+      "name": "Edward Rutledge",
+      "colony": "South Carolina",
+      "supportLevel": 40,
+      "profile": "Conservative",
+      "overview": "The youngest signer of the Declaration at age 26, he initially led the southern opposition against independence, successfully delaying the vote in June. He fiercely demanded that all anti-slavery language be scrubbed from Jefferson's draft to protect South Carolina's plantation economy. He eventually voted for independence only to maintain a unified continental front against British military forces.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "sc_thomas_hayward",
+      "name": "Thomas Heyward Jr.",
+      "colony": "South Carolina",
+      "supportLevel": 75,
+      "profile": "Pragmatic",
+      "overview": "A judge and militia captain who was captured by the British during the fall of Charleston and held as a prisoner of war for a year. He used his legal expertise to transition South Carolina's courts away from colonial royal authority to state-run systems. He was motivated by a practical desire to secure judicial independence and safeguard the state's aristocratic social hierarchy.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "sc_thomas_lynch",
+      "name": "Thomas Lynch Jr.",
+      "colony": "South Carolina",
+      "supportLevel": 75,
+      "profile": "Moderate",
+      "overview": "He entered Congress late to replace his severely ill father and was himself suffering from a debilitating tropical illness contracted during military service. He signed the document in poor health and tragically disappeared at sea a few years later at age 30. His motivation was driven by family honor, stepping in to ensure his father's political legacy and South Carolina's representation were maintained.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "sc_arthur_middleton",
+      "name": "Arthur Middleton",
+      "colony": "South Carolina",
+      "supportLevel": 85,
+      "profile": "Principle driven",
+      "overview": "A highly educated, radical plantation owner who replaced his more conservative father in Congress because of his unyielding stance against Britain. He was deeply involved in purging British loyalists from local South Carolina committees and was later captured and imprisoned when the British occupied Charleston. He was motivated by a fierce, aristocratic pride and a principled refusal to submit to royal dictates.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ga_button_gwinnett",
+      "name": "Button Gwinnett",
+      "colony": "Georgia",
+      "supportLevel": 80,
+      "profile": "Social influencer",
+      "overview": "A charismatic merchant and planter who used his brief time in Congress to skyrocket his personal political career, quickly becoming the Governor of Georgia. His intense political rivalries led to a deadly pistol duel with General Lachlan McIntosh just nine months after signing the Declaration, resulting in Gwinnett's death. He was motivated by intense personal ambition and a desire to lead Georgia's emerging state government.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ga_lyman_hall",
+      "name": "Lyman Hall",
+      "colony": "Georgia",
+      "supportLevel": 95,
+      "profile": "Principle driven",
+      "overview": "A physician and former minister who initially attended Congress as an independent delegate representing a single, radical parish before Georgia officially joined the rebellion. He was a close ally of safe-guarding personal liberties and later helped found the University of Georgia. He was motivated by a New England-style Puritan devotion to personal freedom and the intellectual advancement of the frontier.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ga_george_walton",
+      "name": "George Walton",
+      "colony": "Georgia",
+      "supportLevel": 85,
+      "profile": "Pragmatic",
+      "overview": "An orphaned carpenter's apprentice who taught himself the law by candlelight and rose to become a successful attorney and colonel in the Georgia militia. He was severely wounded and captured during the defense of Savannah, spending months as a prisoner of war before being exchanged. He was motivated by a pragmatic understanding of frontier survival, realizing that a weak British presence could not protect Georgia from frontier conflicts.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_john_dickinson",
+      "name": "John Dickinson",
+      "colony": "Pennsylvania",
+      "supportLevel": 10,
+      "profile": "Moderate",
+      "overview": "He refused to sign because he believed the declaration was premature and favored reconciliation with Great Britain. However, he still fought in the militia for the patriot cause.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_charles_humphreys",
+      "name": "Charles Humphreys",
+      "colony": "Pennsylvania",
+      "supportLevel": 5,
+      "profile": "Moderate",
+      "overview": "A Pennsylvania Quaker who voted against the resolution for independence. He was replaced in the state delegation before the August signing.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "pa_thomas_willing",
+      "name": "Thomas Willing",
+      "colony": "Pennsylvania",
+      "supportLevel": 5,
+      "profile": "Moderate",
+      "overview": "Voted against independence alongside Charles Humphreys and was subsequently replaced.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ny_robert_r Livingston",
+      "name": "Robert R. Livingston",
+      "colony": "New York",
+      "supportLevel": 100,
+      "profile": "Social influencer",
+      "overview": "A member of the \"Committee of Five\" that drafted the document, but ironically did not sign. Livingston was recalled to state duties before the August 2 signing ceremony.",
+      "committeeOfFive": true
+    },
+    {
+      "id": "ny_george_clinton",
+      "name": "George Clinton",
+      "colony": "New York",
+      "supportLevel": 80,
+      "profile": "Principle driven",
+      "overview": "George Clinton voted for independence but left Philadelphia to serve as a general in the Continental Army before the document could be signed.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ny_john_alsop",
+      "name": "John Alsop",
+      "colony": "New York",
+      "supportLevel": 0,
+      "profile": "Moderate",
+      "overview": "John Alsop strongly opposed total separation from Britain; he resigned his seat in protest later in July.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "ny_henry_wisner",
+      "name": "Henry Wisner",
+      "colony": "New York",
+      "supportLevel": 90,
+      "profile": "Social influencer",
+      "overview": "Voted for independence but was away at a New York state convention during the official signing. After returning to New York, Wisner actively supported the war effort by building and operating three gunpowder mills in Orange and Ulster counties to supply George Washington's army.",
+      "committeeOfFive": false
+    },
+    {
+      "id": "md_john_rogers",
+      "name": "John Rogers",
+      "colony": "Maryland",
+      "supportLevel": 80,
+      "profile": "Principle driven",
+      "overview": "Voted in favor of independence on July 4 but was no longer a delegate by the time signing began on August 2.",
+      "committeeOfFive": false
+    }
+  ],
+  "travelTimes": {
+  "Georgia": {
+    "Georgia": 1,
+    "South Carolina": 2,
+    "North Carolina": 2,
+    "Virginia": 3,
+    "Maryland": 3,
+    "Delaware": 3,
+    "Pennsylvania": 3,
+    "New Jersey": 3,
+    "Connecticut": 4,
+    "New York": 4,
+    "Rhode Island": 4,
+    "Massachusetts": 4,
+    "New Hampshire": 4
+  },
+  "South Carolina": {
+    "Georgia": 1,
+    "South Carolina": 1,
+    "North Carolina": 1,
+    "Virginia": 2,
+    "Maryland": 2,
+    "Delaware": 2,
+    "Pennsylvania": 3,
+    "New Jersey": 3,
+    "Connecticut": 4,
+    "New York": 4,
+    "Rhode Island": 4,
+    "Massachusetts": 4,
+    "New Hampshire": 4
+  },
+  "North Carolina": {
+    "Georgia": 2,
+    "South Carolina": 1,
+    "North Carolina": 1,
+    "Virginia": 1,
+    "Maryland": 2,
+    "Delaware": 2,
+    "Pennsylvania": 2,
+    "New Jersey": 2,
+    "Connecticut": 3,
+    "New York": 3,
+    "Rhode Island": 3,
+    "Massachusetts": 4,
+    "New Hampshire": 4
+  },
+  "Virginia": {
+    "Georgia": 3,
+    "South Carolina": 2,
+    "North Carolina": 1,
+    "Virginia": 1,
+    "Maryland": 1,
+    "Delaware": 1,
+    "Pennsylvania": 1,
+    "New Jersey": 2,
+    "Connecticut": 2,
+    "New York": 3,
+    "Rhode Island": 3,
+    "Massachusetts": 4,
+    "New Hampshire": 4
+  },
+  "Maryland": {
+    "Georgia": 3,
+    "South Carolina": 3,
+    "North Carolina": 2,
+    "Virginia": 1,
+    "Maryland": 1,
+    "Delaware": 1,
+    "Pennsylvania": 1,
+    "New Jersey": 1,
+    "Connecticut": 2,
+    "New York": 2,
+    "Rhode Island": 2,
+    "Massachusetts": 3,
+    "New Hampshire": 3
+  },
+  "Delaware": {
+    "Georgia": 3,
+    "South Carolina": 3,
+    "North Carolina": 2,
+    "Virginia": 1,
+    "Maryland": 1,
+    "Delaware": 1,
+    "Pennsylvania": 1,
+    "New Jersey": 1,
+    "Connecticut": 2,
+    "New York": 2,
+    "Rhode Island": 2,
+    "Massachusetts": 3,
+    "New Hampshire": 3
+  },
+  "Pennsylvania": {
+    "Georgia": 4,
+    "South Carolina": 3,
+    "North Carolina": 3,
+    "Virginia": 1,
+    "Maryland": 1,
+    "Delaware": 1,
+    "Pennsylvania": 1,
+    "New Jersey": 1,
+    "Connecticut": 1,
+    "New York": 1,
+    "Rhode Island": 2,
+    "Massachusetts": 2,
+    "New Hampshire": 3
+  },
+  "New Jersey": {
+    "Georgia": 4,
+    "South Carolina": 3,
+    "North Carolina": 3,
+    "Virginia": 2,
+    "Maryland": 1,
+    "Delaware": 1,
+    "Pennsylvania": 1,
+    "New Jersey": 1,
+    "Connecticut": 1,
+    "New York": 1,
+    "Rhode Island": 2,
+    "Massachusetts": 2,
+    "New Hampshire": 2
+  },
+  "New York": {
+    "Georgia": 4,
+    "South Carolina": 4,
+    "North Carolina": 3,
+    "Virginia": 3,
+    "Maryland": 2,
+    "Delaware": 2,
+    "Pennsylvania": 1,
+    "New Jersey": 1,
+    "Connecticut": 1,
+    "New York": 1,
+    "Rhode Island": 1,
+    "Massachusetts": 1,
+    "New Hampshire": 2
+  },
+  "Connecticut": {
+    "Georgia": 4,
+    "South Carolina": 4,
+    "North Carolina": 3,
+    "Virginia": 2,
+    "Maryland": 2,
+    "Delaware": 2,
+    "Pennsylvania": 2,
+    "New Jersey": 1,
+    "Connecticut": 1,
+    "New York": 1,
+    "Rhode Island": 1,
+    "Massachusetts": 1,
+    "New Hampshire": 2
+  },
+  "Rhode Island": {
+    "Georgia": 4,
+    "South Carolina": 4,
+    "North Carolina": 3,
+    "Virginia": 3,
+    "Maryland": 2,
+    "Delaware": 2,
+    "Pennsylvania": 2,
+    "New Jersey": 1,
+    "Connecticut": 1,
+    "New York": 1,
+    "Rhode Island": 1,
+    "Massachusetts": 1,
+    "New Hampshire": 2
+  },
+  "Massachusetts": {
+    "Georgia": 4,
+    "South Carolina": 4,
+    "North Carolina": 3,
+    "Virginia": 3,
+    "Maryland": 2,
+    "Delaware": 2,
+    "Pennsylvania": 2,
+    "New Jersey": 1,
+    "Connecticut": 1,
+    "New York": 1,
+    "Rhode Island": 1,
+    "Massachusetts": 1,
+    "New Hampshire": 1
+  },
+  "New Hampshire": {
+    "Georgia": 4,
+    "South Carolina": 4,
+    "North Carolina": 3,
+    "Virginia": 3,
+    "Maryland": 3,
+    "Delaware": 3,
+    "Pennsylvania": 2,
+    "New Jersey": 2,
+    "Connecticut": 1,
+    "New York": 1,
+    "Rhode Island": 1,
+    "Massachusetts": 1,
+    "New Hampshire": 1
+  }
+}
+}

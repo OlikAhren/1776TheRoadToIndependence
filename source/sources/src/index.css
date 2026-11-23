@@ -1,0 +1,54 @@
+/* Basic styles for Declaration Game */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f5f5dc;
+  color: #2C1B18;
+}
+
+.parchment {
+  background-color: #F5EBE0;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  gap: 20px;
+}
+
+.colony-map {
+  flex: 2;
+}
+
+.delegate-panel {
+  flex: 1;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2C1B18;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+  
+  .colony-map, .delegate-panel {
+    flex: 1;
+    width: 100%;
+  }
+}

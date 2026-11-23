@@ -1,0 +1,156 @@
+import React from 'react'
+import { useGameStore, FAILURE_DEADLINE_LABEL } from '../store/GameStore'
+
+const Timeline: React.FC = () => {
+  const { currentDate } = useGameStore()
+  
+  // Calculate date range
+  const startDate = new Date(1776, 5, 7) // June 7th (month is 0-indexed, so 5 = June)
+  
+  // Parse current date
+  const parseCurrentDate = (dateStr: string): Date => {
+    // Handle format like "June 7, 1776"
+    const parts = dateStr.split(',')
+    if (parts.length < 2) return startDate
+    
+    const monthDay = parts[0].trim()
+    const [month, day] = monthDay.split(' ')
+    const year = parseInt(parts[1].trim()) || 1776
+    
+    // Convert month name to number
+    const months: { [key: string]: number } = {
+      'January': 1, 'February': 2, 'March': 3, 'April': 4,
+      'May': 5, 'June': 6, 'July': 7, 'August': 8,
+      'September': 9, 'October': 10, 'November': 11, 'December': 12
+    }
+    
+    const monthNum = months[month.charAt(0).toUpperCase() + month.slice(1).toLowerCase()] || 6
+    
+    return new Date(year, monthNum - 1, parseInt(day))
+  }
+  
+  // The game must be finished by the July 2, 1776 deadline — the same one the store uses
+  // for the failure check, so the bar and the rules can never disagree.
+  const endDate = parseCurrentDate(FAILURE_DEADLINE_LABEL)
+  
+  const currentParsedDate = parseCurrentDate(currentDate)
+  
+  // Calculate progress percentage (0 to 100)
+  const progressMs = currentParsedDate.getTime() - startDate.getTime()
+  const totalMs = endDate.getTime() - startDate.getTime()
+  const progressPercent = Math.max(0, Math.min(100, (progressMs / totalMs) * 100))
+  
+  // Total days, counted inclusively (June 7 is day 1, July 2 is the last day)
+  const totalDays = Math.round(totalMs / (1000 * 60 * 60 * 24)) + 1
+  
+  // Get current day number
+  const getCurrentDay = (): number => {
+    const diffMs = currentParsedDate.getTime() - startDate.getTime()
+    return Math.round(diffMs / (1000 * 60 * 60 * 24)) + 1 // +1 because we start at day 1
+  }
+  
+  const currentDay = getCurrentDay()
+  
+  return (
+    <div style={{
+      width: '100%',
+      marginBottom: '20px',
+      padding: '15px',
+      background: '#FFF8DC',
+      borderRadius: '8px',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      border: '2px solid #1A237E'
+    }}>
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        alignItems: 'center',
+        marginBottom: '10px'
+      }}>
+        <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#2C1B18' }}>Timeline Progress</span>
+        <span style={{ fontSize: '14px', fontWeight: 'bold', color: '#2C1B18' }}>
+          Current: {currentDate}
+        </span>
+      </div>
+      
+      {/* Timeline bar */}
+      <div style={{ position: 'relative', height: '40px', background: '#ddd', borderRadius: '4px', overflow: 'hidden' }}>
+        {/* Background track */}
+        <div style={{ 
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+          background: 'linear-gradient(to right, #2E7D32 0%, #F07500 50%, #EF5350 100%)',
+          opacity: 0.3
+        }} />
+        
+        {/* Progress fill */}
+        <div style={{ 
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: `${progressPercent}%`,
+          background: 'linear-gradient(to right, #2E7D32, #FA8010)',
+          transition: 'width 0.3s ease'
+        }} />
+        
+        {/* Markers for key dates - positioned below the bar */}
+        {[0, 25, 50, 75, 100].map((markerPercent, index) => {
+          const markerDate = new Date(startDate.getTime() + (totalMs * markerPercent / 100))
+          const markerLabel = markerDate.getMonth() === 5 ? 'June' : 'July'
+          
+          return (
+            <div
+              key={index}
+              style={{
+                position: 'absolute',
+                left: `${markerPercent}%`,
+                top: 'calc(100% + 15px)',
+                transform: 'translateX(-50%)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+            >
+              <span style={{
+                fontSize: '11px',
+                fontWeight: 'bold',
+                color: '#2C1B18',
+                background: 'white',
+                padding: '2px 6px',
+                borderRadius: '4px',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
+              }}>
+                {markerLabel} {markerDate.getDate()}
+              </span>
+            </div>
+          )
+        })}
+        
+        {/* Day counter badge */}
+        <div style={{
+          position: 'absolute',
+          left: `${progressPercent}%`,
+          top: '50%',
+          transform: `translate(calc(-50% - ${Math.max(0, progressPercent - 10)}px), -50%)`,
+          background: '#2C1B18',
+          color: 'white',
+          padding: '4px 8px',
+          borderRadius: '12px',
+          fontSize: '11px',
+          fontWeight: 'bold',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.3)'
+        }}>
+          Day {currentDay}/{totalDays}
+        </div>
+      </div>
+      
+      {/* Date navigation hints */}
+    </div>
+  )
+}
+
+export default Timeline

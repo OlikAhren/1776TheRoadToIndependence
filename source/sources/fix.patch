@@ -1,0 +1,11 @@
+--- a/src/store/GameStore.ts
++++ b/src/store/GameStore.ts
+@@ -102,7 +102,7 @@ export const useGameStore = create<GameState & GameActions>()(
+   (set, get) => ({
+     ...defaultGameState,
+     
+-    useIP: (amount: number): boolean {
++    useIP: (amount: number) => {
+       const { resources } = get();
+       if (resources.influencePoints >= amount) {
+         set({
