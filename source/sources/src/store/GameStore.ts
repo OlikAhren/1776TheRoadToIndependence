@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { GameState, Delegate, Colony, Difficulty } from '../types/game'
+import type { GameState, Delegate, Colony, Difficulty, VictoryEntry } from '../types/game'
+import { containsBlockedWord } from '../data/wordFilter'
 import delegatesData from '../data/delegates.json'
 
 // Convert JSON data to game format
@@ -110,7 +111,32 @@ export const DIFFICULTY_SETTINGS: Record<Difficulty, { label: string; tier: stri
   extreme: { label: 'Join or Die!', tier: 'Extreme!', requiredGreenColonies: 13 }
 }
 
-export const VICTORY_REWARDS: Record<Difficulty, number> = { easy: 50, medium: 75, hard: 100, extreme: 150 }
+export const LEDGER_KEY = 'declaration1776-ledger'
+export const LEDGER_CAP = 100
+export const NAME_LENGTH_ERROR = 'Please enter a name of 2-24 characters.'
+export const NAME_BLOCKED_ERROR = "That name isn't allowed. Please choose another."
+
+const readLedger = (): VictoryEntry[] => {
+  try {
+    if (typeof window === 'undefined') return []
+    const raw = window.localStorage.getItem(LEDGER_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed) ? parsed.filter(e => e && typeof e === 'object' && typeof e.name === 'string') : []
+  } catch {
+    return []
+  }
+}
+
+const writeLedger = (entries: VictoryEntry[]): boolean => {
+  try {
+    if (typeof window === 'undefined') return false
+    window.localStorage.setItem(LEDGER_KEY, JSON.stringify(entries.slice(-LEDGER_CAP)))
+    return true
+  } catch {
+    return false
+  }
+}
 
 export const DEBATE_EXTRA_DAYS = 2
 export const DEBATE_COST_PER_DELEGATE = 1
@@ -143,7 +169,9 @@ const defaultGameState: GameState = {
   selectedDelegateId: null,
   difficulty: 'easy',
   gameStatus: 'playing',
-  victoryReward: 0,
+  victoryRecord: null,
+  victoryName: null,
+  victoryRecorded: false,
   colonySelectionCount: 0,
   debateResult: null,
   actionPopup: null
@@ -197,6 +225,8 @@ interface GameActions {
   setGameMode: (mode: 'historical'|'sandbox'|'educational') => void
   loadDelegateData: () => void
   resetGame: () => void
+  recordVictory: (name: string) => { ok: boolean; error?: string }
+  getLedger: () => VictoryEntry[]
   setDifficulty: (difficulty: Difficulty) => void
   getGreenColonyCount: () => number
   checkEndConditions: () => void
@@ -233,7 +263,9 @@ export const useGameStore = create<GameState & GameActions>()(
           selectedColonyId: DEFAULT_COLONY_ID,
           selectedDelegateId: null,
           gameStatus: 'playing',
-          victoryReward: 0,
+          victoryRecord: null,
+          victoryName: null,
+          victoryRecorded: false,
           colonySelectionCount: 0,
           debateResult: null,
           actionPopup: null
@@ -249,6 +281,19 @@ export const useGameStore = create<GameState & GameActions>()(
         }
       },
       
+      recordVictory: (name) => {
+        const trimmed = String(name ?? '').replace(/\s+/g, ' ').trim()
+        if (trimmed.length < 2 || trimmed.length > 24) return { ok: false, error: NAME_LENGTH_ERROR }
+        if (containsBlockedWord(trimmed)) return { ok: false, error: NAME_BLOCKED_ERROR }
+        const { victoryRecord, victoryRecorded, gameStatus } = get()
+        if (gameStatus !== 'victory' || !victoryRecord || victoryRecorded) return { ok: false, error: 'This victory is already recorded.' }
+        writeLedger([...readLedger(), { name: trimmed, ...victoryRecord, recordedAt: new Date().toISOString() }])
+        set({ victoryName: trimmed, victoryRecorded: true })
+        return { ok: true }
+      },
+
+      getLedger: () => readLedger(),
+
       setDifficulty: (difficulty) => {
         set({ difficulty })
         get().checkEndConditions()
@@ -275,15 +320,19 @@ export const useGameStore = create<GameState & GameActions>()(
         else next = 'playing'
         if (next === gameStatus) return
         if (next === 'victory') {
-          // Reward awarded exactly once, on the transition into victory
-          const bonus = VICTORY_REWARDS[difficulty]
+          // Snapshot of the winning run for the plaque. No funds are awarded.
+          const { colonies } = get()
           set({
             gameStatus: 'victory',
-            victoryReward: bonus,
-            resources: {
-              ...resources,
-              personalFunds: resources.personalFunds + bonus,
-              maxPersonalFunds: resources.maxPersonalFunds + bonus
+            victoryName: null,
+            victoryRecorded: false,
+            victoryRecord: {
+              date: currentDate,
+              greenColonies: get().getGreenColonyCount(),
+              difficultyKey: difficulty,
+              difficultyLabel: DIFFICULTY_SETTINGS[difficulty].label,
+              remainingSubsidies: colonies.reduce((sum, c) => sum + (c.postalSubsidies || 0), 0),
+              personalFunds: resources.personalFunds
             }
           })
         } else {
@@ -650,7 +699,7 @@ export const useGameStore = create<GameState & GameActions>()(
     }),
     {
       name: 'declaration1776-save',
-      version: 5,
+      version: 6,
       migrate: (persisted: unknown) => {
         const p = (persisted ?? {}) as Record<string, any>
         if (Array.isArray(p.delegates)) {
@@ -661,6 +710,7 @@ export const useGameStore = create<GameState & GameActions>()(
             return isProtectedDelegate(n) ? { ...n, supportLevel: 100 } : n
           })
         }
+        delete p.victoryReward
         return p as any
       },
       partialize: (state) => ({
@@ -674,7 +724,9 @@ export const useGameStore = create<GameState & GameActions>()(
         selectedDelegateId: state.selectedDelegateId,
         difficulty: state.difficulty,
         gameStatus: state.gameStatus,
-        victoryReward: state.victoryReward
+        victoryRecord: state.victoryRecord,
+        victoryName: state.victoryName,
+        victoryRecorded: state.victoryRecorded
       })
     }
   )

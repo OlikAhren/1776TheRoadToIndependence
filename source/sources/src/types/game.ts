@@ -70,7 +70,9 @@ export interface GameState {
   selectedDelegateId?: string | null
   difficulty: Difficulty
   gameStatus: GameStatus
-  victoryReward: number
+  victoryRecord: VictoryRecord | null
+  victoryName: string | null
+  victoryRecorded: boolean
   // Increments on every colony click so UI can react to repeat clicks of the same colony.
   colonySelectionCount: number
   debateResult: DebateResult | null  // transient popup data, never persisted
@@ -84,4 +86,18 @@ export interface DebateResult {
   daysTravel: number
   delegateResults: { name: string; change: number; newSupport: number }[]
   excludedProtectedMembers?: string[]
+}
+
+export interface VictoryRecord {
+  date: string
+  greenColonies: number
+  difficultyKey: Difficulty
+  difficultyLabel: string
+  remainingSubsidies: number
+  personalFunds: number
+}
+
+export interface VictoryEntry extends VictoryRecord {
+  name: string
+  recordedAt: string
 }

@@ -15,7 +15,33 @@ const GameApp: React.FC = () => {
   const dismissDebateResult = useGameStore(state => state.dismissDebateResult)
   const actionPopup = useGameStore(state => state.actionPopup)
   const dismissActionPopup = useGameStore(state => state.dismissActionPopup)
-  const victoryReward = useGameStore(state => state.victoryReward)
+  const victoryRecord = useGameStore(state => state.victoryRecord)
+  const victoryName = useGameStore(state => state.victoryName)
+  const victoryRecorded = useGameStore(state => state.victoryRecorded)
+  const recordVictory = useGameStore(state => state.recordVictory)
+  const getLedger = useGameStore(state => state.getLedger)
+  const [showWins, setShowWins] = React.useState(false)
+  const [nameInput, setNameInput] = React.useState('')
+  const [nameError, setNameError] = React.useState<string | null>(null)
+  const [ledgerVersion, setLedgerVersion] = React.useState(0)
+  // Ledger lives in its own localStorage key; re-read when a modal opens or a win is recorded.
+  const ledger = React.useMemo(() => getLedger(), [getLedger, ledgerVersion, showWins, gameStatus, victoryRecorded])
+  const handleRecord = () => {
+    const r = recordVictory(nameInput)
+    if (r.ok) { setNameError(null); setLedgerVersion(v => v + 1) } else setNameError(r.error ?? 'Could not record victory.')
+  }
+  const btnStyle: React.CSSProperties = { fontFamily: 'Georgia, serif', fontSize: '14px', fontWeight: 'bold', color: '#FFFFFF', backgroundColor: '#2C1B18', border: 'none', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer' }
+  const renderLedger = () => (
+    <div style={{ textAlign: 'left' }}>
+      {ledger.length === 0 ? (
+        <p style={{ fontSize: '14px', textAlign: 'center', fontStyle: 'italic' }}>No victories recorded yet.</p>
+      ) : [...ledger].reverse().map((e, i) => (
+        <div key={i} style={{ padding: '6px 0', borderBottom: '1px solid rgba(44,27,24,0.15)', fontSize: '13px' }}>
+          <strong>{e.name}</strong> — {e.difficultyLabel} · {e.date} · {e.greenColonies}/13 green · ${e.personalFunds}
+        </div>
+      ))}
+    </div>
+  )
   const delegates = useGameStore(state => state.delegates)
   const colonies = useGameStore(state => state.colonies)
   // Derived value: use stable selectors plus useMemo. A selector that returns a new array on
@@ -43,7 +69,6 @@ const GameApp: React.FC = () => {
     cursor: 'pointer'
   }
 
-  const currentDate = useGameStore(state => state.currentDate)
 
   const handleFailureRestart = () => {
     resetGame()
@@ -94,7 +119,15 @@ const GameApp: React.FC = () => {
           <h1 style={{ fontSize: '28px', fontWeight: 'bold', color: '#2C1B18', margin: '0' }}>1776: The Road To Independence</h1>
           <p style={{ fontSize: '14px', opacity: 0.7, marginTop: '5px' }}>Manage colonial support through strategic correspondence and private meetings</p>
         </div>
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+        <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', gap: '8px', alignItems: 'flex-start' }}>
+          <button
+            onClick={() => setShowWins(true)}
+            title="Hall of Fame: previous victories"
+            aria-label="Wins - Hall of Fame"
+            style={{ fontFamily: 'Georgia, serif', fontSize: '14px', fontWeight: 'bold', color: '#2C1B18', backgroundColor: '#FFF8DC', border: '2px solid #2C1B18', borderRadius: '6px', padding: '6px 14px', cursor: 'pointer' }}
+          >
+            Wins
+          </button>
           <button
             onClick={handleRestart}
             title="Restart Game: resets all progress"
@@ -157,13 +190,63 @@ const GameApp: React.FC = () => {
           aria-modal="true"
           style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}
         >
-          <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #D4AF37', borderRadius: '10px', padding: '28px', maxWidth: '480px', textAlign: 'center' }}>
+          <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #D4AF37', borderRadius: '10px', padding: '28px', maxWidth: '520px', width: '90%', maxHeight: '85vh', overflowY: 'auto', textAlign: 'center' }}>
             <h2 style={{ margin: '0 0 12px 0', color: '#B8860B' }}>Victory!</h2>
-            <p style={{ fontSize: '16px', lineHeight: 1.5 }}>
-              Victory! {greenCount} of 13 colonies are green as of {currentDate}. The Declaration is signed! Reward: +${victoryReward} in Committee of Five funds.
-            </p>
+            <p style={{ fontSize: '16px', lineHeight: 1.5 }}>The Declaration is signed!</p>
+            {victoryRecord && (
+              <div aria-label="Declaration of Independence plaque" style={{ border: '4px double #8B6914', backgroundColor: '#F5E6B8', borderRadius: '6px', padding: '14px 18px', margin: '12px 0', textAlign: 'left', fontSize: '15px', lineHeight: 1.7 }}>
+                <div style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '17px', color: '#6B4E0A', marginBottom: '6px' }}>Declaration of Independence</div>
+                <div><strong>Setting:</strong> {victoryRecord.difficultyLabel}</div>
+                <div><strong>Date:</strong> {victoryRecord.date}</div>
+                <div><strong>Colonies:</strong> {victoryRecord.greenColonies} of 13 green</div>
+                <div><strong>Difficulty:</strong> {victoryRecord.difficultyLabel} ({DIFFICULTY_SETTINGS[victoryRecord.difficultyKey].tier})</div>
+                <div><strong>Remaining Postal Subsidies:</strong> ${victoryRecord.remainingSubsidies}</div>
+                <div><strong>Committee of Five Funds:</strong> ${victoryRecord.personalFunds}</div>
+              </div>
+            )}
+            <div style={{ margin: '12px 0', textAlign: 'left' }}>
+              {victoryRecorded ? (
+                <p style={{ fontSize: '14px', color: '#2E7D32', fontWeight: 'bold', textAlign: 'center' }}>Recorded as {victoryName}. Your victory is in the Hall of Fame!</p>
+              ) : (
+                <>
+                  <label htmlFor="victory-name" style={{ fontSize: '14px', fontWeight: 'bold', display: 'block', marginBottom: '4px' }}>Your name for the Hall of Fame</label>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    <input
+                      id="victory-name"
+                      type="text"
+                      value={nameInput}
+                      maxLength={40}
+                      onChange={e => { setNameInput(e.target.value); setNameError(null) }}
+                      onKeyDown={e => { if (e.key === 'Enter') handleRecord() }}
+                      style={{ flex: 1, fontFamily: 'Georgia, serif', fontSize: '14px', padding: '6px 8px', border: '2px solid #2C1B18', borderRadius: '4px', backgroundColor: '#FFFDF5', color: '#2C1B18' }}
+                    />
+                    <button onClick={handleRecord} style={btnStyle}>Record this victory</button>
+                  </div>
+                  {nameError && <div role="alert" style={{ color: '#B71C1C', fontSize: '13px', marginTop: '4px' }}>{nameError}</div>}
+                </>
+              )}
+            </div>
+            <h3 style={{ margin: '12px 0 4px 0' }}>Hall of Fame</h3>
+            {renderLedger()}
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '16px' }}>
-              <button onClick={handleFailureRestart} style={{ fontFamily: 'Georgia, serif', fontSize: '14px', fontWeight: 'bold', color: '#FFFFFF', backgroundColor: '#2C1B18', border: 'none', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer' }}>Restart Game</button>
+              <button onClick={handleFailureRestart} style={btnStyle}>Restart Game</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showWins && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Hall of Fame"
+          style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}
+        >
+          <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '520px', width: '90%', maxHeight: '85vh', overflowY: 'auto' }}>
+            <h2 style={{ margin: '0 0 12px 0', textAlign: 'center' }}>Hall of Fame</h2>
+            {renderLedger()}
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
+              <button onClick={() => setShowWins(false)} style={btnStyle}>Close</button>
             </div>
           </div>
         </div>

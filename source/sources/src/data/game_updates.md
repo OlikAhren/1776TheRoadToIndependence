@@ -192,6 +192,29 @@ In states with many delegates (Pennsylvania has twelve) the delegate panel grew 
 
 The timeline bar ran to **July 4, 1776** and its badge had a hardcoded total of **28 days**, so it disagreed with the game's actual rules — everything is due **July 2** (the same July 2 the failure check uses). The bar now ends at the store's `FAILURE_DEADLINE_LABEL` (July 2, 1776), and the badge reads `Day {currentDay}/26`, counting inclusively: June 7 is day 1 and July 2 is day 26, with the bar reaching 100% on the deadline. The end date is now read from the same constant the rules use, so the bar and the failure check can never drift apart again.
 
+## Balance: More Starting Riders and Subsidies
+**Location**: `src/store/GameStore.ts` (`initialRiders`, `initialSubsidies`)
+
+Every colony now starts with **$5 more postal subsidies**, and **one more postal rider**, except Rhode Island and Delaware which stay at **zero riders**.
+
+| Colony | Riders (was → now) | Subsidies (was → now) |
+|---|---|---|
+| Virginia | 5 → 6 | $20 → $25 |
+| Maryland | 5 → 4 riders… see note | $20 → $25 |
+| North Carolina | 3 → 4 | $20 → $25 |
+| South Carolina | 1 → 2 | $20 → $25 |
+| Georgia | 1 → 2 | $20 → $25 |
+| Pennsylvania | 3 → 4 | $15 → $20 |
+| New York | 2 → 3 | $15 → $20 |
+| New Jersey | 1 → 2 | $15 → $20 |
+| Delaware | 0 → 0 | $15 → $20 |
+| Massachusetts | 3 → 4 | $10 → $15 |
+| Connecticut | 2 → 3 | $10 → $15 |
+| Rhode Island | 0 → 0 | $10 → $15 |
+| New Hampshire | 1 → 2 | $10 → $15 |
+
+(Delaware and Rhode Island keep zero riders by request; every other colony gains exactly one rider.)
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared
