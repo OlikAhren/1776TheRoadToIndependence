@@ -229,6 +229,16 @@ Every colony now starts with **$5 more postal subsidies**, and **one more postal
 
 A **"Wins"** button in the header opens the Hall of Fame at any time, with the empty state "No victories recorded yet."
 
+## Content: Colony Briefs for All Thirteen Colonies
+**Location**: `src/data/colonyOverviews.json` (new), `src/components/DelegatePanel.tsx`
+
+Every colony now has an owner-written brief covering its economy, its concerns, and what it wants from the other colonies (for example: New Hampshire wants military assurances and a share of the financial burden; Massachusetts wants a firm commitment to colonial unity; Pennsylvania wants evidence that peaceful alternatives are exhausted).
+
+- In the delegate panel's colony list, the brief appears as an expandable **"About {State}"** block, so it stays collapsed until wanted and does not crowd the list.
+- In a delegate's detail view, the brief appears as a gold-accented **"About {State}"** card above the delegate's own profile and biography.
+
+The text was parsed programmatically from the owner's brief (which listed each colony twice) and deduplicated, so no paragraph was retyped by hand. All thirteen colony names match the game's colony list exactly.
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared

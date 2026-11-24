@@ -7,6 +7,8 @@ const DelegatePanel: React.FC = () => {
   const { delegates, resources, getDelegateForColony, sendCorrespondence, meetPrivately, selectedColonyId, currentColony, colonies, getTravelTime, getDaysUntilDeadline, colonySelectionCount, organizePublicDebate, gameStatus, showActionPopup } = useGameStore()
   const [debateMessage, setDebateMessage] = React.useState<string | null>(null)
   const [selectedDelegate, setSelectedDelegate] = React.useState<string | null>(null)
+  // The colony brief starts expanded for every colony the player visits.
+  const [overviewOpen, setOverviewOpen] = React.useState(true)
 
   // Any click on the map (including clicking the already-selected colony again) loads that
   // colony's delegate list, so an open delegate detail is dropped on every colony click.
@@ -41,6 +43,11 @@ const DelegatePanel: React.FC = () => {
 
   // Colony-level brief (economy, concerns, and what the colony wants from the others)
   const colonyOverview = (colonyOverviews as Record<string, string>)[currentColonyName] || ''
+
+  // A new colony always starts with its brief expanded.
+  React.useEffect(() => {
+    setOverviewOpen(true)
+  }, [currentColonyName])
 
   // Organize a Public Debate availability (acts on the state shown in this panel)
   const debateBaseCost = colonyDelegates.length * DEBATE_COST_PER_DELEGATE
@@ -118,14 +125,34 @@ const DelegatePanel: React.FC = () => {
               Click a delegate from {currentColonyName}
             </p>
             {colonyOverview && (
-              <details style={{ marginBottom: '15px' }}>
-                <summary style={{ cursor: 'pointer', fontSize: '13px', fontWeight: 'bold', color: '#2C1B18', marginBottom: '6px' }}>
-                  About {currentColonyName}
-                </summary>
-                <p style={{ fontSize: '12px', lineHeight: 1.6, opacity: 0.9, margin: '0', textAlign: 'left' }}>
-                  {colonyOverview}
-                </p>
-              </details>
+              <div style={{ marginBottom: '15px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                  <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#2C1B18' }}>About {currentColonyName}</span>
+                  <button
+                    onClick={() => setOverviewOpen(open => !open)}
+                    aria-expanded={overviewOpen}
+                    aria-label={overviewOpen ? `Collapse the brief for ${currentColonyName}` : `Expand the brief for ${currentColonyName}`}
+                    style={{
+                      fontFamily: 'Georgia, serif',
+                      fontSize: '11px',
+                      fontWeight: 'bold',
+                      color: '#2C1B18',
+                      backgroundColor: 'transparent',
+                      border: '1px solid #2C1B18',
+                      borderRadius: '4px',
+                      padding: '2px 10px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {overviewOpen ? 'Collapse' : 'Expand'}
+                  </button>
+                </div>
+                {overviewOpen && (
+                  <p style={{ fontSize: '12px', lineHeight: 1.6, opacity: 0.9, margin: '0', textAlign: 'left' }}>
+                    {colonyOverview}
+                  </p>
+                )}
+              </div>
             )}
           </>
         ) : (
