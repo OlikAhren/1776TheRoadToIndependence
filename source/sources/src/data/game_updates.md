@@ -215,6 +215,20 @@ Every colony now starts with **$5 more postal subsidies**, and **one more postal
 
 (Delaware and Rhode Island keep zero riders by request; every other colony gains exactly one rider.)
 
+## Feature 3: Victory Plaque, Hall of Fame and Name Entry
+**Location**: `src/store/GameStore.ts`, `src/components/GameApp.tsx`, `src/types/game.ts`, `src/data/wordFilter.ts` (new)
+
+**The cash reward is gone.** Victory no longer adds money to the Committee of Five funds; the old `VICTORY_REWARDS` table ($50/$75/$100/$150) was deleted and `victoryReward` was removed from the state and the save (persist version is now 6, and the migration drops any stale `victoryReward`).
+
+**Victory plaque.** On winning, the store snapshots the run and the victory modal shows a double-bordered parchment plaque titled "Declaration of Independence":
+- Setting (the difficulty label) · Date (in-game date) · Colonies (X of 13 green) · Difficulty (label and tier) · Remaining Postal Subsidies ($) · Committee of Five Funds ($)
+
+**Hall of Fame.** Wins are recorded in the player's own browser under the local-storage key `declaration1776-ledger` — deliberately separate from the game save, so restarting a game or clearing the save never erases the ledger. The ledger keeps the newest 100 entries. Each entry stores the name, date, difficulty, green colony count, remaining subsidies and funds.
+
+**Name entry.** The victory modal asks "Your name for the Hall of Fame" and offers "Record this victory". Names are trimmed and must be 2-24 characters. A starter profanity filter (`src/data/wordFilter.ts`, 18 words the owner can extend) rejects names: it lowercases the input, maps common look-alikes (`!`/`1`→i, `0`→o, `3`→e, `4`/`@`→a, `5`/`$`→s), splits on non-letters, strips trailing s/es/ing/ed/er/ers, and also checks the joined letters so compounds like "fuckyou" and "shithead" are caught. Ambiguous words (fag, dick, cock, twat) only match as whole words, so "Dickinson" and "Hancock" pass.
+
+A **"Wins"** button in the header opens the Hall of Fame at any time, with the empty state "No victories recorded yet."
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared
