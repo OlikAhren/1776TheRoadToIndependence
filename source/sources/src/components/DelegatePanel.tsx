@@ -314,14 +314,6 @@ const DelegatePanel: React.FC = () => {
 
       {/* Profile */}
       <div style={{ marginBottom: '20px' }}>
-        {colonyOverview && (
-          <div style={{ marginBottom: '12px', padding: '10px 12px', background: 'rgba(212,175,55,0.12)', borderLeft: '4px solid #D4AF37', borderRadius: '4px' }}>
-            <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '4px', color: '#2C1B18' }}>
-              About {delegate.colony}
-            </div>
-            <div style={{ fontSize: '12px', lineHeight: 1.6, opacity: 0.9 }}>{colonyOverview}</div>
-          </div>
-        )}
         <div style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '5px' }}>Profile: {delegate.profile}</div>
         <div style={{ fontSize: '12px', opacity: 0.9, lineHeight: '1.5' }}>
           {delegate.overview}

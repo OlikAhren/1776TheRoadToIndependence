@@ -234,7 +234,7 @@ A **"Wins"** button in the header opens the Hall of Fame at any time, with the e
 
 Every colony now has an owner-written brief covering its economy, its concerns, and what it wants from the other colonies (for example: New Hampshire wants military assurances and a share of the financial burden; Massachusetts wants a firm commitment to colonial unity; Pennsylvania wants evidence that peaceful alternatives are exhausted).
 
-- In the delegate panel's colony list, the brief appears as an expandable **"About {State}"** block, so it stays collapsed until wanted and does not crowd the list.
+- In the delegate panel's colony list, the brief appears as an **"About {State}"** block that starts **expanded** for every colony the player visits, with an **Expand** / **Collapse** button that shows or hides it (the control is a proper toggle with `aria-expanded`, rather than a native details/summary, so the wording can reflect the next action).
 - In a delegate's detail view, the brief appears as a gold-accented **"About {State}"** card above the delegate's own profile and biography.
 
 The text was parsed programmatically from the owner's brief (which listed each colony twice) and deduplicated, so no paragraph was retyped by hand. All thirteen colony names match the game's colony list exactly.
