@@ -1,5 +1,6 @@
 import React from 'react'
 import { useGameStore, DEFAULT_COLONY_ID, DEBATE_EXTRA_DAYS, DEBATE_COST_PER_DELEGATE, FAILURE_DEADLINE_LABEL } from '../store/GameStore'
+import colonyOverviews from '../data/colonyOverviews.json'
 import type { Delegate } from '../types/game'
 
 const DelegatePanel: React.FC = () => {
@@ -37,6 +38,9 @@ const DelegatePanel: React.FC = () => {
 
   // Get current colony name for header
   const currentColonyName = colonies.find(c => c.id === effectiveColonyId)?.name || ''
+
+  // Colony-level brief (economy, concerns, and what the colony wants from the others)
+  const colonyOverview = (colonyOverviews as Record<string, string>)[currentColonyName] || ''
 
   // Organize a Public Debate availability (acts on the state shown in this panel)
   const debateBaseCost = colonyDelegates.length * DEBATE_COST_PER_DELEGATE
@@ -113,6 +117,16 @@ const DelegatePanel: React.FC = () => {
             <p style={{ fontSize: '12px', opacity: 0.7, marginBottom: '15px', textAlign: 'center', color: '#666' }}>
               Click a delegate from {currentColonyName}
             </p>
+            {colonyOverview && (
+              <details style={{ marginBottom: '15px' }}>
+                <summary style={{ cursor: 'pointer', fontSize: '13px', fontWeight: 'bold', color: '#2C1B18', marginBottom: '6px' }}>
+                  About {currentColonyName}
+                </summary>
+                <p style={{ fontSize: '12px', lineHeight: 1.6, opacity: 0.9, margin: '0', textAlign: 'left' }}>
+                  {colonyOverview}
+                </p>
+              </details>
+            )}
           </>
         ) : (
           <>
@@ -273,6 +287,14 @@ const DelegatePanel: React.FC = () => {
 
       {/* Profile */}
       <div style={{ marginBottom: '20px' }}>
+        {colonyOverview && (
+          <div style={{ marginBottom: '12px', padding: '10px 12px', background: 'rgba(212,175,55,0.12)', borderLeft: '4px solid #D4AF37', borderRadius: '4px' }}>
+            <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '4px', color: '#2C1B18' }}>
+              About {delegate.colony}
+            </div>
+            <div style={{ fontSize: '12px', lineHeight: 1.6, opacity: 0.9 }}>{colonyOverview}</div>
+          </div>
+        )}
         <div style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '5px' }}>Profile: {delegate.profile}</div>
         <div style={{ fontSize: '12px', opacity: 0.9, lineHeight: '1.5' }}>
           {delegate.overview}
