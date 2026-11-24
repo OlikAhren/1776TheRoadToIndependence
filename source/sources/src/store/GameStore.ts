@@ -43,36 +43,36 @@ const createColoniesMap = (): Colony[] => {
 
   // Initial postal riders per colony
   const initialRiders: { [key: string]: number } = {
-    "Virginia": 5,
-    "Pennsylvania": 3,
-    "Massachusetts": 3,
-    "Maryland": 3,
-    "North Carolina": 3,
-    "Connecticut": 2,
-    "New York": 2,
-    "South Carolina": 1,
-    "New Jersey": 1,
-    "New Hampshire": 1,
+    "Virginia": 6,
+    "Pennsylvania": 4,
+    "Massachusetts": 4,
+    "Maryland": 4,
+    "North Carolina": 4,
+    "Connecticut": 3,
+    "New York": 3,
+    "South Carolina": 2,
+    "New Jersey": 2,
+    "New Hampshire": 2,
     "Rhode Island": 0,
-    "Georgia": 1,
+    "Georgia": 2,
     "Delaware": 0
   }
 
   // Initial postal subsidies per colony ($)
   const initialSubsidies: { [key: string]: number } = {
-    "Virginia": 20,
-    "Maryland": 20,
-    "North Carolina": 20,
-    "South Carolina": 20,
-    "Georgia": 20,
-    "Pennsylvania": 15,
-    "New York": 15,
-    "New Jersey": 15,
-    "Delaware": 15,
-    "Massachusetts": 10,
-    "Connecticut": 10,
-    "Rhode Island": 10,
-    "New Hampshire": 10
+    "Virginia": 25,
+    "Maryland": 25,
+    "North Carolina": 25,
+    "South Carolina": 25,
+    "Georgia": 25,
+    "Pennsylvania": 20,
+    "New York": 20,
+    "New Jersey": 20,
+    "Delaware": 20,
+    "Massachusetts": 15,
+    "Connecticut": 15,
+    "Rhode Island": 15,
+    "New Hampshire": 15
   }
 
   return Object.entries(colonyLayout).map(([name, coords], index) => {
