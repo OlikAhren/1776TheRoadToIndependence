@@ -277,6 +277,24 @@ Each colony's public debate is now framed by one of **four colony-specific angle
 
 The 52 angles and their odds were parsed programmatically from the owner's brief (`tools/parse_debate_angles.py`), so no option text or number was retyped by hand.
 
+## Feature 6: Profile-Based Approach Choices for Mail and Private Meetings
+**Location**: `src/data/delegateApproaches.json` (new), `src/store/GameStore.ts`, `src/components/DelegatePanel.tsx`, `tools/audit_delegate_bios.py` (new)
+
+Before sending a letter to, or meeting in private with, an individual delegate, the player now picks one of **two approaches** matched to that delegate's profile. The prompt shows the delegate's name, their profile and their **full biography** (in a scrollable block, so the player can read it while choosing), then the two approach texts as radio buttons — no odds and no indication of which is the better choice. An earlier draft showed a one-line "tell" summary, but it gave the answer away, so it was removed from the prompt.
+
+**The roll bands** (one table in `GameStore.ts`, `APPROACH_BANDS`, with a comment saying "TUNE HERE"):
+
+| Action | Neutral (no choice) | Good approach | Wrong approach |
+|---|---|---|---|
+| Mail | -1..+5 | -1..+10 | -10..+1 |
+| Private meeting | -5..+20 | -5..+25 | -25..+5 |
+
+The good approach keeps the current roll shape and extends the positive end by +5; the wrong approach is its mirror image, skewed the other way. Choosing nothing (or cancelling) leaves the behaviour exactly as it was today. Nothing else about either action changed — costs, days, event rolls, deadline gates, protected delegates, the 100% support lock and subsidy handling are untouched.
+
+The chosen approach is echoed in the result popup as "Approach: {text}".
+
+The six profile tells and their twelve approach texts live in `src/data/delegateApproaches.json`.
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared

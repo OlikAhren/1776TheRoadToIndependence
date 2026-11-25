@@ -545,7 +545,12 @@ const DelegatePanel: React.FC = () => {
             <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '520px', width: '90%', maxHeight: '85vh', overflowY: 'auto' }}>
               <h2 style={{ margin: '0 0 6px 0', textAlign: 'center', fontSize: '20px' }}>{delegate.name}</h2>
               <p style={{ margin: '0 0 10px 0', textAlign: 'center', fontSize: '13px', fontStyle: 'italic' }}>Profile: {delegate.profile}</p>
-              <p style={{ margin: '0 0 14px 0', textAlign: 'center', fontSize: '14px' }}>{approachInfo.tell}</p>
+              {/* The delegate's full description — the player must read this to judge the approaches. */}
+              {delegate.overview && (
+                <div style={{ maxHeight: '150px', overflowY: 'auto', textAlign: 'left', fontSize: '12.5px', lineHeight: 1.55, opacity: 0.85, margin: '0 0 14px 0', padding: '8px 10px', background: 'rgba(212,175,55,0.10)', borderLeft: '3px solid #D4AF37', borderRadius: '4px' }}>
+                  {delegate.overview}
+                </div>
+              )}
               <div role="radiogroup" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {(['good', 'bad'] as const).map(k => (
                   <label key={k} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', fontSize: '14px', lineHeight: 1.4 }}>
