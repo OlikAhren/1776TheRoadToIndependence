@@ -110,7 +110,7 @@ const GameApp: React.FC = () => {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <button onClick={() => cycleDifficulty(-1)} aria-label="Previous difficulty" title="Previous difficulty" style={arrowStyle}>◀</button>
-            <span style={{ minWidth: '140px', textAlign: 'center' }}>{DIFFICULTY_SETTINGS[difficulty].label}</span>
+            <span style={{ width: '180px', textAlign: 'center', whiteSpace: 'nowrap' }}>{DIFFICULTY_SETTINGS[difficulty].label}</span>
             <button onClick={() => cycleDifficulty(1)} aria-label="Next difficulty" title="Next difficulty" style={arrowStyle}>▶</button>
           </div>
         </div>
