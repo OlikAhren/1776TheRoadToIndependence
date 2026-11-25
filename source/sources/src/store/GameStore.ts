@@ -11,15 +11,15 @@ import delegateBespokeApproaches from '../data/delegateBespokeApproaches.json'
 //   neutral = original behaviour (no approach chosen, or an unexpected value).
 //   good    = neutral with the positive end extended by +5.
 //   bad     = mirror of good (negate and swap the ends).
-//   legend  = the bespoke, legend-drawn approach of a story-critical delegate; extends the positive
-//             end further than good (mail up to +15, meeting up to +30).
+//   legend  = the bespoke, legend-drawn approach of a story-critical delegate; a bigger risk and a
+//             bigger reward (mail -10..+15, meeting -15..+30).
 // The player-facing choice ids are 'good' | 'bad' | 'bespoke'; 'bespoke' resolves to the legend band
 // only for delegates that have an entry in delegateBespokeApproaches.json (see resolveApproachBand).
-export type ApproachChoice = 'good' | 'bad' | 'bespoke'
+export type ApproachChoice = 'neutral' | 'good' | 'bad' | 'bespoke'
 export type ApproachBand = 'neutral' | 'good' | 'bad' | 'legend'
 export const APPROACH_BANDS = {
-  mail:    { neutral: [-1, 5],  good: [-1, 10], bad: [-10, 1], legend: [-1, 15] },
-  meeting: { neutral: [-5, 20], good: [-5, 25], bad: [-25, 5], legend: [-5, 30] },
+  mail:    { neutral: [-1, 5],  good: [-1, 10], bad: [-10, 1], legend: [-10, 15] },
+  meeting: { neutral: [-5, 20], good: [-5, 25], bad: [-25, 5], legend: [-15, 30] },
 } as const
 const bespokeTable = delegateBespokeApproaches as unknown as Record<string, { band?: string }>
 // Single place that maps a chosen option id to a band for a given delegate.
