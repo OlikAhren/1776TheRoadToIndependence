@@ -264,6 +264,19 @@ The store refuses the action as well, so the rule holds even if the interface is
 
 A one-debate-per-colony limit was added and later reverted at the owner's request. Colonies may host **as many public debates as the player likes** again. The `debatedColonies` state field, the store refusal ("*State* has already hosted a public debate.") and the greyed-out button were all removed.
 
+## Feature 5: Colony-Specific Public Debate Angles
+**Location**: `src/data/debateAngles.json` (new), `src/store/GameStore.ts`, `src/components/DelegatePanel.tsx`, `src/components/GameApp.tsx`, `src/types/game.ts`, `tools/parse_debate_angles.py` (new)
+
+Each colony's public debate is now framed by one of **four colony-specific angles**. Clicking "Organize a Public Debate" opens a prompt headed *"Organize this {Colony}'s public debate around:"* with that colony's four angles as radio buttons, each showing its text and its odds range.
+
+**The chosen angle sets the support roll for every delegate in that colony**: `roll = min + floor(random * (max - min + 1))`, applied uniformly to each rolled delegate, then clamped to 1-100 as before. So Georgia's "-15 to +5" gives 21 equally likely values, while Maryland's "-20 to +20" gives 41 and can swing a delegate 40 points in one debate. A negative range can still pull a delegate down from 100, so a green colony can be lost.
+
+**The good luck / bad luck events are unchanged**: the tavern refund, faster preparation, the long debate and the bad weather still adjust days and Committee of Five funds exactly as before, and the event line still appears in the post-debate popup.
+
+**Post-debate popup** now shows, in order: the good/bad luck event line, the chosen angle, and the angle's post-event explanation (italic; omitted for the two angles whose brief had no explanation text), then the days/cost line, the per-delegate changes, and the protected-members line.
+
+The 52 angles and their odds were parsed programmatically from the owner's brief (`tools/parse_debate_angles.py`), so no option text or number was retyped by hand.
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared

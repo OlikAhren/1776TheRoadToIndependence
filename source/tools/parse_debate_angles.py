@@ -8,9 +8,10 @@ angles with:
   - "Post-Event Prompt Explanation: ..." -> the explanation shown after the debate
 
 This script parses that brief programmatically (no hand transcription) and
-writes the JSON data file. Two options in the original brief have no
-explanation text (North Carolina B and South Carolina B) and are stored with an
-empty explanation.
+writes the JSON data file. Two options in the original brief had no
+explanation text (North Carolina B and South Carolina B); the owner supplied
+those two explanations afterwards and they were added to the JSON by hand, so
+re-running this script against the original brief would blank them again.
 
 Usage: python3 tools/parse_debate_angles.py <brief.txt>
 """

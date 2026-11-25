@@ -261,12 +261,12 @@ const GameApp: React.FC = () => {
             </p>
             {debateResult.angleText && (
               <p style={{ fontSize: '14px', textAlign: 'center', margin: '8px 0' }}>
-                <strong>Debate angle:</strong> {debateResult.angleText}
+                <strong>Debate Angle:</strong> {debateResult.angleText}
               </p>
             )}
             {debateResult.angleExplanation && (
-              <p style={{ fontSize: '13px', fontStyle: 'italic', textAlign: 'center', opacity: 0.8, margin: '4px 0 8px' }}>
-                {debateResult.angleExplanation}
+              <p style={{ fontSize: '14px', fontStyle: 'italic', textAlign: 'center', opacity: 0.8, margin: '4px 0 8px' }}>
+                <strong style={{ fontStyle: 'normal' }}>Explanation:</strong> {debateResult.angleExplanation}
               </p>
             )}
             <p style={{ fontSize: '13px', textAlign: 'center', opacity: 0.8 }}>

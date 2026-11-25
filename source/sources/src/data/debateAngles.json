@@ -270,7 +270,7 @@
       "text": "A Delegate overhears you suggest before the event that North Carolina should shoulder the responsibility for its frontier without outside assistance.",
       "min": -20,
       "max": 2,
-      "explanation": ""
+      "explanation": "North Carolina greatly feared lack of British Protection of its frontier."
     },
     {
       "text": "You fail to downplay the role Indigenous Nations will play after the revolution.",
@@ -296,7 +296,7 @@
       "text": "You commend South Carolina on their valuable rice and indigo exports.",
       "min": -2,
       "max": 10,
-      "explanation": ""
+      "explanation": "South Carolina is very proud of its industry."
     },
     {
       "text": "You suppress fears of a British Naval attack on Charleston.",

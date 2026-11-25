@@ -70,7 +70,6 @@ const DelegatePanel: React.FC = () => {
     debateDisabledReason = `Not enough funds: the debate costs at least $${debateBaseCost} ($${DEBATE_COST_PER_DELEGATE} per delegate).`
   }
   const angleOptions = (debateAngles as Record<string, { text: string; min: number; max: number; explanation: string }[]>)[currentColonyName] ?? []
-  const fmtOdds = (n: number) => (n > 0 ? `+${n}` : `${n}`)
   const handleOrganizeDebate = () => {
     setSelectedAngle(0)
     setDebatePromptOpen(true)
@@ -137,14 +136,13 @@ const DelegatePanel: React.FC = () => {
                   style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}
                 >
                   <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '520px', width: '90%', maxHeight: '85vh', overflowY: 'auto' }}>
-                    <h2 style={{ margin: '0 0 14px 0', textAlign: 'center', fontSize: '20px' }}>Organize this {currentColonyName}'s public debate around:</h2>
+                    <h2 style={{ margin: '0 0 14px 0', textAlign: 'center', fontSize: '20px' }}>{currentColonyName}'s Debate:</h2>
                     <div role="radiogroup" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       {angleOptions.map((a, i) => (
                         <label key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', fontSize: '14px', lineHeight: 1.4 }}>
                           <input type="radio" name="debate-angle" checked={selectedAngle === i} onChange={() => setSelectedAngle(i)} style={{ marginTop: '3px' }} />
                           <span>
-                            {a.text}{' '}
-                            <span style={{ fontSize: '12px', opacity: 0.6 }}>({fmtOdds(a.min)} to {fmtOdds(a.max)})</span>
+                            {a.text}
                           </span>
                         </label>
                       ))}
