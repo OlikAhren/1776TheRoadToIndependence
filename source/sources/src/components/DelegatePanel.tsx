@@ -4,6 +4,7 @@ import colonyOverviews from '../data/colonyOverviews.json'
 import debateAngles from '../data/debateAngles.json'
 import delegateApproaches from '../data/delegateApproaches.json'
 import delegateBespoke from '../data/delegateBespokeApproaches.json'
+import { hasPostDeadlineContent } from '../data/postDeadline'
 import delegateImages from '../data/delegateImages.json'
 import type { Delegate } from '../types/game'
 
@@ -464,6 +465,12 @@ const DelegatePanel: React.FC = () => {
       {/* Profile */}
       <div style={{ marginBottom: '20px' }}>
         <div style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '5px' }}>Profile: {delegate.profile}</div>
+        <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '3px', color: '#2C1B18' }}>Historical Note</div>
+        {hasPostDeadlineContent(delegate.overview) && (
+          <div style={{ fontSize: '11px', fontStyle: 'italic', opacity: 0.7, marginBottom: '5px' }}>
+            Includes what happened after July 2, 1776 — the deadline this game is played against.
+          </div>
+        )}
         <div style={{ fontSize: '12px', opacity: 0.9, lineHeight: '1.5' }}>
           {delegate.overview}
         </div>
@@ -560,6 +567,12 @@ const DelegatePanel: React.FC = () => {
               {/* The delegate's full description — the player must read this to judge the approaches. */}
               {delegate.overview && (
                 <div style={{ maxHeight: '150px', overflowY: 'auto', textAlign: 'left', fontSize: '12.5px', lineHeight: 1.55, opacity: 0.85, margin: '0 0 14px 0', padding: '8px 10px', background: 'rgba(212,175,55,0.10)', borderLeft: '3px solid #D4AF37', borderRadius: '4px' }}>
+                  <div style={{ fontWeight: 'bold', fontSize: '11px', letterSpacing: '0.5px', textTransform: 'uppercase', opacity: 0.7, marginBottom: '3px' }}>Historical Note</div>
+                  {hasPostDeadlineContent(delegate.overview) && (
+                    <div style={{ fontStyle: 'italic', fontSize: '11px', opacity: 0.7, marginBottom: '5px' }}>
+                      Includes what happened after July 2, 1776 — the deadline this game is played against.
+                    </div>
+                  )}
                   {delegate.overview}
                 </div>
               )}
