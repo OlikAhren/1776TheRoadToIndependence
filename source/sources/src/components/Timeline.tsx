@@ -51,6 +51,11 @@ const Timeline: React.FC = () => {
   }
   
   const currentDay = getCurrentDay()
+
+  // Nudge the rider and badge inward near the ends of the bar so neither is clipped.
+  const badgeShift = progressPercent > 8
+    ? -Math.max(0, progressPercent - 92) * 6
+    : Math.max(0, 8 - progressPercent) * 6
   
   return (
     <div style={{
@@ -108,21 +113,30 @@ const Timeline: React.FC = () => {
               transition: 'width 0.3s ease'
             }} />
 
-            {/* Day counter badge */}
+            {/* Rider and day counter, moving together along the bar */}
             <div style={{
               position: 'absolute',
               left: `${progressPercent}%`,
               top: '50%',
-              transform: `translate(calc(-50% - ${Math.max(0, progressPercent - 10)}px), -50%)`,
-              background: '#2C1B18',
-              color: 'white',
-              padding: '4px 8px',
-              borderRadius: '12px',
-              fontSize: '11px',
-              fontWeight: 'bold',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.3)'
+              // keep the rider and badge inside the bar at both ends
+              transform: `translate(calc(-50% + ${badgeShift}px), -50%)`,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              whiteSpace: 'nowrap'
             }}>
-              Day {currentDay}/{totalDays}
+              <span style={{ fontSize: '19px', lineHeight: 1 }} title="Your ride across the timeline">🏇</span>
+              <div style={{
+                background: '#2C1B18',
+                color: 'white',
+                padding: '4px 8px',
+                borderRadius: '12px',
+                fontSize: '11px',
+                fontWeight: 'bold',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.3)'
+              }}>
+                Day {currentDay}/{totalDays}
+              </div>
             </div>
           </div>
 
