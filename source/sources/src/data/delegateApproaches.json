@@ -1,0 +1,56 @@
+{
+  "Principle driven": {
+    "tell": "He answers to principle before profit.",
+    "good": {
+      "text": "Appeal to his convictions and the principles he has already stated."
+    },
+    "bad": {
+      "text": "Appeal to his business interests and what independence would pay him."
+    }
+  },
+  "Pragmatic": {
+    "tell": "He weighs what works, not what is right.",
+    "good": {
+      "text": "Lay out the practical costs and benefits for his own colony."
+    },
+    "bad": {
+      "text": "Appeal to lofty ideals and to his sense of moral duty."
+    }
+  },
+  "Conservative": {
+    "tell": "He fears upheaval more than he fears the Crown.",
+    "good": {
+      "text": "Assure him that order, property and established institutions will be protected."
+    },
+    "bad": {
+      "text": "Urge him to act decisively and set aside his caution."
+    }
+  },
+  "Social influencer": {
+    "tell": "He moves crowds with a good story.",
+    "good": {
+      "text": "Make the appeal public and stirring — speak to his standing and influence."
+    },
+    "bad": {
+      "text": "Appeal to his private doubts and to the hard losses of his trade."
+    }
+  },
+  "Constituency first": {
+    "tell": "He answers to his constituents, not to principle.",
+    "good": {
+      "text": "Speak to the needs of the people and communities he represents."
+    },
+    "bad": {
+      "text": "Appeal to his personal ambition and his own standing."
+    }
+  },
+  "Moderate": {
+    "tell": "He will not be pushed, but he can be brought along.",
+    "good": {
+      "text": "Offer a moderate, reconcilable step and a way to go along with it."
+    },
+    "bad": {
+      "text": "Push him toward an extreme position and demand a firm answer."
+    }
+  }
+}

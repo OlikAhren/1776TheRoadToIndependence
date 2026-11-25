@@ -5,6 +5,22 @@ import { containsBlockedWord } from '../data/wordFilter'
 import delegatesData from '../data/delegates.json'
 import debateAnglesData from '../data/debateAngles.json'
 
+// ---- Approach bands (TUNE HERE) -------------------------------------------------------
+// Support-roll range [min, max] (inclusive) per action. 'good' keeps the neutral shape and
+// extends the positive end by +5; 'bad' is the mirror of 'good' (negate and swap the ends).
+// No approach chosen (or an unexpected value) uses 'neutral' = the original behaviour.
+export type ApproachChoice = 'good' | 'bad'
+export const APPROACH_BANDS = {
+  mail:    { neutral: [-1, 5],  good: [-1, 10], bad: [-10, 1] },
+  meeting: { neutral: [-5, 20], good: [-5, 25], bad: [-25, 5] },
+} as const
+export const rollSupportChange = (kind: 'mail' | 'meeting', approach?: unknown): number => {
+  const bands = APPROACH_BANDS[kind]
+  const [min, max] = approach === 'good' ? bands.good : approach === 'bad' ? bands.bad : bands.neutral
+  return min + Math.floor(Math.random() * (max - min + 1))
+}
+// ----------------------------------------------------------------------------------------
+
 // Convert JSON data to game format
 const initialDelegates: Delegate[] = delegatesData.delegates.map(d => ({
   id: d.id,
@@ -217,8 +233,8 @@ const MEETING_GOOD_LUCK_EVENTS = [
 interface GameActions {
   selectColony: (colonyId: string) => void
   setSelectedDelegateId: (delegateId: string | null) => void
-  sendCorrespondence: (delegateId: string, targetColony: string) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
-  meetPrivately: (delegateId: string) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
+  sendCorrespondence: (delegateId: string, targetColony: string, approach?: 'good' | 'bad') => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
+  meetPrivately: (delegateId: string, approach?: 'good' | 'bad') => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
   organizePublicDebate: (targetColonyName: string, angleIndex: number) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null }
   dismissDebateResult: () => void
   showActionPopup: (title: string, message: string, tone?: 'success' | 'error') => void
@@ -346,7 +362,7 @@ export const useGameStore = create<GameState & GameActions>()(
         console.log('Delegate data loaded successfully')
       },
       
-      sendCorrespondence: (delegateId, targetColony) => {
+      sendCorrespondence: (delegateId, targetColony, approach) => {
         if (get().gameStatus !== 'playing') {
           return { success: false, cost: 0, daysTravel: 0, message: get().gameStatus === 'victory'
             ? 'Victory! The colonies have declared independence — restart the game to play again.'
@@ -405,7 +421,7 @@ export const useGameStore = create<GameState & GameActions>()(
         const finalCost = finalTravelDays * 1 // $1 per day of travel
         
         // Calculate random support change for letter recipient (-1 to +5)
-        const supportChange = Math.floor(Math.random() * 7) - 1 // Random number from -1 to 5
+        const supportChange = rollSupportChange('mail', approach)
         const updatedDelegates = delegates.map(d => 
           d.id === delegateId ? { ...d, supportLevel: Math.min(100, Math.max(1, d.supportLevel + supportChange)) } : d
         )
@@ -455,7 +471,7 @@ export const useGameStore = create<GameState & GameActions>()(
         }
       },
       
-      meetPrivately: (delegateId) => {
+      meetPrivately: (delegateId, approach) => {
         if (get().gameStatus !== 'playing') {
           return { success: false, cost: 0, daysTravel: 0, message: get().gameStatus === 'victory'
             ? 'Victory! The colonies have declared independence — restart the game to play again.'
@@ -519,7 +535,7 @@ export const useGameStore = create<GameState & GameActions>()(
         }
         
         // Calculate random support change (-5 to +20)
-        const supportChange = Math.floor(Math.random() * 26) - 5 // Random number from -5 to 20
+        const supportChange = rollSupportChange('meeting', approach)
         const newSupportLevel = Math.min(100, Math.max(1, delegate.supportLevel + supportChange))
         
         // Deduct costs from PERSONAL FUNDS (not from any colony's postal subsidies)

@@ -2,6 +2,7 @@ import React from 'react'
 import { useGameStore, DEFAULT_COLONY_ID, DEBATE_EXTRA_DAYS, DEBATE_COST_PER_DELEGATE, FAILURE_DEADLINE_LABEL } from '../store/GameStore'
 import colonyOverviews from '../data/colonyOverviews.json'
 import debateAngles from '../data/debateAngles.json'
+import delegateApproaches from '../data/delegateApproaches.json'
 import delegateImages from '../data/delegateImages.json'
 import type { Delegate } from '../types/game'
 
@@ -43,6 +44,10 @@ const DelegatePanel: React.FC = () => {
   // Get current colony name for header
   const [debatePromptOpen, setDebatePromptOpen] = React.useState(false)
   const [selectedAngle, setSelectedAngle] = React.useState(0)
+  const [approachPrompt, setApproachPrompt] = React.useState<{ kind: 'mail' | 'meet'; delegateId: string } | null>(null)
+  const [approachChoice, setApproachChoice] = React.useState<'good' | 'bad' | null>(null)
+  React.useEffect(() => { setApproachPrompt(null); setApproachChoice(null) }, [selectedDelegate])
+  const approachTable = delegateApproaches as unknown as Record<string, { tell: string; good: { text: string }; bad: { text: string } }>
   const currentColonyName = colonies.find(c => c.id === effectiveColonyId)?.name || ''
 
   // Colony-level brief (economy, concerns, and what the colony wants from the others)
@@ -258,6 +263,62 @@ const DelegatePanel: React.FC = () => {
   const delegate = delegates.find(d => d.id === selectedDelegate)
   if (!delegate) return null
 
+  const approachInfo = approachTable[delegate.profile]
+  const approachLine = (c: 'good' | 'bad' | undefined) => (c && approachInfo ? `Approach: ${approachInfo[c].text}\n` : '')
+  const openApproach = (kind: 'mail' | 'meet') => {
+    if (!approachInfo) { if (kind === 'mail') runMail(undefined); else runMeet(undefined); return }
+    setApproachChoice(null)
+    setApproachPrompt({ kind, delegateId: delegate.id })
+  }
+  const runMail = (approach: 'good' | 'bad' | undefined) => {
+    const result = sendCorrespondence(delegate.id, delegate.colony, approach)
+    if (!result.success) {
+      showActionPopup("Letter not sent", result.message || "Cannot send correspondence.", 'error')
+    } else {
+      const sign = (result.supportChange ?? 0) >= 0 ? '+' : ''
+      const supportIcon = (result.supportChange ?? 0) > 0 ? ' ✅' : ((result.supportChange ?? 0) < 0 ? ' ⚠️' : '')
+      const mailEvent = result.eventMessage?.trim()
+        ? result.eventMessage.split('\n').filter(l => l.trim()).join('\n') + '\n\n'
+        : ''
+      showActionPopup(`Letter sent to ${delegate.name}`, `✓ Letter sent to ${delegate.name}!\n` + approachLine(approach) + mailEvent + (mailEvent ? '' : '\n') +
+            `Support for Independence: ${sign}${result.supportChange ?? 0}%${supportIcon}\n\n` + 
+            `Final Cost: $${result.cost}\n` + 
+            `Estimated delivery time: ${result.daysTravel} day(s)`, 'success')
+    }
+  }
+  const runMeet = (approach: 'good' | 'bad' | undefined) => {
+    const result = meetPrivately(delegate.id, approach)
+    if (!result.success) {
+      showActionPopup('Meeting not possible', result.message || `Insufficient personal funds! You need $${result.cost || 3} to meet privately.`, 'error')
+    } else {
+      let message = `✓ Met with ${delegate.name} successfully!\n` + approachLine(approach)
+      if (result.eventMessage && result.eventMessage.trim() !== "") {
+        result.eventMessage.split('\n').forEach((line) => {
+          if (line.trim()) {
+            message += `${line}\n`
+          }
+        })
+        message += `\n`
+      } else {
+        message += `Travel completed\n\n`
+      }
+      const sign = (result.supportChange ?? 0) >= 0 ? '+' : ''
+      const supportIcon = (result.supportChange ?? 0) > 0 ? ' ✅' : ((result.supportChange ?? 0) < 0 ? ' ⚠️' : '')
+      message += `Support for Independence: ${sign}${result.supportChange ?? 0}%${supportIcon}\n\n`
+      message += `Final Cost: $${result.cost}\n`
+      message += `Final Travel Time: ${result.daysTravel} day(s)`
+      showActionPopup(`Met with ${delegate.name}`, message, 'success')
+    }
+  }
+  const confirmApproach = () => {
+    if (!approachPrompt) return
+    const kind = approachPrompt.kind
+    const choice = approachChoice ?? undefined
+    setApproachPrompt(null)
+    setApproachChoice(null)
+    if (kind === 'mail') runMail(choice); else runMeet(choice)
+  }
+
   const isPresident = delegate.continentalCongressPresident || false
   const isCommitteeOfFive = !!(delegate.committeeOfFive || isPresident)
 
@@ -425,22 +486,7 @@ const DelegatePanel: React.FC = () => {
 
           return (
             <button
-              onClick={async () => {
-                const result = sendCorrespondence(delegate.id, delegate.colony)
-                if (!result.success) {
-                  showActionPopup("Letter not sent", result.message || "Cannot send correspondence.", 'error')
-                } else {
-                  const sign = (result.supportChange ?? 0) >= 0 ? '+' : ''
-                  const supportIcon = (result.supportChange ?? 0) > 0 ? ' ✅' : ((result.supportChange ?? 0) < 0 ? ' ⚠️' : '')
-                  const mailEvent = result.eventMessage?.trim()
-                    ? result.eventMessage.split('\n').filter(l => l.trim()).join('\n') + '\n\n'
-                    : ''
-                  showActionPopup(`Letter sent to ${delegate.name}`, `✓ Letter sent to ${delegate.name}!\n` + mailEvent + (mailEvent ? '' : '\n') +
-                        `Support for Independence: ${sign}${result.supportChange ?? 0}%${supportIcon}\n\n` + 
-                        `Final Cost: $${result.cost}\n` + 
-                        `Estimated delivery time: ${result.daysTravel} day(s)`, 'success')
-                }
-              }}
+              onClick={() => openApproach('mail')}
               disabled={isCommitteeOfFive}
               title={mailTitle}
               aria-label={mailTitle}
@@ -470,32 +516,7 @@ const DelegatePanel: React.FC = () => {
           disabled={meetBlocked}
           title={meetTitle}
           aria-label={meetTitle}
-          onClick={async () => {
-            const result = meetPrivately(delegate.id)
-            if (!result.success) {
-              showActionPopup('Meeting not possible', result.message || `Insufficient personal funds! You need $${result.cost || 3} to meet privately.`, 'error')
-            } else {
-              let message = `✓ Met with ${delegate.name} successfully!\n`
-              if (result.eventMessage && result.eventMessage.trim() !== "") {
-                // Split the message into lines for proper display
-                const lines = result.eventMessage.split('\n')
-                lines.forEach((line) => {
-                  if (line.trim()) {
-                    message += `${line}\n`
-                  }
-                })
-                message += `\n`
-              } else {
-                message += `Travel completed\n\n`
-              }
-              const sign = (result.supportChange ?? 0) >= 0 ? '+' : ''
-              const supportIcon = (result.supportChange ?? 0) > 0 ? ' ✅' : ((result.supportChange ?? 0) < 0 ? ' ⚠️' : '')
-              message += `Support for Independence: ${sign}${result.supportChange ?? 0}%${supportIcon}\n\n`
-              message += `Final Cost: $${result.cost}\n`
-              message += `Final Travel Time: ${result.daysTravel} day(s)`
-              showActionPopup(`Met with ${delegate.name}`, message, 'success')
-            }
-          }}
+          onClick={() => openApproach('meet')}
           style={{
             padding: '15px',
             background: meetEnabled ? '#D4AF37' : '#ccc',
@@ -514,6 +535,32 @@ const DelegatePanel: React.FC = () => {
             • Deducts from Committee of Five Funds ($3/day) • Required Ride Time: {meetingTravelDays} Day{meetingTravelDays === 1 ? '' : 's'} • Updates current location
           </div>
         </button>
+        {approachPrompt && approachPrompt.delegateId === delegate.id && approachInfo && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Choose an approach"
+            style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}
+          >
+            <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '520px', width: '90%', maxHeight: '85vh', overflowY: 'auto' }}>
+              <h2 style={{ margin: '0 0 6px 0', textAlign: 'center', fontSize: '20px' }}>{delegate.name}</h2>
+              <p style={{ margin: '0 0 10px 0', textAlign: 'center', fontSize: '13px', fontStyle: 'italic' }}>Profile: {delegate.profile}</p>
+              <p style={{ margin: '0 0 14px 0', textAlign: 'center', fontSize: '14px' }}>{approachInfo.tell}</p>
+              <div role="radiogroup" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {(['good', 'bad'] as const).map(k => (
+                  <label key={k} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', fontSize: '14px', lineHeight: 1.4 }}>
+                    <input type="radio" name="delegate-approach" checked={approachChoice === k} onChange={() => setApproachChoice(k)} style={{ marginTop: '3px' }} />
+                    <span>{approachInfo[k].text}</span>
+                  </label>
+                ))}
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: '20px' }}>
+                <button onClick={confirmApproach} style={{ fontFamily: 'Georgia, serif', fontSize: '14px', fontWeight: 'bold', color: '#FFFFFF', backgroundColor: '#2C1B18', border: 'none', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer' }}>{approachPrompt.kind === 'mail' ? 'Send the Letter' : 'Meet in Private'}</button>
+                <button onClick={() => { setApproachPrompt(null); setApproachChoice(null) }} style={{ fontFamily: 'Georgia, serif', fontSize: '14px', color: '#2C1B18', backgroundColor: 'transparent', border: '2px solid #2C1B18', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer' }}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       </div>
     </div>
