@@ -1,6 +1,7 @@
 import React from 'react'
 import { useGameStore, DEFAULT_COLONY_ID, DEBATE_EXTRA_DAYS, DEBATE_COST_PER_DELEGATE, FAILURE_DEADLINE_LABEL } from '../store/GameStore'
 import colonyOverviews from '../data/colonyOverviews.json'
+import delegateImages from '../data/delegateImages.json'
 import type { Delegate } from '../types/game'
 
 const DelegatePanel: React.FC = () => {
@@ -224,6 +225,9 @@ const DelegatePanel: React.FC = () => {
   const isPresident = delegate.continentalCongressPresident || false
   const isCommitteeOfFive = !!(delegate.committeeOfFive || isPresident)
 
+  // Portrait from Wikipedia / Wikimedia Commons (absent for a few delegates)
+  const portrait = (delegateImages as Record<string, { file: string; page?: string; title?: string }>)[delegate.id]
+
   // Deadline rule: a private meeting must be able to happen before July 2, 1776.
   const meetingTravelDays = getTravelTime(currentColony, delegate.colony)
   const meetingDaysRemaining = getDaysUntilDeadline()
@@ -289,6 +293,37 @@ const DelegatePanel: React.FC = () => {
       </div>
 
       <p style={{ opacity: 0.7, marginBottom: '20px', fontSize: '13px' }}>{delegate.colony} Delegate</p>
+
+      {/* Portrait */}
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+        {portrait ? (
+          <img
+            src={portrait.file}
+            alt={`Portrait of ${delegate.name}`}
+            title={portrait.title ? `Portrait from Wikipedia: ${portrait.title}` : `Portrait of ${delegate.name}`}
+            style={{
+              maxHeight: '200px',
+              maxWidth: '100%',
+              objectFit: 'contain',
+              border: '3px solid #8B6914',
+              borderRadius: '6px',
+              backgroundColor: '#F5E6B8',
+              boxShadow: '0 3px 10px rgba(0,0,0,0.25)'
+            }}
+          />
+        ) : (
+          <div
+            aria-label={`No portrait available for ${delegate.name}`}
+            style={{
+              width: '130px', height: '170px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              border: '3px solid #8B6914', borderRadius: '6px', backgroundColor: '#F5E6B8',
+              fontSize: '38px', fontWeight: 'bold', color: '#8B6914'
+            }}
+          >
+            {delegate.name.split(' ').map(p => p[0]).slice(0, 2).join('')}
+          </div>
+        )}
+      </div>
 
       {/* Support Level Meter */}
       <div style={{ marginBottom: '20px' }}>
