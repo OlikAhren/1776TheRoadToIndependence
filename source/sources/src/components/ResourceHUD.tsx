@@ -37,10 +37,11 @@ const ResourceHUD: React.FC = () => {
       justifyContent: 'space-between',
       alignItems: 'center',
       padding: '15px 20px',
-      background: '#fff',
-      borderRadius: '8px',
+      background: '#FFF8DC',
+      border: '3px solid #1A237E',
+      borderRadius: '16px',
       marginBottom: '20px',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
       gap: '20px',
       flexWrap: 'wrap'
     }}>
