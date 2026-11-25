@@ -196,7 +196,7 @@ def main():
         fname = did + ext
         (OUT_IMG / fname).write_bytes(data)
         results[did] = {
-            "file": f"/delegate-images/{fname}",
+            "file": f"delegate-images/{fname}",
             "name": name,
             "title": pick.get("title"),
             "page": pick.get("page"),

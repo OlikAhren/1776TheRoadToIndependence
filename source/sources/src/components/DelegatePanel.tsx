@@ -306,7 +306,7 @@ const DelegatePanel: React.FC = () => {
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
         {portrait ? (
           <img
-            src={portrait.file}
+            src={`${import.meta.env.BASE_URL}${portrait.file}`}
             alt={`Portrait of ${delegate.name}`}
             title={portrait.title ? `Portrait from Wikipedia: ${portrait.title}` : `Portrait of ${delegate.name}`}
             style={{

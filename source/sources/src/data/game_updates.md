@@ -258,6 +258,13 @@ The store refuses the action as well, so the rule holds even if the interface is
 
 **Public debates are deliberately exempt.** A debate still rolls every non-protected delegate in the state, including those already at 100%, so a negative roll can pull a delegate back down and drop a colony out of green. The owner's intent (2026-11-24) is that a debate can still "mess up public opinion", so this asymmetry between letters/meetings and debates is intended, not an oversight.
 
+## Rule: One Public Debate Per Colony
+**Location**: `src/store/GameStore.ts`, `src/components/DelegatePanel.tsx`, `src/types/game.ts`
+
+Each colony may host **one public debate per game**. After a colony has hosted its debate, the "Organize a Public Debate" button greys out when you view that colony, with the explanation "*State* has already hosted a public debate." The store enforces the same rule ("*State* has already hosted a public debate.") before any cost, date or support change, so it holds even if the interface is bypassed.
+
+The list of colonies that have hosted their debate lives in the saved game (persisted with the rest of the state) and is cleared by a restart.
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared

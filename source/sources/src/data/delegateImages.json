@@ -1,6 +1,6 @@
 {
   "nh_josiah_bartlett": {
-    "file": "/delegate-images/nh_josiah_bartlett.png",
+    "file": "delegate-images/nh_josiah_bartlett.png",
     "name": "Josiah Bartlett",
     "title": "Josiah Bartlett",
     "page": "https://en.wikipedia.org/wiki/Josiah_Bartlett",
@@ -9,7 +9,7 @@
     "artist": null
   },
   "nh_william_whipple": {
-    "file": "/delegate-images/nh_william_whipple.jpg",
+    "file": "delegate-images/nh_william_whipple.jpg",
     "name": "William Whipple",
     "title": "William Whipple",
     "page": "https://en.wikipedia.org/wiki/William_Whipple",
@@ -18,7 +18,7 @@
     "artist": null
   },
   "nh_matthew_thornton": {
-    "file": "/delegate-images/nh_matthew_thornton.jpg",
+    "file": "delegate-images/nh_matthew_thornton.jpg",
     "name": "Matthew Thornton",
     "title": "Matthew Thornton",
     "page": "https://en.wikipedia.org/wiki/Matthew_Thornton",
@@ -27,7 +27,7 @@
     "artist": null
   },
   "ma_john_hancock": {
-    "file": "/delegate-images/ma_john_hancock.jpg",
+    "file": "delegate-images/ma_john_hancock.jpg",
     "name": "John Hancock",
     "title": "John Hancock",
     "page": "https://en.wikipedia.org/wiki/John_Hancock",
@@ -36,7 +36,7 @@
     "artist": null
   },
   "ma_samuel_adams": {
-    "file": "/delegate-images/ma_samuel_adams.jpg",
+    "file": "delegate-images/ma_samuel_adams.jpg",
     "name": "Samuel Adams",
     "title": "Samuel Adams",
     "page": "https://en.wikipedia.org/wiki/Samuel_Adams",
@@ -45,7 +45,7 @@
     "artist": null
   },
   "ma_john_adams": {
-    "file": "/delegate-images/ma_john_adams.jpg",
+    "file": "delegate-images/ma_john_adams.jpg",
     "name": "John Adams",
     "title": "John Adams",
     "page": "https://en.wikipedia.org/wiki/John_Adams",
@@ -54,7 +54,7 @@
     "artist": null
   },
   "ma_elbridge_gerry": {
-    "file": "/delegate-images/ma_elbridge_gerry.jpg",
+    "file": "delegate-images/ma_elbridge_gerry.jpg",
     "name": "Elbridge Gerry",
     "title": "Elbridge Gerry",
     "page": "https://en.wikipedia.org/wiki/Elbridge_Gerry",
@@ -63,7 +63,7 @@
     "artist": null
   },
   "ma_robert_treat_paine": {
-    "file": "/delegate-images/ma_robert_treat_paine.jpg",
+    "file": "delegate-images/ma_robert_treat_paine.jpg",
     "name": "Robert Treat Paine",
     "title": "Robert Treat Paine",
     "page": "https://en.wikipedia.org/wiki/Robert_Treat_Paine",
@@ -72,7 +72,7 @@
     "artist": null
   },
   "ri_stephen_hopkins": {
-    "file": "/delegate-images/ri_stephen_hopkins.jpg",
+    "file": "delegate-images/ri_stephen_hopkins.jpg",
     "name": "Stephen Hopkins",
     "title": "File:Stephen Hopkins (NYPL NYPG97-F76-420410) (cropped).jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Stephen_Hopkins_(NYPL_NYPG97-F76-420410)_(cropped).jpg",
@@ -81,7 +81,7 @@
     "artist": "Scan by NYPL"
   },
   "ri_william_ellery": {
-    "file": "/delegate-images/ri_william_ellery.jpg",
+    "file": "delegate-images/ri_william_ellery.jpg",
     "name": "William Ellery",
     "title": "William Ellery",
     "page": "https://en.wikipedia.org/wiki/William_Ellery",
@@ -90,7 +90,7 @@
     "artist": null
   },
   "ct_roger_sherman": {
-    "file": "/delegate-images/ct_roger_sherman.jpg",
+    "file": "delegate-images/ct_roger_sherman.jpg",
     "name": "Roger Sherman",
     "title": "Roger Sherman",
     "page": "https://en.wikipedia.org/wiki/Roger_Sherman",
@@ -99,7 +99,7 @@
     "artist": null
   },
   "ct_samuel_huntington": {
-    "file": "/delegate-images/ct_samuel_huntington.jpg",
+    "file": "delegate-images/ct_samuel_huntington.jpg",
     "name": "Samuel Huntington",
     "title": "Samuel Huntington (Connecticut politician)",
     "page": "https://en.wikipedia.org/wiki/Samuel_Huntington_(Connecticut_politician)",
@@ -108,14 +108,14 @@
     "artist": null
   },
   "ct_william_williams": {
-    "file": "/delegate-images/ct_william_williams.jpg",
+    "file": "delegate-images/ct_william_williams.jpg",
     "name": "William Williams",
     "title": "William Williams (Connecticut politician)",
     "page": "https://en.wikipedia.org/wiki/William_Williams_(Connecticut_politician)",
     "description": "American Founding Father and politician"
   },
   "ct_oliver_wolcott": {
-    "file": "/delegate-images/ct_oliver_wolcott.jpg",
+    "file": "delegate-images/ct_oliver_wolcott.jpg",
     "name": "Oliver Wolcott",
     "title": "Oliver Wolcott",
     "page": "https://en.wikipedia.org/wiki/Oliver_Wolcott",
@@ -124,7 +124,7 @@
     "artist": null
   },
   "ny_william_floyd": {
-    "file": "/delegate-images/ny_william_floyd.jpg",
+    "file": "delegate-images/ny_william_floyd.jpg",
     "name": "William Floyd",
     "title": "William Floyd",
     "page": "https://en.wikipedia.org/wiki/William_Floyd",
@@ -133,7 +133,7 @@
     "artist": null
   },
   "ny_philip_livingston": {
-    "file": "/delegate-images/ny_philip_livingston.jpg",
+    "file": "delegate-images/ny_philip_livingston.jpg",
     "name": "Philip Livingston",
     "title": "Philip Livingston",
     "page": "https://en.wikipedia.org/wiki/Philip_Livingston",
@@ -142,7 +142,7 @@
     "artist": null
   },
   "ny_francis_lewis": {
-    "file": "/delegate-images/ny_francis_lewis.jpg",
+    "file": "delegate-images/ny_francis_lewis.jpg",
     "name": "Francis Lewis",
     "title": "Francis Lewis",
     "page": "https://en.wikipedia.org/wiki/Francis_Lewis",
@@ -151,7 +151,7 @@
     "artist": null
   },
   "ny_lewis_morris": {
-    "file": "/delegate-images/ny_lewis_morris.jpg",
+    "file": "delegate-images/ny_lewis_morris.jpg",
     "name": "Lewis Morris",
     "title": "Lewis Morris",
     "page": "https://en.wikipedia.org/wiki/Lewis_Morris",
@@ -160,7 +160,7 @@
     "artist": null
   },
   "nj_richard_stockton": {
-    "file": "/delegate-images/nj_richard_stockton.jpg",
+    "file": "delegate-images/nj_richard_stockton.jpg",
     "name": "Richard Stockton",
     "title": "Richard Stockton (senator)",
     "page": "https://en.wikipedia.org/wiki/Richard_Stockton_(senator)",
@@ -169,7 +169,7 @@
     "artist": null
   },
   "nj_john_witherspoon": {
-    "file": "/delegate-images/nj_john_witherspoon.jpg",
+    "file": "delegate-images/nj_john_witherspoon.jpg",
     "name": "John Witherspoon",
     "title": "John Witherspoon",
     "page": "https://en.wikipedia.org/wiki/John_Witherspoon",
@@ -178,7 +178,7 @@
     "artist": null
   },
   "nj_francis_hopkinson": {
-    "file": "/delegate-images/nj_francis_hopkinson.jpg",
+    "file": "delegate-images/nj_francis_hopkinson.jpg",
     "name": "Francis Hopkinson",
     "title": "Francis Hopkinson",
     "page": "https://en.wikipedia.org/wiki/Francis_Hopkinson",
@@ -187,7 +187,7 @@
     "artist": null
   },
   "nj_john_hart": {
-    "file": "/delegate-images/nj_john_hart.jpg",
+    "file": "delegate-images/nj_john_hart.jpg",
     "name": "John Hart",
     "title": "John Hart (New Jersey politician)",
     "page": "https://en.wikipedia.org/wiki/John_Hart_(New_Jersey_politician)",
@@ -196,7 +196,7 @@
     "artist": null
   },
   "nj_abraham_clark": {
-    "file": "/delegate-images/nj_abraham_clark.jpg",
+    "file": "delegate-images/nj_abraham_clark.jpg",
     "name": "Abraham Clark",
     "title": "Abraham Clark",
     "page": "https://en.wikipedia.org/wiki/Abraham_Clark",
@@ -205,7 +205,7 @@
     "artist": null
   },
   "pa_robert_morris": {
-    "file": "/delegate-images/pa_robert_morris.jpg",
+    "file": "delegate-images/pa_robert_morris.jpg",
     "name": "Robert Morris",
     "title": "File:Robert Morris, 31 Jan 1734 - 8 May 1806.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Robert_Morris,_31_Jan_1734_-_8_May_1806.jpg",
@@ -214,7 +214,7 @@
     "artist": "Robert Edge Pine"
   },
   "pa_benjamin_rush": {
-    "file": "/delegate-images/pa_benjamin_rush.jpg",
+    "file": "delegate-images/pa_benjamin_rush.jpg",
     "name": "Benjamin Rush",
     "title": "Benjamin Rush",
     "page": "https://en.wikipedia.org/wiki/Benjamin_Rush",
@@ -223,7 +223,7 @@
     "artist": null
   },
   "pa_benjamin_franklin": {
-    "file": "/delegate-images/pa_benjamin_franklin.jpg",
+    "file": "delegate-images/pa_benjamin_franklin.jpg",
     "name": "Benjamin Franklin",
     "title": "Benjamin Franklin",
     "page": "https://en.wikipedia.org/wiki/Benjamin_Franklin",
@@ -232,7 +232,7 @@
     "artist": null
   },
   "pa_john_morton": {
-    "file": "/delegate-images/pa_john_morton.jpg",
+    "file": "delegate-images/pa_john_morton.jpg",
     "name": "John Morton",
     "title": "John Morton (American politician)",
     "page": "https://en.wikipedia.org/wiki/John_Morton_(American_politician)",
@@ -241,7 +241,7 @@
     "artist": null
   },
   "pa_george_clymer": {
-    "file": "/delegate-images/pa_george_clymer.jpg",
+    "file": "delegate-images/pa_george_clymer.jpg",
     "name": "George Clymer",
     "title": "George Clymer",
     "page": "https://en.wikipedia.org/wiki/George_Clymer",
@@ -250,7 +250,7 @@
     "artist": null
   },
   "pa_james_smith": {
-    "file": "/delegate-images/pa_james_smith.png",
+    "file": "delegate-images/pa_james_smith.png",
     "name": "James Smith",
     "title": "James Smith (Pennsylvania politician)",
     "page": "https://en.wikipedia.org/wiki/James_Smith_(Pennsylvania_politician)",
@@ -259,7 +259,7 @@
     "artist": null
   },
   "pa_george_taylor": {
-    "file": "/delegate-images/pa_george_taylor.jpg",
+    "file": "delegate-images/pa_george_taylor.jpg",
     "name": "George Taylor",
     "title": "George Taylor (Pennsylvania politician)",
     "page": "https://en.wikipedia.org/wiki/George_Taylor_(Pennsylvania_politician)",
@@ -268,7 +268,7 @@
     "artist": null
   },
   "pa_james_wilson": {
-    "file": "/delegate-images/pa_james_wilson.jpg",
+    "file": "delegate-images/pa_james_wilson.jpg",
     "name": "James Wilson",
     "title": "File:JusticeJamesWilson.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:JusticeJamesWilson.jpg",
@@ -277,7 +277,7 @@
     "artist": ""
   },
   "pa_george_ross": {
-    "file": "/delegate-images/pa_george_ross.jpg",
+    "file": "delegate-images/pa_george_ross.jpg",
     "name": "George Ross",
     "title": "George Ross (American politician)",
     "page": "https://en.wikipedia.org/wiki/George_Ross_(American_politician)",
@@ -286,7 +286,7 @@
     "artist": null
   },
   "de_caesar_rodney": {
-    "file": "/delegate-images/de_caesar_rodney.jpg",
+    "file": "delegate-images/de_caesar_rodney.jpg",
     "name": "Caesar Rodney",
     "title": "Caesar Rodney",
     "page": "https://en.wikipedia.org/wiki/Caesar_Rodney",
@@ -295,7 +295,7 @@
     "artist": null
   },
   "de_george_read": {
-    "file": "/delegate-images/de_george_read.jpg",
+    "file": "delegate-images/de_george_read.jpg",
     "name": "George Read",
     "title": "George Read (American politician, born 1733)",
     "page": "https://en.wikipedia.org/wiki/George_Read_(American_politician%2C_born_1733)",
@@ -304,7 +304,7 @@
     "artist": null
   },
   "de_thomas_mckean": {
-    "file": "/delegate-images/de_thomas_mckean.jpg",
+    "file": "delegate-images/de_thomas_mckean.jpg",
     "name": "Thomas McKean",
     "title": "Thomas McKean",
     "page": "https://en.wikipedia.org/wiki/Thomas_McKean",
@@ -313,7 +313,7 @@
     "artist": null
   },
   "md_samuel_chase": {
-    "file": "/delegate-images/md_samuel_chase.jpg",
+    "file": "delegate-images/md_samuel_chase.jpg",
     "name": "Samuel Chase",
     "title": "Samuel Chase",
     "page": "https://en.wikipedia.org/wiki/Samuel_Chase",
@@ -322,7 +322,7 @@
     "artist": null
   },
   "md_william_paca": {
-    "file": "/delegate-images/md_william_paca.jpg",
+    "file": "delegate-images/md_william_paca.jpg",
     "name": "William Paca",
     "title": "William Paca",
     "page": "https://en.wikipedia.org/wiki/William_Paca",
@@ -331,7 +331,7 @@
     "artist": null
   },
   "md_thomas_stone": {
-    "file": "/delegate-images/md_thomas_stone.jpg",
+    "file": "delegate-images/md_thomas_stone.jpg",
     "name": "Thomas Stone",
     "title": "Thomas Stone",
     "page": "https://en.wikipedia.org/wiki/Thomas_Stone",
@@ -340,7 +340,7 @@
     "artist": null
   },
   "va_george_wythe": {
-    "file": "/delegate-images/va_george_wythe.jpg",
+    "file": "delegate-images/va_george_wythe.jpg",
     "name": "George Wythe",
     "title": "George Wythe",
     "page": "https://en.wikipedia.org/wiki/George_Wythe",
@@ -349,7 +349,7 @@
     "artist": null
   },
   "va_richard_henry_lee": {
-    "file": "/delegate-images/va_richard_henry_lee.jpg",
+    "file": "delegate-images/va_richard_henry_lee.jpg",
     "name": "Richard Henry Lee",
     "title": "Richard Henry Lee",
     "page": "https://en.wikipedia.org/wiki/Richard_Henry_Lee",
@@ -358,7 +358,7 @@
     "artist": null
   },
   "va_thomas_jefferson": {
-    "file": "/delegate-images/va_thomas_jefferson.jpg",
+    "file": "delegate-images/va_thomas_jefferson.jpg",
     "name": "Thomas Jefferson",
     "title": "Thomas Jefferson",
     "page": "https://en.wikipedia.org/wiki/Thomas_Jefferson",
@@ -367,7 +367,7 @@
     "artist": null
   },
   "va_benjamin_harrison": {
-    "file": "/delegate-images/va_benjamin_harrison.jpg",
+    "file": "delegate-images/va_benjamin_harrison.jpg",
     "name": "Benjamin Harrison",
     "title": "Benjamin Harrison",
     "page": "https://en.wikipedia.org/wiki/Benjamin_Harrison",
@@ -376,7 +376,7 @@
     "artist": null
   },
   "va_thomas_nelson": {
-    "file": "/delegate-images/va_thomas_nelson.jpg",
+    "file": "delegate-images/va_thomas_nelson.jpg",
     "name": "Thomas Nelson Jr.",
     "title": "Thomas Nelson Jr.",
     "page": "https://en.wikipedia.org/wiki/Thomas_Nelson_Jr.",
@@ -385,7 +385,7 @@
     "artist": null
   },
   "va_francis_lightfoot_lee": {
-    "file": "/delegate-images/va_francis_lightfoot_lee.jpg",
+    "file": "delegate-images/va_francis_lightfoot_lee.jpg",
     "name": "Francis Lightfoot Lee",
     "title": "Francis Lightfoot Lee",
     "page": "https://en.wikipedia.org/wiki/Francis_Lightfoot_Lee",
@@ -394,7 +394,7 @@
     "artist": null
   },
   "va_carter_braxton": {
-    "file": "/delegate-images/va_carter_braxton.jpg",
+    "file": "delegate-images/va_carter_braxton.jpg",
     "name": "Carter Braxton",
     "title": "Carter Braxton",
     "page": "https://en.wikipedia.org/wiki/Carter_Braxton",
@@ -403,7 +403,7 @@
     "artist": null
   },
   "nc_william_hooper": {
-    "file": "/delegate-images/nc_william_hooper.png",
+    "file": "delegate-images/nc_william_hooper.png",
     "name": "William Hooper",
     "title": "William Hooper",
     "page": "https://en.wikipedia.org/wiki/William_Hooper",
@@ -412,7 +412,7 @@
     "artist": null
   },
   "nc_joseph_hewes": {
-    "file": "/delegate-images/nc_joseph_hewes.png",
+    "file": "delegate-images/nc_joseph_hewes.png",
     "name": "Joseph Hewes",
     "title": "Joseph Hewes",
     "page": "https://en.wikipedia.org/wiki/Joseph_Hewes",
@@ -421,7 +421,7 @@
     "artist": null
   },
   "sc_edward_rutledge": {
-    "file": "/delegate-images/sc_edward_rutledge.jpg",
+    "file": "delegate-images/sc_edward_rutledge.jpg",
     "name": "Edward Rutledge",
     "title": "Edward Rutledge",
     "page": "https://en.wikipedia.org/wiki/Edward_Rutledge",
@@ -430,7 +430,7 @@
     "artist": null
   },
   "sc_thomas_hayward": {
-    "file": "/delegate-images/sc_thomas_hayward.jpg",
+    "file": "delegate-images/sc_thomas_hayward.jpg",
     "name": "Thomas Heyward Jr.",
     "title": "Thomas Heyward Jr.",
     "page": "https://en.wikipedia.org/wiki/Thomas_Heyward_Jr.",
@@ -439,7 +439,7 @@
     "artist": null
   },
   "sc_thomas_lynch": {
-    "file": "/delegate-images/sc_thomas_lynch.jpg",
+    "file": "delegate-images/sc_thomas_lynch.jpg",
     "name": "Thomas Lynch Jr.",
     "title": "Thomas Lynch Jr.",
     "page": "https://en.wikipedia.org/wiki/Thomas_Lynch_Jr.",
@@ -448,7 +448,7 @@
     "artist": null
   },
   "sc_arthur_middleton": {
-    "file": "/delegate-images/sc_arthur_middleton.jpg",
+    "file": "delegate-images/sc_arthur_middleton.jpg",
     "name": "Arthur Middleton",
     "title": "Arthur Middleton",
     "page": "https://en.wikipedia.org/wiki/Arthur_Middleton",
@@ -457,7 +457,7 @@
     "artist": null
   },
   "ga_button_gwinnett": {
-    "file": "/delegate-images/ga_button_gwinnett.png",
+    "file": "delegate-images/ga_button_gwinnett.png",
     "name": "Button Gwinnett",
     "title": "Button Gwinnett",
     "page": "https://en.wikipedia.org/wiki/Button_Gwinnett",
@@ -466,7 +466,7 @@
     "artist": null
   },
   "ga_lyman_hall": {
-    "file": "/delegate-images/ga_lyman_hall.jpg",
+    "file": "delegate-images/ga_lyman_hall.jpg",
     "name": "Lyman Hall",
     "title": "Lyman Hall",
     "page": "https://en.wikipedia.org/wiki/Lyman_Hall",
@@ -475,7 +475,7 @@
     "artist": null
   },
   "ga_george_walton": {
-    "file": "/delegate-images/ga_george_walton.png",
+    "file": "delegate-images/ga_george_walton.png",
     "name": "George Walton",
     "title": "George Walton",
     "page": "https://en.wikipedia.org/wiki/George_Walton",
@@ -484,7 +484,7 @@
     "artist": null
   },
   "pa_john_dickinson": {
-    "file": "/delegate-images/pa_john_dickinson.jpg",
+    "file": "delegate-images/pa_john_dickinson.jpg",
     "name": "John Dickinson",
     "title": "John Dickinson",
     "page": "https://en.wikipedia.org/wiki/John_Dickinson",
@@ -493,7 +493,7 @@
     "artist": null
   },
   "pa_thomas_willing": {
-    "file": "/delegate-images/pa_thomas_willing.jpg",
+    "file": "delegate-images/pa_thomas_willing.jpg",
     "name": "Thomas Willing",
     "title": "Thomas Willing",
     "page": "https://en.wikipedia.org/wiki/Thomas_Willing",
@@ -502,7 +502,7 @@
     "artist": null
   },
   "ny_john_alsop": {
-    "file": "/delegate-images/ny_john_alsop.jpg",
+    "file": "delegate-images/ny_john_alsop.jpg",
     "name": "John Alsop",
     "title": "John Alsop",
     "page": "https://en.wikipedia.org/wiki/John_Alsop",
@@ -511,7 +511,7 @@
     "artist": null
   },
   "ny_henry_wisner": {
-    "file": "/delegate-images/ny_henry_wisner.jpg",
+    "file": "delegate-images/ny_henry_wisner.jpg",
     "name": "Henry Wisner",
     "title": "Henry Wisner",
     "page": "https://en.wikipedia.org/wiki/Henry_Wisner",
@@ -520,21 +520,21 @@
     "artist": null
   },
   "md_charles_carroll": {
-    "file": "/delegate-images/md_charles_carroll.jpg",
+    "file": "delegate-images/md_charles_carroll.jpg",
     "name": "Charles Carroll of Carrollton",
     "title": "Charles Carroll of Carrollton",
     "page": "https://en.wikipedia.org/wiki/Charles_Carroll_of_Carrollton",
     "description": "American Founding Father, politician, and planter (1737–1832)"
   },
   "ny_george_clinton": {
-    "file": "/delegate-images/ny_george_clinton.jpg",
+    "file": "delegate-images/ny_george_clinton.jpg",
     "name": "George Clinton",
     "title": "George Clinton (vice president)",
     "page": "https://commons.wikimedia.org/wiki/File:George_Clinton_by_Ezra_Ames_(full_portrait).jpg",
     "description": "American politician and 4th Vice President (1739-1812)"
   },
   "ny_robert_r Livingston": {
-    "file": "/delegate-images/ny_robert_r_livingston.jpg",
+    "file": "delegate-images/ny_robert_r_livingston.jpg",
     "name": "Robert R. Livingston",
     "title": "Robert R. Livingston",
     "page": "https://en.wikipedia.org/wiki/Robert_R._Livingston",
