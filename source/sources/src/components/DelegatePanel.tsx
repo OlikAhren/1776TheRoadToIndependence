@@ -1,6 +1,7 @@
 import React from 'react'
 import { useGameStore, DEFAULT_COLONY_ID, DEBATE_EXTRA_DAYS, DEBATE_COST_PER_DELEGATE, FAILURE_DEADLINE_LABEL } from '../store/GameStore'
 import colonyOverviews from '../data/colonyOverviews.json'
+import debateAngles from '../data/debateAngles.json'
 import delegateImages from '../data/delegateImages.json'
 import type { Delegate } from '../types/game'
 
@@ -40,6 +41,8 @@ const DelegatePanel: React.FC = () => {
     : []
 
   // Get current colony name for header
+  const [debatePromptOpen, setDebatePromptOpen] = React.useState(false)
+  const [selectedAngle, setSelectedAngle] = React.useState(0)
   const currentColonyName = colonies.find(c => c.id === effectiveColonyId)?.name || ''
 
   // Colony-level brief (economy, concerns, and what the colony wants from the others)
@@ -49,6 +52,7 @@ const DelegatePanel: React.FC = () => {
   React.useEffect(() => {
     setOverviewOpen(true)
   }, [currentColonyName])
+  React.useEffect(() => { setDebatePromptOpen(false) }, [currentColonyName])
 
   // Organize a Public Debate availability (acts on the state shown in this panel)
   const debateBaseCost = colonyDelegates.length * DEBATE_COST_PER_DELEGATE
@@ -65,8 +69,15 @@ const DelegatePanel: React.FC = () => {
   } else if (resources.personalFunds < debateBaseCost) {
     debateDisabledReason = `Not enough funds: the debate costs at least $${debateBaseCost} ($${DEBATE_COST_PER_DELEGATE} per delegate).`
   }
+  const angleOptions = (debateAngles as Record<string, { text: string; min: number; max: number; explanation: string }[]>)[currentColonyName] ?? []
+  const fmtOdds = (n: number) => (n > 0 ? `+${n}` : `${n}`)
   const handleOrganizeDebate = () => {
-    const result = organizePublicDebate(currentColonyName)
+    setSelectedAngle(0)
+    setDebatePromptOpen(true)
+  }
+  const confirmDebate = () => {
+    setDebatePromptOpen(false)
+    const result = organizePublicDebate(currentColonyName, selectedAngle)
     setDebateMessage(result.success ? null : (result.message ?? 'The debate could not be organized.'))
   }
 
@@ -117,6 +128,33 @@ const DelegatePanel: React.FC = () => {
               </button>
               {debateMessage && (
                 <p role="alert" style={{ fontSize: '12px', color: '#C62828', margin: '0' }}>{debateMessage}</p>
+              )}
+              {debatePromptOpen && (
+                <div
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label="Choose a debate angle"
+                  style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}
+                >
+                  <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '520px', width: '90%', maxHeight: '85vh', overflowY: 'auto' }}>
+                    <h2 style={{ margin: '0 0 14px 0', textAlign: 'center', fontSize: '20px' }}>Organize this {currentColonyName}'s public debate around:</h2>
+                    <div role="radiogroup" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      {angleOptions.map((a, i) => (
+                        <label key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', fontSize: '14px', lineHeight: 1.4 }}>
+                          <input type="radio" name="debate-angle" checked={selectedAngle === i} onChange={() => setSelectedAngle(i)} style={{ marginTop: '3px' }} />
+                          <span>
+                            {a.text}{' '}
+                            <span style={{ fontSize: '12px', opacity: 0.6 }}>({fmtOdds(a.min)} to {fmtOdds(a.max)})</span>
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: '20px' }}>
+                      <button onClick={confirmDebate} style={{ fontFamily: 'Georgia, serif', fontSize: '14px', fontWeight: 'bold', color: '#FFFFFF', backgroundColor: '#2C1B18', border: 'none', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer' }}>Organize the Debate</button>
+                      <button onClick={() => setDebatePromptOpen(false)} style={{ fontFamily: 'Georgia, serif', fontSize: '14px', color: '#2C1B18', backgroundColor: 'transparent', border: '2px solid #2C1B18', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer' }}>Cancel</button>
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
             <p style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center', color: '#2C1B18' }}>

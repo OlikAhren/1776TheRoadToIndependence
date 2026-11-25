@@ -82,6 +82,9 @@ export interface GameState {
 export interface DebateResult {
   colonyName: string
   eventMessage: string | null
+  angleText: string
+  angleExplanation: string
+  angleOdds: string
   cost: number
   daysTravel: number
   delegateResults: { name: string; change: number; newSupport: number }[]

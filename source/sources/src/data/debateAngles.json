@@ -1,0 +1,340 @@
+{
+  "New Hampshire": [
+    {
+      "text": "Mention that the Pine Tree Riot of 1772 was not warranted.",
+      "min": -20,
+      "max": 5,
+      "explanation": "New Hampshire's lumber merchants had long suffered from Crown restrictions reserving valuable pine trees for the Royal Navy, resulting in the Pine Tree Riot of 1772."
+    },
+    {
+      "text": "Suggest that Every colony must contribute the same amount of money to fight.",
+      "min": -10,
+      "max": 5,
+      "explanation": "New Hampshire consisted of a relatively small and modestly wealthy population."
+    },
+    {
+      "text": "Attempt to ease concerns for lack of protection from Canadian British troops.",
+      "min": -1,
+      "max": 20,
+      "explanation": "New Hampshire colonists feared attacks from British troops to their northern borders."
+    },
+    {
+      "text": "Casually mention that Massachusetts speaks on behalf of all New England.",
+      "min": -15,
+      "max": 5,
+      "explanation": "New Hampshire was particularly resentful to being treated as a subordinate of Massachusetts."
+    }
+  ],
+  "Massachusetts": [
+    {
+      "text": "Mention the absurdity of the Administration of Justice Act.",
+      "min": -1,
+      "max": 20,
+      "explanation": "The Administration of Justice Act, one of the Intolerable Acts, allowed British officials accused of crimes to be tried in other colonies or in Great Britain rather than Massachusetts."
+    },
+    {
+      "text": "Suggest that Massachusetts should bear higher costs due to the Boston Tea Party being an act of criminal vandalism.",
+      "min": -20,
+      "max": 2,
+      "explanation": "Massachusetts colonists felt as thought they had exhausted all other options for petitioning their government."
+    },
+    {
+      "text": "Maintain that the Boston Port Act was a legitimate response.",
+      "min": -15,
+      "max": 5,
+      "explanation": "The Crown used another Intolerable Act, the Boston Port Act, to close Boston's Harbor to trade until colonists paid for the tea destroyed during the Boston Tea Party."
+    },
+    {
+      "text": "Evoke memories of the battles of Lexington and Concord and Bunker Hill and downplay that other Colonies will seek separate reconciliation with the Crown.",
+      "min": -5,
+      "max": 15,
+      "explanation": "Massachusetts believes its sacrifices were made on behalf of every colony, not merely itself and wanted a firm commitment to colonial unity and feared that they would be left holding all of the blame."
+    }
+  ],
+  "Rhode Island": [
+    {
+      "text": "Propose that Pennsylvania's plans to establish an official State church denomination are a intriguing notion.",
+      "min": -15,
+      "max": 1,
+      "explanation": "Rhode Island was founded upon unusually broad principles of religious liberty."
+    },
+    {
+      "text": "You jokingly refer to the Colony as Rogue Island and suggest that Congress would have future ability to determine which foreign countries they would be permitted to trade with.",
+      "min": -15,
+      "max": 5,
+      "explanation": "Rhode Island believed replacing British authority with another distant, restrictive government defeated the purpose of independence."
+    },
+    {
+      "text": "Maintain that the heart of independence lie with a strong maritime economy and that they would have naval support.",
+      "min": -1,
+      "max": 20,
+      "explanation": "Rhode Island had a prosperous maritime economy that depended heavily on shipping, international commerce, the rum trade and its connection to Southern slavery.  The colony's extensive coastline left its ports and communities vulnerable to the powerful British Royal Navy."
+    },
+    {
+      "text": "Casually mention the importance of Jefferson's 29th grievance in his first draft of the Declaration.",
+      "min": -15,
+      "max": 5,
+      "explanation": "While Rhode Island was a Free Colony, they benefited from the maritime import of slaves to the Southern Colonies."
+    }
+  ],
+  "Connecticut": [
+    {
+      "text": "Suggest that Connecticut's agricultural contributions to the revolutionary cause needed to be adequately compensated.",
+      "min": -1,
+      "max": 20,
+      "explanation": "Farmers firmly believed that they should not be forced to surrender provisions without receiving compensation.  They were deeply worried about losing agricultural workers to the war effort."
+    },
+    {
+      "text": "Suggest that Industrialization is the future of America.",
+      "min": -10,
+      "max": 10,
+      "explanation": "Connecticut was predominately an agricultural economy."
+    },
+    {
+      "text": "Maintain that Congress should have the power to select Governors of each colony.",
+      "min": -15,
+      "max": 1,
+      "explanation": "Connecticut possessed an established tradition of electing its own governor and managing its own internal affairs. Its delegates would be deeply suspicious of creating an overly powerful central power that resembled a monarchy and its parliament."
+    },
+    {
+      "text": "Suggest that America needs a hereditary head of state.",
+      "min": -20,
+      "max": 1,
+      "explanation": "Connecticut was drawn to the idea of a freely elected government and rejected the idea of a new Monarchy."
+    }
+  ],
+  "New York": [
+    {
+      "text": "Imply that you sympathize with the Loyalists still hoping for reconciliation with Great Britain.",
+      "min": -10,
+      "max": 10,
+      "explanation": "New York is deeply divided between Patriots and Loyalists."
+    },
+    {
+      "text": "Imply that you support the Patriots and that the revolution is inevitable.",
+      "min": -10,
+      "max": 10,
+      "explanation": "New York is deeply divided between Patriots and Loyalists."
+    },
+    {
+      "text": "Propose that the delegates take matters into their own hands and bypass its provincial government.",
+      "min": -15,
+      "max": 5,
+      "explanation": "New York is reluctant to declare independence without clear authorization from its own political representatives."
+    },
+    {
+      "text": "Convince the crowd that the American revolutionaries will protect the Hudson River and surrounding communities at all costs.",
+      "min": -1,
+      "max": 20,
+      "explanation": "The Hudson River is strategically important and particularly vulnerable to British naval operations."
+    }
+  ],
+  "New Jersey": [
+    {
+      "text": "Make a light-hearted joke about Royal Governor William Franklin in your opening speech.",
+      "min": -10,
+      "max": 10,
+      "explanation": "New Jersey's population is politically divided, and Royal Governor William Franklin remains loyal to the Crown."
+    },
+    {
+      "text": "Downplay the possibility of shortages.",
+      "min": -5,
+      "max": 15,
+      "explanation": "Farmers and merchants fear the destruction of property and interruption of commerce."
+    },
+    {
+      "text": "Assure patrons that the revolution will likely be won quickly in the American's favor.",
+      "min": -15,
+      "max": 15,
+      "explanation": "While this sounds nice, many Colonists remain skeptical."
+    },
+    {
+      "text": "Assure attendees that the other colonies remain fully committed to the revolutionary cause.",
+      "min": -2,
+      "max": 20,
+      "explanation": "New Jersey wants assurances that the Continental Army and other colonies are fully committed to protecting locals."
+    }
+  ],
+  "Pennsylvania": [
+    {
+      "text": "You begin your event with a prayer from a group of protestant Continental Army service members.",
+      "min": -15,
+      "max": 5,
+      "explanation": "Many event patrons in the room are Quakers and generally disagree with pro-war protestant revolutionaries."
+    },
+    {
+      "text": "You finish your debate by demanding Pennsylvania swear an oath to the American Colonies.",
+      "min": -15,
+      "max": 15,
+      "explanation": "Pennsylvania Quakers had a long history of clashing with New England Puritans pushing for independence. Protestant revolutionaries in Pennsylvania view passivist Quakers as well as Anabaptists like Mennonites and Amish with suspicions over refusing oaths of allegiance or military service."
+    },
+    {
+      "text": "You make assurances to the room that commerce will be protected.",
+      "min": -5,
+      "max": 10,
+      "explanation": "Pennsylvania is heavily reliant on inter-colony commerce."
+    },
+    {
+      "text": "You ensure religious leaders in the community that all peaceful alternatives have been rejected by the British Crown.",
+      "min": -5,
+      "max": 20,
+      "explanation": "The colony wants evidence that all peaceful alternatives have been exhausted."
+    }
+  ],
+  "Delaware": [
+    {
+      "text": "You mock the lack of patrons who have attended your event and question their commitment to the Revolution.",
+      "min": -15,
+      "max": 1,
+      "explanation": "Delaware is a small colony with limited financial resources and military strength."
+    },
+    {
+      "text": "You emphasize your understanding of the strategic importance of protecting the Delaware River.",
+      "min": -1,
+      "max": 10,
+      "explanation": "Delaware's economy depends heavily on trade along the Delaware River from nearby Philadelphia."
+    },
+    {
+      "text": "You suggest that if Delaware does not stand against the British Crown that they should be returned to Pennsylvania's jurisdiction after the Revolution.",
+      "min": -12,
+      "max": 1,
+      "explanation": "Delaware had historically been governed in conjunction with Pennsylvania, despite maintaining its own assembly."
+    },
+    {
+      "text": "You alleviate concerns of future economic instability.",
+      "min": -10,
+      "max": 20,
+      "explanation": "Delaware prefers reconciliation. The colony wants guarantees of future political stability."
+    }
+  ],
+  "Maryland": [
+    {
+      "text": "Mention the vital importance that the tobacco industry will play in reestablishing and soothing economic ties with Britain merchants after the Revolution.",
+      "min": -1,
+      "max": 20,
+      "explanation": "Maryland's economy depends heavily on tobacco exports."
+    },
+    {
+      "text": "You argue that American independence should create an exclusively Protestant nation.",
+      "min": -20,
+      "max": 20,
+      "explanation": "Maryland was largely Roman Catholic, although there was a great many Protestants as well."
+    },
+    {
+      "text": "Suggest that Maryland will maintain autonomy over its current internal political affairs and property rights.",
+      "min": -5,
+      "max": 15,
+      "explanation": "Many colonists are concerned about replacing the existing proprietary government with an uncertain political system."
+    },
+    {
+      "text": "You downplay Virginia's claims to western territory.",
+      "min": -1,
+      "max": 10,
+      "explanation": "This was an issue that would become particularly important during the later debate over the Articles of Confederation."
+    }
+  ],
+  "Virginia": [
+    {
+      "text": "You awkwardly hesitate when a Delegate questions Thomas Jefferson's 29th grievance Criticizing the British Crown and the American Slave trade.",
+      "min": -20,
+      "max": 1,
+      "explanation": "Many of Virginia's leading revolutionaries, including Thomas Jefferson's family were wealthy slaveholders. Despite Jefferson's proposals to abolish slavery, many Delegates recognized doing so would threaten their economic and political position."
+    },
+    {
+      "text": "You imply that the British Parliament has meddled too deeply in Virginia's internal affairs.",
+      "min": -5,
+      "max": 10,
+      "explanation": "Many Colonists felt that the British Parliament possessed no rightful authority to govern Virginia."
+    },
+    {
+      "text": "You downplay the role of Virginia's reliance on British financial credit and severing ties with British tobacco merchants.",
+      "min": -10,
+      "max": 10,
+      "explanation": "Virginia remained heavily reliant on British demand for tobacco exports."
+    },
+    {
+      "text": "You downplay Lord Dunmore's proclamation.",
+      "min": -10,
+      "max": 10,
+      "explanation": "Lord Dunmore's proclamation offered freedom to certain enslaved people who joined British forces which intensified slaveholders' fears."
+    }
+  ],
+  "North Carolina": [
+    {
+      "text": "You praise North Carolina for the Halifax Resolves.",
+      "min": -1,
+      "max": 20,
+      "explanation": "The Halifax Resolves of 1776 made North Carolina the first of any colony calling for independence from Great Britain."
+    },
+    {
+      "text": "A Delegate overhears you suggest before the event that North Carolina should shoulder the responsibility for its frontier without outside assistance.",
+      "min": -20,
+      "max": 2,
+      "explanation": ""
+    },
+    {
+      "text": "You fail to downplay the role Indigenous Nations will play after the revolution.",
+      "min": -15,
+      "max": 5,
+      "explanation": "North Carolina frontier communities often clash with Indigenous nations."
+    },
+    {
+      "text": "The delegates feel as though you are thumbing your nose at their agricultural economy, implying that it's too primitive to command equal influence in Congress.",
+      "min": -20,
+      "max": 2,
+      "explanation": "North Carolina is paranoid that other colonies will not respect its authority over local affairs post revolution."
+    }
+  ],
+  "South Carolina": [
+    {
+      "text": "You suggest that free States are inevitable that states with greater populations will maintain greater control of congress.",
+      "min": -20,
+      "max": 2,
+      "explanation": "Enslaved people constituted a majority of the South Carolina's population, making slaveholders especially fearful of challenges to their authority."
+    },
+    {
+      "text": "You commend South Carolina on their valuable rice and indigo exports.",
+      "min": -2,
+      "max": 10,
+      "explanation": ""
+    },
+    {
+      "text": "You suppress fears of a British Naval attack on Charleston.",
+      "min": -5,
+      "max": 15,
+      "explanation": "British Naval attacks were of great concern to South Carolina's delegates."
+    },
+    {
+      "text": "You awkwardly hesitate when a Delegate questions Thomas Jefferson's 29th grievance Criticizing the British Crown and the American Slave trade.",
+      "min": -20,
+      "max": 2,
+      "explanation": "Many of South Carolina's elite families were wealthy slaveholders. Despite Jefferson's proposals to abolish slavery, many Delegates recognized doing so would threaten their economic and political position in Congress."
+    }
+  ],
+  "Georgia": [
+    {
+      "text": "You suggest that Thomas Jefferson's condemnation of the slave trade must be adopted regardless of Georgia's objections.",
+      "min": -15,
+      "max": 5,
+      "explanation": "Many of Georgia's elite families were wealthy slaveholders. Despite Jefferson's proposals to abolish slavery, many Delegates recognized doing so would threaten their economic and political position in Congress."
+    },
+    {
+      "text": "You assure that the Continental Army will help protect Georgia's southern and western borders against British East-Florida and Indigenous Nations.",
+      "min": -2,
+      "max": 10,
+      "explanation": "Georgia faces threats from British-controlled East Florida and Indigenous nations along its frontier, and fears losing British protection."
+    },
+    {
+      "text": "You accidentally imply that Georgia is too young to govern itself and that South Carolina should help administer Georgia's affairs.",
+      "min": -15,
+      "max": 2,
+      "explanation": "Georgia's delegates are particularly offended by arguments suggesting that their colony was too insignificant to deserve assistance or equal recognition."
+    },
+    {
+      "text": "You recognize the significance of Georgia's plantation economy and its contributes to American prosperity.",
+      "min": -2,
+      "max": 10,
+      "explanation": "Georgia colonists were very proud of their economy and way of life."
+    }
+  ]
+}

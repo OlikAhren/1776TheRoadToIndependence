@@ -259,6 +259,16 @@ const GameApp: React.FC = () => {
             <p style={{ fontSize: '15px', lineHeight: 1.5, whiteSpace: 'pre-line', textAlign: 'center' }}>
               {debateResult.eventMessage ?? 'The debate proceeded without incident.'}
             </p>
+            {debateResult.angleText && (
+              <p style={{ fontSize: '14px', textAlign: 'center', margin: '8px 0' }}>
+                <strong>Debate angle:</strong> {debateResult.angleText}
+              </p>
+            )}
+            {debateResult.angleExplanation && (
+              <p style={{ fontSize: '13px', fontStyle: 'italic', textAlign: 'center', opacity: 0.8, margin: '4px 0 8px' }}>
+                {debateResult.angleExplanation}
+              </p>
+            )}
             <p style={{ fontSize: '13px', textAlign: 'center', opacity: 0.8 }}>
               {debateResult.daysTravel} day(s) elapsed · ${debateResult.cost} spent
             </p>

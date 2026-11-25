@@ -3,6 +3,7 @@ import { persist } from 'zustand/middleware'
 import type { GameState, Delegate, Colony, Difficulty, VictoryEntry } from '../types/game'
 import { containsBlockedWord } from '../data/wordFilter'
 import delegatesData from '../data/delegates.json'
+import debateAnglesData from '../data/debateAngles.json'
 
 // Convert JSON data to game format
 const initialDelegates: Delegate[] = delegatesData.delegates.map(d => ({
@@ -218,7 +219,7 @@ interface GameActions {
   setSelectedDelegateId: (delegateId: string | null) => void
   sendCorrespondence: (delegateId: string, targetColony: string) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
   meetPrivately: (delegateId: string) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
-  organizePublicDebate: (targetColonyName: string) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null }
+  organizePublicDebate: (targetColonyName: string, angleIndex: number) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null }
   dismissDebateResult: () => void
   showActionPopup: (title: string, message: string, tone?: 'success' | 'error') => void
   dismissActionPopup: () => void
@@ -560,7 +561,7 @@ export const useGameStore = create<GameState & GameActions>()(
         }
       },
       
-      organizePublicDebate: (targetColonyName) => {
+      organizePublicDebate: (targetColonyName, angleIndex) => {
         if (get().gameStatus !== 'playing') {
           return { success: false, cost: 0, daysTravel: 0, message: get().gameStatus === 'victory'
             ? 'Victory! The colonies have declared independence — restart the game to play again.'
@@ -602,11 +603,16 @@ export const useGameStore = create<GameState & GameActions>()(
         if (resources.personalFunds < finalCost) {
           return { success: false, cost: 0, daysTravel: 0, message: 'Insufficient personal funds!' }
         }
+        const angleList = (debateAnglesData as Record<string, { text: string; min: number; max: number; explanation: string }[]>)[targetColonyName]
+        const angle = angleList && Number.isInteger(angleIndex) && angleIndex >= 0 && angleIndex < angleList.length ? angleList[angleIndex] : null
+        const rollMin = angle ? angle.min : -5
+        const rollMax = angle ? angle.max : 20
+        const fmt = (n: number) => (n > 0 ? `+${n}` : `${n}`)
         const changes = new Map<string, { change: number; newSupport: number }>()
         const rollDelegates = targetDelegates.filter(d => !isProtectedDelegate(d))
         const excludedProtectedMembers = targetDelegates.filter(d => isProtectedDelegate(d)).map(d => d.name)
         rollDelegates.forEach(d => {
-          const roll2 = Math.floor(Math.random() * 26) - 5 // -5..+20, same as meetPrivately
+          const roll2 = rollMin + Math.floor(Math.random() * (rollMax - rollMin + 1)) // chosen angle range (default -5..+20)
           const newSupport = Math.min(100, Math.max(1, d.supportLevel + roll2))
           changes.set(d.id, { change: newSupport - d.supportLevel, newSupport })
         })
@@ -624,6 +630,9 @@ export const useGameStore = create<GameState & GameActions>()(
           debateResult: {
             colonyName: targetColonyName,
             eventMessage,
+            angleText: angle ? angle.text : '',
+            angleExplanation: angle ? angle.explanation : '',
+            angleOdds: `${fmt(rollMin)} to ${fmt(rollMax)}`,
             cost: finalCost,
             daysTravel: finalDays,
             delegateResults: rollDelegates.map(d => ({ name: d.name, change: changes.get(d.id)!.change, newSupport: changes.get(d.id)!.newSupport })),
