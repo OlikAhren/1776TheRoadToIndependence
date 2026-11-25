@@ -73,82 +73,100 @@ const Timeline: React.FC = () => {
         </span>
       </div>
       
-      {/* Timeline bar */}
-      <div style={{ position: 'relative', height: '40px', background: '#ddd', borderRadius: '4px', overflow: 'hidden' }}>
-        {/* Background track */}
-        <div style={{ 
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-          background: 'linear-gradient(to right, #2E7D32 0%, #F07500 50%, #EF5350 100%)',
-          opacity: 0.3
-        }} />
-        
-        {/* Progress fill */}
-        <div style={{ 
-          position: 'absolute',
-          left: 0,
-          top: 0,
-          bottom: 0,
-          width: `${progressPercent}%`,
-          background: 'linear-gradient(to right, #2E7D32, #FA8010)',
-          transition: 'width 0.3s ease'
-        }} />
-        
-        {/* Markers for key dates - positioned below the bar */}
-        {[0, 25, 50, 75, 100].map((markerPercent, index) => {
-          const markerDate = new Date(startDate.getTime() + (totalMs * markerPercent / 100))
-          const markerLabel = markerDate.getMonth() === 5 ? 'June' : 'July'
-          
-          return (
-            <div
-              key={index}
-              style={{
-                position: 'absolute',
-                left: `${markerPercent}%`,
-                top: 'calc(100% + 15px)',
-                transform: 'translateX(-50%)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center'
-              }}
-            >
-              <span style={{
-                fontSize: '11px',
-                fontWeight: 'bold',
-                color: '#2C1B18',
-                background: 'white',
-                padding: '2px 6px',
-                borderRadius: '4px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
-              }}>
-                {markerLabel} {markerDate.getDate()}
-              </span>
+      {/* Timeline bar, flanked by the two milestones it runs between */}
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+        <span
+          title="Lee Resolution — June 7, 1776"
+          aria-label="Lee Resolution, June 7 1776"
+          style={{ fontSize: '26px', lineHeight: '40px' }}
+        >
+          🏛️
+        </span>
+
+        <div style={{ flex: 1, minWidth: 0, position: 'relative', marginBottom: '30px' }}>
+          <div style={{ position: 'relative', height: '40px', background: '#ddd', borderRadius: '4px', overflow: 'hidden' }}>
+            {/* Background track */}
+            <div style={{ 
+              position: 'absolute',
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+              background: 'linear-gradient(to right, #2E7D32 0%, #F07500 50%, #EF5350 100%)',
+              opacity: 0.3
+            }} />
+            
+            {/* Progress fill */}
+            <div style={{ 
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              bottom: 0,
+              width: `${progressPercent}%`,
+              background: 'linear-gradient(to right, #2E7D32, #FA8010)',
+              transition: 'width 0.3s ease'
+            }} />
+
+            {/* Day counter badge */}
+            <div style={{
+              position: 'absolute',
+              left: `${progressPercent}%`,
+              top: '50%',
+              transform: `translate(calc(-50% - ${Math.max(0, progressPercent - 10)}px), -50%)`,
+              background: '#2C1B18',
+              color: 'white',
+              padding: '4px 8px',
+              borderRadius: '12px',
+              fontSize: '11px',
+              fontWeight: 'bold',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.3)'
+            }}>
+              Day {currentDay}/{totalDays}
             </div>
-          )
-        })}
-        
-        {/* Day counter badge */}
-        <div style={{
-          position: 'absolute',
-          left: `${progressPercent}%`,
-          top: '50%',
-          transform: `translate(calc(-50% - ${Math.max(0, progressPercent - 10)}px), -50%)`,
-          background: '#2C1B18',
-          color: 'white',
-          padding: '4px 8px',
-          borderRadius: '12px',
-          fontSize: '11px',
-          fontWeight: 'bold',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.3)'
-        }}>
-          Day {currentDay}/{totalDays}
+          </div>
+
+          {/* Markers for key dates - positioned below the bar */}
+          {[0, 25, 50, 75, 100].map((markerPercent, index) => {
+            const markerDate = new Date(startDate.getTime() + (totalMs * markerPercent / 100))
+            const markerLabel = markerDate.getMonth() === 5 ? 'June' : 'July'
+            
+            return (
+              <div
+                key={index}
+                style={{
+                  position: 'absolute',
+                  left: `${markerPercent}%`,
+                  top: 'calc(100% + 10px)',
+                  transform: 'translateX(-50%)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center'
+                }}
+              >
+                <span style={{
+                  fontSize: '11px',
+                  fontWeight: 'bold',
+                  color: '#2C1B18',
+                  background: 'white',
+                  padding: '2px 6px',
+                  borderRadius: '4px',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
+                }}>
+                  {markerLabel} {markerDate.getDate()}
+                </span>
+              </div>
+            )
+          })}
         </div>
+
+        <span
+          title="Declaration of Independence — July 2, 1776"
+          aria-label="Declaration of Independence, July 2 1776"
+          style={{ fontSize: '26px', lineHeight: '40px' }}
+        >
+          📜
+        </span>
       </div>
-      
-      {/* Date navigation hints */}
     </div>
   )
 }
