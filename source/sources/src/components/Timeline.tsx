@@ -59,7 +59,7 @@ const Timeline: React.FC = () => {
       background: '#FFF8DC',
       borderRadius: '8px',
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-      border: '2px solid #1A237E'
+      border: '3px solid #1A237E'
     }}>
       <div style={{ 
         display: 'flex', 
