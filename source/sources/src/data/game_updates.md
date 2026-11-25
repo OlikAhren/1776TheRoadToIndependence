@@ -238,6 +238,17 @@ Every colony now has an owner-written brief covering its economy, its concerns, 
 
 The text was parsed programmatically from the owner's brief (which listed each colony twice) and deduplicated, so no paragraph was retyped by hand. All thirteen colony names match the game's colony list exactly.
 
+## Feature 4: Delegate Portraits
+**Location**: `sources/public/delegate-images/`, `sources/src/data/delegateImages.json`, `src/components/DelegatePanel.tsx`, `tools/fetch_delegate_images.py` (new)
+
+**61 of the 64 delegates now have a portrait**, pulled from Wikipedia and Wikimedia Commons and shown in the delegate detail view — below the delegate's name and above the Support for Independence meter — in a gold-edged frame that matches the plaque styling.
+
+The three delegates with no portrait available anywhere on Wikipedia/Wikimedia (**John Penn** of North Carolina, **Charles Humphreys** of Pennsylvania, **John Rogers** of Maryland) show a styled placeholder with their initials instead.
+
+**How the images are chosen and checked.** `tools/fetch_delegate_images.py` fetches each delegate's article summary, then validates that the image is a portrait of *that* person: the artwork file name must carry the delegate's surname, and obvious non-portraits (maps, flags, seals, buildings, statues) are rejected. Where the article's lead image fails that check, the script falls back to a Commons file search. Every accepted image was additionally audited by hand against the delegate list, which caught and replaced five wrong matches — a fictional character, a modern sculptor, a 20th-century scholar, a 1921 portrait, and a different George Clinton.
+
+**Attribution**: `CREDITS.md` lists every delegate, source file, article link and licence. The images are mostly public-domain 18th-century paintings and engravings, with some Creative Commons works.
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared

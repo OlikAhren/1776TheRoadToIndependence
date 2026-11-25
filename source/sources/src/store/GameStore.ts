@@ -360,6 +360,9 @@ export const useGameStore = create<GameState & GameActions>()(
         if (isProtectedDelegate(delegate)) {
           return { success: false, cost: 0, daysTravel: 0, message: delegate.continentalCongressPresident ? 'The Continental Congress President cannot be contacted by correspondence.' : 'Committee of Five members cannot be contacted by correspondence.' }
         }
+        if (delegate.supportLevel >= 100) {
+          return { success: false, cost: 0, daysTravel: 0, message: `${delegate.name} already fully supports independence — no further contact is needed.` }
+        }
         
         // Check if there's a rider available in current colony
         const currentColonyData = colonies.find(c => c.name === currentColony)
@@ -465,6 +468,9 @@ export const useGameStore = create<GameState & GameActions>()(
         }
         if (isProtectedDelegate(delegate)) {
           return { success: false, cost: 0, daysTravel: 0, message: delegate.continentalCongressPresident ? 'The Continental Congress President cannot be met in private.' : 'Committee of Five members cannot be met in private.' }
+        }
+        if (delegate.supportLevel >= 100) {
+          return { success: false, cost: 0, daysTravel: 0, message: `${delegate.name} already fully supports independence — no further contact is needed.` }
         }
         
         // Meeting requires traveling to delegate's colony

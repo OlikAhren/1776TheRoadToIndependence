@@ -228,14 +228,19 @@ const DelegatePanel: React.FC = () => {
   // Portrait from Wikipedia / Wikimedia Commons (absent for a few delegates)
   const portrait = (delegateImages as Record<string, { file: string; page?: string; title?: string }>)[delegate.id]
 
+  // A delegate who already fully supports independence needs no further contact.
+  const fullySupportive = delegate.supportLevel >= 100
+
   // Deadline rule: a private meeting must be able to happen before July 2, 1776.
   const meetingTravelDays = getTravelTime(currentColony, delegate.colony)
   const meetingDaysRemaining = getDaysUntilDeadline()
   const canMeetByDeadline = meetingTravelDays <= meetingDaysRemaining
-  const meetBlocked = isCommitteeOfFive
+  const meetBlocked = isCommitteeOfFive || fullySupportive
   const meetEnabled = !meetBlocked && resources.personalFunds >= 3 && canMeetByDeadline
-  const meetTitle = meetBlocked
+  const meetTitle = isCommitteeOfFive
     ? (isPresident ? 'The Continental Congress President cannot be met in private.' : 'Committee of Five members cannot be met in private.')
+    : fullySupportive
+    ? `${delegate.name} already fully supports independence — no further contact is needed.`
     : !canMeetByDeadline
     ? `Cannot meet: the meeting would happen after July 2, 1776 (${meetingTravelDays} day ride, ${meetingDaysRemaining} days left)`
     : 'Meet this delegate in private'
@@ -373,9 +378,11 @@ const DelegatePanel: React.FC = () => {
           const daysRemaining = getDaysUntilDeadline()
           const canArriveByDeadline = mailTravelDays <= daysRemaining
 
-          const isButtonEnabled = !isCommitteeOfFive && currentLocationHasRider && hasSufficientSubsidy && canArriveByDeadline
+          const isButtonEnabled = !isCommitteeOfFive && !fullySupportive && currentLocationHasRider && hasSufficientSubsidy && canArriveByDeadline
           const mailTitle = isCommitteeOfFive
             ? (isPresident ? 'The Continental Congress President cannot be contacted by correspondence.' : 'Committee of Five members cannot be contacted by correspondence.')
+            : fullySupportive
+            ? `${delegate.name} already fully supports independence — no further contact is needed.`
             : !canArriveByDeadline
             ? `Cannot mail: the letter would arrive after July 2, 1776 (${mailTravelDays} day ride, ${daysRemaining} days left)`
             : 'Send a letter by Postal Rider'
