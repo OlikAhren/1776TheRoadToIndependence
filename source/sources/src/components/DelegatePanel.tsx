@@ -568,22 +568,7 @@ const DelegatePanel: React.FC = () => {
                 ))}
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: '20px' }}>
-                <button
-                  onClick={confirmApproach}
-                  disabled={approachChoice === null}
-                  title={approachChoice === null ? 'Choose an approach first' : undefined}
-                  style={{
-                    fontFamily: 'Georgia, serif',
-                    fontSize: '14px',
-                    fontWeight: 'bold',
-                    color: approachChoice === null ? '#666' : '#FFFFFF',
-                    backgroundColor: approachChoice === null ? '#ccc' : '#2C1B18',
-                    border: 'none',
-                    borderRadius: '6px',
-                    padding: '8px 16px',
-                    cursor: approachChoice === null ? 'not-allowed' : 'pointer'
-                  }}
-                >{approachPrompt.kind === 'mail' ? 'Send the Letter' : 'Meet in Private'}</button>
+                <button onClick={confirmApproach} style={{ fontFamily: 'Georgia, serif', fontSize: '14px', fontWeight: 'bold', color: '#FFFFFF', backgroundColor: '#2C1B18', border: 'none', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer' }}>{approachPrompt.kind === 'mail' ? 'Send the Letter' : 'Meet in Private'}</button>
                 <button onClick={() => { setApproachPrompt(null); setApproachChoice(null) }} style={{ fontFamily: 'Georgia, serif', fontSize: '14px', color: '#2C1B18', backgroundColor: 'transparent', border: '2px solid #2C1B18', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer' }}>Cancel</button>
               </div>
             </div>
