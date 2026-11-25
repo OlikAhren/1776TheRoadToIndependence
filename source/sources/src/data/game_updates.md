@@ -311,6 +311,20 @@ So recognising a delegate's legend from their biography is mechanically the best
 
 Each explanation was written to stop before July 2, 1776, so no bespoke angle reveals an event the player could not yet know. (Rodney's ride is dated July 2 itself, the final day of the game's window.)
 
+## Change: Delegate Biographies Labelled as Historical Notes
+**Location**: `src/data/postDeadline.ts` (new), `src/components/DelegatePanel.tsx`
+
+The delegate biographies are **kept in full** — they are useful educational context, and the
+player is expected to read them to judge which approach to take. What changed is how they are
+presented: every biography is now headed **"Historical Note"**, and where it mentions events
+after July 2, 1776 (signing the Declaration, later offices, presidencies, death) an extra
+italic line says so: *"Includes what happened after July 2, 1776 — the deadline this game is
+played against."*
+
+This appears in both the delegate detail view and the approach prompt. The detection uses the
+same pattern set as `tools/audit_delegate_bios.py`, shared in `src/data/postDeadline.ts`, so
+the interface and the audit stay in step. Nothing was deleted from the game data.
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared
