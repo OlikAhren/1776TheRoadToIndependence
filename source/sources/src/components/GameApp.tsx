@@ -168,7 +168,7 @@ const GameApp: React.FC = () => {
           style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}
         >
           <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '480px', textAlign: 'center' }}>
-            <h2 style={{ margin: '0 0 12px 0' }}>Failure</h2>
+            <h2 style={{ margin: '0 0 12px 0' }}>❌ Failure</h2>
             <p style={{ fontSize: '16px', lineHeight: 1.5 }}>
               Failure: The colonies were not united in time. {greenCount} of 13 colonies were green by {FAILURE_DEADLINE_LABEL}. {DIFFICULTY_SETTINGS[difficulty].label} required {DIFFICULTY_SETTINGS[difficulty].requiredGreenColonies}.
             </p>
