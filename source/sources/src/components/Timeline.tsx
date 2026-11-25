@@ -1,5 +1,6 @@
 import React from 'react'
 import { useGameStore, FAILURE_DEADLINE_LABEL } from '../store/GameStore'
+import ResourceHUD from './ResourceHUD'
 
 const Timeline: React.FC = () => {
   const { currentDate } = useGameStore()
@@ -125,10 +126,15 @@ const Timeline: React.FC = () => {
             </div>
           </div>
 
-          {/* Markers for key dates - positioned below the bar */}
-          {[0, 25, 50, 75, 100].map((markerPercent, index) => {
+          {/* Markers for the two ends of the timeline */}
+          {[0, 100].map((markerPercent, index) => {
             const markerDate = new Date(startDate.getTime() + (totalMs * markerPercent / 100))
-            const markerLabel = markerDate.getMonth() === 5 ? 'June' : 'July'
+            const monthName = markerDate.getMonth() === 5 ? 'June' : 'July'
+            const day = markerDate.getDate()
+            const suffix = day % 10 === 1 && day % 100 !== 11 ? 'st'
+              : day % 10 === 2 && day % 100 !== 12 ? 'nd'
+              : day % 10 === 3 && day % 100 !== 13 ? 'rd'
+              : 'th'
             
             return (
               <div
@@ -152,7 +158,7 @@ const Timeline: React.FC = () => {
                   borderRadius: '4px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
                 }}>
-                  {markerLabel} {markerDate.getDate()}
+                  {monthName} {day}{suffix}
                 </span>
               </div>
             )
@@ -167,6 +173,9 @@ const Timeline: React.FC = () => {
           📜
         </span>
       </div>
+
+      {/* Current location, funds and colonial support, inside the same panel */}
+      <ResourceHUD />
     </div>
   )
 }

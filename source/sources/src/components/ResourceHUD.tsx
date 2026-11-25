@@ -36,12 +36,8 @@ const ResourceHUD: React.FC = () => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: '15px 20px',
-      background: '#FFF8DC',
-      border: '3px solid #1A237E',
-      borderRadius: '16px',
-      marginBottom: '20px',
-      boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+      padding: '15px 0 0 0',
+      borderTop: '1px solid rgba(44,27,24,0.2)',
       gap: '20px',
       flexWrap: 'wrap'
     }}>

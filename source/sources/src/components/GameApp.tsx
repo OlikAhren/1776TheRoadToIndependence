@@ -1,7 +1,6 @@
 import React from 'react'
 import ColonyMap, { COLONY_MAP_HEIGHT } from './ColonyMap'
 import DelegatePanel from './DelegatePanel'
-import ResourceHUD from './ResourceHUD'
 import Timeline from './Timeline'
 import { useGameStore, DIFFICULTY_ORDER, DIFFICULTY_SETTINGS, FAILURE_DEADLINE_LABEL } from '../store/GameStore'
 
@@ -151,9 +150,6 @@ const GameApp: React.FC = () => {
 
       {/* Timeline Bar */}
       <Timeline />
-
-      {/* Resource HUD */}
-      <ResourceHUD />
 
       {/* Main Game Area */}
       <main style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
