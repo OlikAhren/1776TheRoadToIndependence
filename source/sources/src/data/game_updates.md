@@ -295,6 +295,22 @@ The chosen approach is echoed in the result popup as "Approach: {text}".
 
 The six profile tells and their twelve approach texts live in `src/data/delegateApproaches.json`.
 
+## Feature 7: Bespoke "Legend" Approaches for Sixteen Story-Critical Delegates
+**Location**: `src/data/delegateBespokeApproaches.json` (new), `src/store/GameStore.ts`, `src/components/DelegatePanel.tsx`
+
+Sixteen delegates now offer a THIRD approach drawn from their own legend, in addition to the two profile approaches: Caesar Rodney (DE), Samuel Adams and John Hancock (MA), Benjamin Franklin and Robert Morris (PA), Thomas Jefferson, Richard Henry Lee and Thomas Nelson Jr. (VA), Edward Rutledge (SC), Joseph Hewes and William Hooper (NC), Philip Livingston (NY), Charles Carroll and Samuel Chase (MD), Button Gwinnett (GA), Roger Sherman (CT).
+
+The third option appears as a plain radio button with no label, no odds and no hint that it is better. Choosing it resolves to a new **legend** band, which extends the positive end further than the good band:
+
+| Action | Neutral | Good | Bad | Legend (bespoke) |
+|---|---|---|---|---|
+| Mail | -1..+5 | -1..+10 | -10..+1 | **-1..+15** (17 values) |
+| Meeting | -5..+20 | -5..+25 | -25..+5 | **-5..+30** (36 values) |
+
+So recognising a delegate's legend from their biography is mechanically the best play. Only delegates with an entry can ever reach the legend band. The popup shows the approach as before, plus an **"Explanation:"** line carrying the delegate's story when the bespoke approach was chosen.
+
+Each explanation was written to stop before July 2, 1776, so no bespoke angle reveals an event the player could not yet know. (Rodney's ride is dated July 2 itself, the final day of the game's window.)
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared

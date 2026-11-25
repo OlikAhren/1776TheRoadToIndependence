@@ -4,19 +4,34 @@ import type { GameState, Delegate, Colony, Difficulty, VictoryEntry } from '../t
 import { containsBlockedWord } from '../data/wordFilter'
 import delegatesData from '../data/delegates.json'
 import debateAnglesData from '../data/debateAngles.json'
+import delegateBespokeApproaches from '../data/delegateBespokeApproaches.json'
 
 // ---- Approach bands (TUNE HERE) -------------------------------------------------------
-// Support-roll range [min, max] (inclusive) per action. 'good' keeps the neutral shape and
-// extends the positive end by +5; 'bad' is the mirror of 'good' (negate and swap the ends).
-// No approach chosen (or an unexpected value) uses 'neutral' = the original behaviour.
-export type ApproachChoice = 'good' | 'bad'
+// Support-roll range [min, max] (inclusive) per action. Four bands, all sharing the neutral shape:
+//   neutral = original behaviour (no approach chosen, or an unexpected value).
+//   good    = neutral with the positive end extended by +5.
+//   bad     = mirror of good (negate and swap the ends).
+//   legend  = the bespoke, legend-drawn approach of a story-critical delegate; extends the positive
+//             end further than good (mail up to +15, meeting up to +30).
+// The player-facing choice ids are 'good' | 'bad' | 'bespoke'; 'bespoke' resolves to the legend band
+// only for delegates that have an entry in delegateBespokeApproaches.json (see resolveApproachBand).
+export type ApproachChoice = 'good' | 'bad' | 'bespoke'
+export type ApproachBand = 'neutral' | 'good' | 'bad' | 'legend'
 export const APPROACH_BANDS = {
-  mail:    { neutral: [-1, 5],  good: [-1, 10], bad: [-10, 1] },
-  meeting: { neutral: [-5, 20], good: [-5, 25], bad: [-25, 5] },
+  mail:    { neutral: [-1, 5],  good: [-1, 10], bad: [-10, 1], legend: [-1, 15] },
+  meeting: { neutral: [-5, 20], good: [-5, 25], bad: [-25, 5], legend: [-5, 30] },
 } as const
-export const rollSupportChange = (kind: 'mail' | 'meeting', approach?: unknown): number => {
+const bespokeTable = delegateBespokeApproaches as unknown as Record<string, { band?: string }>
+// Single place that maps a chosen option id to a band for a given delegate.
+export const resolveApproachBand = (delegateId: string, approach?: unknown): ApproachBand => {
+  if (approach === 'good') return 'good'
+  if (approach === 'bad') return 'bad'
+  if (approach === 'bespoke' && bespokeTable[delegateId]?.band === 'legend') return 'legend'
+  return 'neutral'
+}
+export const rollSupportChange = (kind: 'mail' | 'meeting', band: ApproachBand = 'neutral'): number => {
   const bands = APPROACH_BANDS[kind]
-  const [min, max] = approach === 'good' ? bands.good : approach === 'bad' ? bands.bad : bands.neutral
+  const [min, max] = bands[band] ?? bands.neutral
   return min + Math.floor(Math.random() * (max - min + 1))
 }
 // ----------------------------------------------------------------------------------------
@@ -233,8 +248,8 @@ const MEETING_GOOD_LUCK_EVENTS = [
 interface GameActions {
   selectColony: (colonyId: string) => void
   setSelectedDelegateId: (delegateId: string | null) => void
-  sendCorrespondence: (delegateId: string, targetColony: string, approach?: 'good' | 'bad') => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
-  meetPrivately: (delegateId: string, approach?: 'good' | 'bad') => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
+  sendCorrespondence: (delegateId: string, targetColony: string, approach?: ApproachChoice) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
+  meetPrivately: (delegateId: string, approach?: ApproachChoice) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
   organizePublicDebate: (targetColonyName: string, angleIndex: number) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null }
   dismissDebateResult: () => void
   showActionPopup: (title: string, message: string, tone?: 'success' | 'error') => void
@@ -421,7 +436,7 @@ export const useGameStore = create<GameState & GameActions>()(
         const finalCost = finalTravelDays * 1 // $1 per day of travel
         
         // Calculate random support change for letter recipient (-1 to +5)
-        const supportChange = rollSupportChange('mail', approach)
+        const supportChange = rollSupportChange('mail', resolveApproachBand(delegateId, approach))
         const updatedDelegates = delegates.map(d => 
           d.id === delegateId ? { ...d, supportLevel: Math.min(100, Math.max(1, d.supportLevel + supportChange)) } : d
         )
@@ -535,7 +550,7 @@ export const useGameStore = create<GameState & GameActions>()(
         }
         
         // Calculate random support change (-5 to +20)
-        const supportChange = rollSupportChange('meeting', approach)
+        const supportChange = rollSupportChange('meeting', resolveApproachBand(delegateId, approach))
         const newSupportLevel = Math.min(100, Math.max(1, delegate.supportLevel + supportChange))
         
         // Deduct costs from PERSONAL FUNDS (not from any colony's postal subsidies)

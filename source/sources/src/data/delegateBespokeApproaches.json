@@ -1,0 +1,82 @@
+{
+  "de_caesar_rodney": {
+    "text": "Appeal to his legend as Delaware's ever-ready emergency delegate — the man who once rode all night to break a deadlock.",
+    "explanation": "When Delaware's two present delegates were deadlocked on July 2, 1776, Rodney rode 80 miles overnight through a thunderstorm while suffering from asthma and facial cancer to cast the tie-breaking vote for independence.",
+    "band": "legend"
+  },
+  "ma_samuel_adams": {
+    "text": "Appeal to the plain-spoken patriot who answers the Crown with the voice of the people.",
+    "explanation": "Adams was the Boston merchant who told Governor Hutchinson in 1773 that the people of Massachusetts would 'consult the Lord and the people' for the removal of the statue, and who spent the years since keeping colonial resistance alive through the tea party and the Intolerable Acts.",
+    "band": "legend"
+  },
+  "ma_john_hancock": {
+    "text": "Appeal to his standing as the most visible patriot in the room.",
+    "explanation": "As the richest and best-known patriot in America, Hancock's wealth, his public daring and his command of every room gave his open support more weight with delegates from other colonies than any other man's.",
+    "band": "legend"
+  },
+  "pa_benjamin_franklin": {
+    "text": "Appeal to the printer who has spent a lifetime on the public good.",
+    "explanation": "Franklin made his name as a printer and publisher — 'Poor Richard' and the Pennsylvania Gazette taught him to win ordinary people over with plain, useful argument, and he had spent the last year in Philadelphia laying the ground for French aid.",
+    "band": "legend"
+  },
+  "pa_robert_morris": {
+    "text": "Appeal to the merchant who staked his own fortune and his own credit on the Revolution.",
+    "explanation": "Morris pledged his own credit, and ultimately a great part of his fortune, to keep the Continental Army supplied — paying bills that Congress could not, and earning the name of the Revolution's financier.",
+    "band": "legend"
+  },
+  "va_thomas_jefferson": {
+    "text": "Appeal to the philosopher who has spent his nights drafting a declaration of natural rights.",
+    "explanation": "Jefferson had been at work on the draft since early June, from his own library and his own pen, and he held the document to be a statement of principle rather than a piece of factional politics.",
+    "band": "legend"
+  },
+  "va_richard_henry_lee": {
+    "text": "Appeal to the orator who first moved the Congress toward declaring the colonies free.",
+    "explanation": "In June 1776 Richard Henry Lee moved in the Congress for the resolution that these United Colonies are, and of right ought to be, free and independent States — the motion that opened the whole question of independence.",
+    "band": "legend"
+  },
+  "va_thomas_nelson": {
+    "text": "Appeal to the colonel who carries his county's militia and Virginia's cause alike.",
+    "explanation": "Nelson was among the Virginia Convention delegates who carried the colony's resolution for independence in June 1776, and he commanded militia in his home county while the Convention was still sitting.",
+    "band": "legend"
+  },
+  "sc_edward_rutledge": {
+    "text": "Appeal to the cautious man whose assent the rest of the South waits on.",
+    "explanation": "Rutledge was South Carolina's careful delegate, the man whose agreement the other southern delegates watched for before committing their own colonies — and whose caution was as much a measure of what his ports stood to lose as of his own character.",
+    "band": "legend"
+  },
+  "nc_joseph_hewes": {
+    "text": "Appeal to the pragmatist who votes the colony's interest, whatever the instructions say.",
+    "explanation": "North Carolina's delegates were sent to Congress instructed to oppose independence, but Hewes and William Hooper judged the latitude their own colony's resolves gave them and voted their own consciences instead.",
+    "band": "legend"
+  },
+  "nc_william_hooper": {
+    "text": "Appeal to the delegate who signed his own instructions and then defended them at home.",
+    "explanation": "Hooper was one of the two North Carolina delegates who argued in Congress for independence against their own instructions, and who returned to the provincial assembly to press the colony to follow the course he had taken in Philadelphia.",
+    "band": "legend"
+  },
+  "ny_philip_livingston": {
+    "text": "Appeal to the New York statesman who holds the Congress together while the colonies decide.",
+    "explanation": "Livingston chaired the committee that reported the Declaration, and he was one of the cautious New Yorkers who tied the colony's hands to the Congress until the moment was ripe — a man who moved when the moving would hold.",
+    "band": "legend"
+  },
+  "md_charles_carroll": {
+    "text": "Appeal to the man whose standing makes his assent worth having.",
+    "explanation": "Carroll of Carrollton was the only Roman Catholic among the delegates, and the most prominent Catholic layman in the colonies — a family that had held Maryland's honours since colonial Maryland began, and whose opinion other men's opinions weighed against.",
+    "band": "legend"
+  },
+  "md_samuel_chase": {
+    "text": "Appeal to the patriot who would not be moved by the Governor's threats.",
+    "explanation": "When the Governor of Maryland demanded that Chase be silenced by the mob, he refused and kept his seat in the Congress — and he stood with the delegation that carried Maryland's instructions for independence.",
+    "band": "legend"
+  },
+  "ga_button_gwinnett": {
+    "text": "Appeal to the man who carries his new colony in the House.",
+    "explanation": "Gwinnett was Georgia's leading voice for independence in the spring of 1776, and he drafted the preamble to the colony's new constitution, which opened with the grievances against the Crown rather than any plea for the King's mercy.",
+    "band": "legend"
+  },
+  "ct_roger_sherman": {
+    "text": "Appeal to the man who reasons compromise into consensus.",
+    "explanation": "Sherman was the pragmatist of the Congress — the man who worked out the compromise that could bring the colonies together, and who held that a majority of them could bind the rest.",
+    "band": "legend"
+  }
+}

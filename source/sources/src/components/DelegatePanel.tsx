@@ -3,6 +3,7 @@ import { useGameStore, DEFAULT_COLONY_ID, DEBATE_EXTRA_DAYS, DEBATE_COST_PER_DEL
 import colonyOverviews from '../data/colonyOverviews.json'
 import debateAngles from '../data/debateAngles.json'
 import delegateApproaches from '../data/delegateApproaches.json'
+import delegateBespoke from '../data/delegateBespokeApproaches.json'
 import delegateImages from '../data/delegateImages.json'
 import type { Delegate } from '../types/game'
 
@@ -45,7 +46,7 @@ const DelegatePanel: React.FC = () => {
   const [debatePromptOpen, setDebatePromptOpen] = React.useState(false)
   const [selectedAngle, setSelectedAngle] = React.useState(0)
   const [approachPrompt, setApproachPrompt] = React.useState<{ kind: 'mail' | 'meet'; delegateId: string } | null>(null)
-  const [approachChoice, setApproachChoice] = React.useState<'good' | 'bad' | null>(null)
+  const [approachChoice, setApproachChoice] = React.useState<'good' | 'bad' | 'bespoke' | null>(null)
   React.useEffect(() => { setApproachPrompt(null); setApproachChoice(null) }, [selectedDelegate])
   const approachTable = delegateApproaches as unknown as Record<string, { tell: string; good: { text: string }; bad: { text: string } }>
   const currentColonyName = colonies.find(c => c.id === effectiveColonyId)?.name || ''
@@ -264,13 +265,17 @@ const DelegatePanel: React.FC = () => {
   if (!delegate) return null
 
   const approachInfo = approachTable[delegate.profile]
-  const approachLine = (c: 'good' | 'bad' | undefined) => (c && approachInfo ? `Approach: ${approachInfo[c].text}\n` : '')
+  const bespokeInfo = (delegateBespoke as unknown as Record<string, { text: string; explanation: string } | undefined>)[delegate.id]
+  const approachLine = (c: 'good' | 'bad' | 'bespoke' | undefined) => {
+    if (c === 'bespoke') return bespokeInfo ? `Approach: ${bespokeInfo.text}\nExplanation: ${bespokeInfo.explanation}\n` : ''
+    return c && approachInfo ? `Approach: ${approachInfo[c].text}\n` : ''
+  }
   const openApproach = (kind: 'mail' | 'meet') => {
-    if (!approachInfo) { if (kind === 'mail') runMail(undefined); else runMeet(undefined); return }
+    if (!approachInfo && !bespokeInfo) { if (kind === 'mail') runMail(undefined); else runMeet(undefined); return }
     setApproachChoice(null)
     setApproachPrompt({ kind, delegateId: delegate.id })
   }
-  const runMail = (approach: 'good' | 'bad' | undefined) => {
+  const runMail = (approach: 'good' | 'bad' | 'bespoke' | undefined) => {
     const result = sendCorrespondence(delegate.id, delegate.colony, approach)
     if (!result.success) {
       showActionPopup("Letter not sent", result.message || "Cannot send correspondence.", 'error')
@@ -286,7 +291,7 @@ const DelegatePanel: React.FC = () => {
             `Estimated delivery time: ${result.daysTravel} day(s)`, 'success')
     }
   }
-  const runMeet = (approach: 'good' | 'bad' | undefined) => {
+  const runMeet = (approach: 'good' | 'bad' | 'bespoke' | undefined) => {
     const result = meetPrivately(delegate.id, approach)
     if (!result.success) {
       showActionPopup('Meeting not possible', result.message || `Insufficient personal funds! You need $${result.cost || 3} to meet privately.`, 'error')
@@ -535,7 +540,7 @@ const DelegatePanel: React.FC = () => {
             • Deducts from Committee of Five Funds ($3/day) • Required Ride Time: {meetingTravelDays} Day{meetingTravelDays === 1 ? '' : 's'} • Updates current location
           </div>
         </button>
-        {approachPrompt && approachPrompt.delegateId === delegate.id && approachInfo && (
+        {approachPrompt && approachPrompt.delegateId === delegate.id && (approachInfo || bespokeInfo) && (
           <div
             role="dialog"
             aria-modal="true"
@@ -552,10 +557,13 @@ const DelegatePanel: React.FC = () => {
                 </div>
               )}
               <div role="radiogroup" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {(['good', 'bad'] as const).map(k => (
+                {([
+                  ...(approachInfo ? [['good', approachInfo.good.text], ['bad', approachInfo.bad.text]] as const : []),
+                  ...(bespokeInfo ? [['bespoke', bespokeInfo.text]] as const : []),
+                ]).map(([k, text]) => (
                   <label key={k} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', fontSize: '14px', lineHeight: 1.4 }}>
                     <input type="radio" name="delegate-approach" checked={approachChoice === k} onChange={() => setApproachChoice(k)} style={{ marginTop: '3px' }} />
-                    <span>{approachInfo[k].text}</span>
+                    <span>{text}</span>
                   </label>
                 ))}
               </div>
