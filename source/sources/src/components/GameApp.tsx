@@ -255,26 +255,26 @@ const GameApp: React.FC = () => {
           style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}
         >
           <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '480px', width: '90%', maxHeight: '85vh', overflowY: 'auto' }}>
-            <h2 style={{ margin: '0 0 12px 0', textAlign: 'center' }}>Public Debate in {debateResult.colonyName}</h2>
-            <p style={{ fontSize: '15px', lineHeight: 1.5, whiteSpace: 'pre-line', textAlign: 'center' }}>
+            <h2 style={{ margin: '0 0 12px 0', textAlign: 'center', fontSize: '22px' }}>Public Debate in {debateResult.colonyName}</h2>
+            <p style={{ fontSize: '13px', lineHeight: 1.5, whiteSpace: 'pre-line', textAlign: 'center' }}>
               {debateResult.eventMessage ?? 'The debate proceeded without incident.'}
             </p>
             {debateResult.angleText && (
-              <p style={{ fontSize: '14px', textAlign: 'center', margin: '8px 0' }}>
+              <p style={{ fontSize: '12px', textAlign: 'center', margin: '8px 0' }}>
                 <strong>Debate Angle:</strong> {debateResult.angleText}
               </p>
             )}
             {debateResult.angleExplanation && (
-              <p style={{ fontSize: '14px', fontStyle: 'italic', textAlign: 'center', opacity: 0.8, margin: '4px 0 8px' }}>
+              <p style={{ fontSize: '12px', fontStyle: 'italic', textAlign: 'center', opacity: 0.8, margin: '4px 0 8px' }}>
                 <strong style={{ fontStyle: 'normal' }}>Explanation:</strong> {debateResult.angleExplanation}
               </p>
             )}
-            <p style={{ fontSize: '13px', textAlign: 'center', opacity: 0.8 }}>
+            <p style={{ fontSize: '11px', textAlign: 'center', opacity: 0.8 }}>
               {debateResult.daysTravel} day(s) elapsed · ${debateResult.cost} spent
             </p>
             <div style={{ marginTop: '12px' }}>
               {debateResult.delegateResults.map((r, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid rgba(44,27,24,0.15)', fontSize: '15px' }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '5px 0', borderBottom: '1px solid rgba(44,27,24,0.15)', fontSize: '11px' }}>
                   <span>{r.name}</span>
                   <span style={{ fontWeight: 'bold', color: r.change > 0 ? '#2E7D32' : r.change < 0 ? '#EF5350' : '#2C1B18' }}>
                     {r.change > 0 ? `+${r.change}` : r.change} (now {r.newSupport})
@@ -283,12 +283,12 @@ const GameApp: React.FC = () => {
               ))}
             </div>
             {debateResult.excludedProtectedMembers && debateResult.excludedProtectedMembers.length > 0 && (
-              <p style={{ fontSize: '13px', textAlign: 'center', fontStyle: 'italic', marginTop: '10px' }}>
+              <p style={{ fontSize: '11px', textAlign: 'center', fontStyle: 'italic', marginTop: '10px' }}>
                 Committee of Five and Continental Congress President members maintain their full support: {debateResult.excludedProtectedMembers.join(', ')}.
               </p>
             )}
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
-              <button onClick={dismissDebateResult} style={{ fontFamily: 'Georgia, serif', fontSize: '14px', fontWeight: 'bold', color: '#FFFFFF', backgroundColor: '#2C1B18', border: 'none', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer' }}>Close</button>
+              <button onClick={dismissDebateResult} style={{ fontFamily: 'Georgia, serif', fontSize: '12px', fontWeight: 'bold', color: '#FFFFFF', backgroundColor: '#2C1B18', border: 'none', borderRadius: '6px', padding: '7px 16px', cursor: 'pointer' }}>Close</button>
             </div>
           </div>
         </div>
