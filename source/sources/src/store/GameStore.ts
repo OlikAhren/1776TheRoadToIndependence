@@ -173,7 +173,7 @@ const writeLedger = (entries: VictoryEntry[]): boolean => {
 export const DEBATE_EXTRA_DAYS = 2
 export const DEBATE_COST_PER_DELEGATE = 1
 export const DEBATE_GOOD_LUCK_TAVERN = 'Local Tavern provides Free Food for the Delegates'
-export const DEBATE_GOOD_LUCK_FASTER = 'Event preparation goes faster than expected'
+export const DEBATE_GOOD_LUCK_FASTER = 'Event prepared faster than expected'
 export const DEBATE_BAD_LUCK_LONGER = 'A longer than expected political debate breaks out'
 export const DEBATE_BAD_LUCK_WEATHER = 'Bad weather delays the debate'
 
