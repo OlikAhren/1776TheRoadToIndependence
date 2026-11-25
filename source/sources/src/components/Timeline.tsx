@@ -84,7 +84,7 @@ const Timeline: React.FC = () => {
           🏛️
         </span>
 
-        <div style={{ flex: 1, minWidth: 0, position: 'relative', marginBottom: '30px' }}>
+        <div style={{ flex: 1, minWidth: 0, position: 'relative', marginBottom: '44px' }}>
           <div style={{ position: 'relative', height: '40px', background: '#ddd', borderRadius: '4px', overflow: 'hidden' }}>
             {/* Background track */}
             <div style={{ 
@@ -143,10 +143,12 @@ const Timeline: React.FC = () => {
                   position: 'absolute',
                   left: `${markerPercent}%`,
                   top: 'calc(100% + 10px)',
-                  transform: 'translateX(-50%)',
+                  // keep each label inside the bar: start-aligned at the left end,
+                  // end-aligned at the right end, so neither wraps or overlaps the emoji
+                  transform: markerPercent === 0 ? 'translateX(0)' : 'translateX(-100%)',
                   display: 'flex',
                   flexDirection: 'column',
-                  alignItems: 'center'
+                  alignItems: markerPercent === 0 ? 'flex-start' : 'flex-end'
                 }}
               >
                 <span style={{
@@ -156,7 +158,8 @@ const Timeline: React.FC = () => {
                   background: 'white',
                   padding: '2px 6px',
                   borderRadius: '4px',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
+                  whiteSpace: 'nowrap'
                 }}>
                   {monthName} {day}{suffix}
                 </span>

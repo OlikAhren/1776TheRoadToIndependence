@@ -86,7 +86,7 @@ const GameApp: React.FC = () => {
   return (
     <div style={{ fontFamily: 'Georgia, serif', maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
       {/* Header */}
-      <header style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '30px' }}>
+      <header style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '18px' }}>
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '6px', color: '#2C1B18', fontSize: '13px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontWeight: 'bold' }}>Difficulty Setting</span>
