@@ -21,7 +21,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent / "sources"
 SRC = ROOT / "src"
 OUT_IMG = ROOT / "public" / "delegate-images"
 OUT_JSON = SRC / "data" / "delegateImages.json"
-UA = "OpenClaw-FoundationBot/1.0 (Declaration Game asset fetch; contact: olik.parents@gmail.com)"
+UA = "DeclarationGamePortraitFetch/1.0 (asset fetch; contact: olik.parents@gmail.com)"
 API = "https://en.wikipedia.org/w/api.php"
 REST = "https://en.wikipedia.org/api/rest_v1/page/summary/"
 

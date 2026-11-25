@@ -258,19 +258,11 @@ The store refuses the action as well, so the rule holds even if the interface is
 
 **Public debates are deliberately exempt.** A debate still rolls every non-protected delegate in the state, including those already at 100%, so a negative roll can pull a delegate back down and drop a colony out of green. The owner's intent (2026-11-24) is that a debate can still "mess up public opinion", so this asymmetry between letters/meetings and debates is intended, not an oversight.
 
-## Rule: One Public Debate Per Colony
+## Reverted: One Public Debate Per Colony
 **Location**: `src/store/GameStore.ts`, `src/components/DelegatePanel.tsx`, `src/types/game.ts`
+**Applied**: 2026-11-20, then reverted the same night
 
-Each colony may host **one public debate per game**. After a colony has hosted its debate, the "Organize a Public Debate" button greys out when you view that colony, with the explanation "*State* has already hosted a public debate." The store enforces the same rule ("*State* has already hosted a public debate.") before any cost, date or support change, so it holds even if the interface is bypassed.
-
-The list of colonies that have hosted their debate lives in the saved game (persisted with the rest of the state) and is cleared by a restart.
-
-## Fix: Delegate Portraits Under Sub-Path Hosting
-**Location**: `src/data/delegateImages.json`, `src/components/DelegatePanel.tsx`, `tools/fetch_delegate_images.py`
-
-Portrait paths were stored as absolute (`/delegate-images/...`). On the local dev server the site root is the app root, so they worked; on **GitHub Pages**, where the game lives at `/<repo>/`, the browser resolved them against the **domain root** and every portrait 404'd (broken image icons on other machines).
-
-Paths are now **relative** (`delegate-images/...`) and rendered through Vite's `import.meta.env.BASE_URL`, so the browser resolves them against the current page URL. This works from a repository sub-path, from a custom domain, and from the local dev server alike.
+A one-debate-per-colony limit was added and later reverted at the owner's request. Colonies may host **as many public debates as the player likes** again. The `debatedColonies` state field, the store refusal ("*State* has already hosted a public debate.") and the greyed-out button were all removed.
 
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
@@ -383,5 +375,5 @@ Paths are now **relative** (`delegate-images/...`) and rendered through Vite's `
 ---
 
 *Document created: October 19, 2026*
-*Developer: Jefferson (OpenClaw AI Assistant)*
+*Developer: Jefferson*
 *Project: Declaration Game - The Road to Independence*

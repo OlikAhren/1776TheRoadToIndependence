@@ -28,4 +28,4 @@ GitHub Pages rebuilds automatically, usually within a minute.
 
 ## Credits
 
-Built with the assistance of Foundation Bot (OpenClaw).
+Olik Ahren

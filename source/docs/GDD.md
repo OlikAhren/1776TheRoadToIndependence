@@ -2703,7 +2703,7 @@ The design emphasizes:
 - **Historical authenticity** with transparent handling of uncertain details
 - **Accessibility** across platforms with thoughtful UI/UX design
 - **Replayability** through branching narratives and variable conditions
-- **Feasibility** for solo developer using modern frameworks and AI assistance
+- **Feasibility** for a solo developer using modern frameworks
 
 This document serves as complete blueprint for implementation. Next step: begin prototype development focusing on core turn loop and delegate interaction mechanics.
 

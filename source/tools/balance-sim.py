@@ -32,7 +32,7 @@ Usage: python3 tools/balance-sim.py [runs]
 import json, random, sys, collections
 from pathlib import Path
 
-SRC = Path("/home/brandon/.openclaw/workspace/Declaration Game/sources/src")
+SRC = Path(__file__).resolve().parent.parent / "sources" / "src"
 
 # ---------------------------------------------------------------- static data
 data = json.loads((SRC / "data/delegates.json").read_text())

@@ -207,7 +207,7 @@ When historical details are uncertain, the game will flag them rather than inven
 ## Contact Information
 
 **Project Lead:** Brandon Vanderford  
-**Workspace:** /home/brandon/.openclaw/workspace/Declaration Game  
+**Workspace:** the `Declaration Game` project folder (sources live in `sources/`)  
 **Repository:** Git-enabled in workspace root
 
 For questions about this beta package or to discuss development priorities, review the full GDD.md for detailed specifications.
