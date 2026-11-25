@@ -75,7 +75,7 @@ const ResourceHUD: React.FC = () => {
           {coloniesWithMajority}/13 colonies
         </div>
         <div style={{ 
-          width: '55%',
+          width: '38%',
           margin: '0 auto',
           height: '8px', 
           background: '#ddd', 
