@@ -201,6 +201,7 @@ const defaultGameState: GameState = {
   selectedDelegateId: null,
   difficulty: 'easy',
   gameStatus: 'playing',
+  failureReason: null,
   victoryRecord: null,
   victoryName: null,
   victoryRecorded: false,
@@ -295,6 +296,7 @@ export const useGameStore = create<GameState & GameActions>()(
           selectedColonyId: DEFAULT_COLONY_ID,
           selectedDelegateId: null,
           gameStatus: 'playing',
+          failureReason: null,
           victoryRecord: null,
           victoryName: null,
           victoryRecorded: false,
@@ -342,20 +344,27 @@ export const useGameStore = create<GameState & GameActions>()(
       },
 
       checkEndConditions: () => {
-        const { currentDate, difficulty, gameStatus, resources } = get()
+        const { currentDate, difficulty, gameStatus, resources, failureReason } = get()
         const required = DIFFICULTY_SETTINGS[difficulty].requiredGreenColonies
         const now = parseGameDate(currentDate)
         const deadline = new Date('July 2, 1776')
+        // Running out of money ends the game on or before July 1: with under $3 left the
+        // Committee of Five cannot pay for even the shortest private meeting.
+        const fundsFloorDate = new Date('July 1, 1776')
+        const bankrupt = resources.personalFunds < 3 && !!now && now.getTime() <= fundsFloorDate.getTime()
         let next: 'playing' | 'failed' | 'victory'
+        let nextReason: 'colonies' | 'funds' | null = null
         if (get().getGreenColonyCount() >= required) next = 'victory'
-        else if (!!now && now.getTime() >= deadline.getTime()) next = 'failed'
+        else if (bankrupt) { next = 'failed'; nextReason = 'funds' }
+        else if (!!now && now.getTime() >= deadline.getTime()) { next = 'failed'; nextReason = 'colonies' }
         else next = 'playing'
-        if (next === gameStatus) return
+        if (next === gameStatus && nextReason === failureReason) return
         if (next === 'victory') {
           // Snapshot of the winning run for the plaque. No funds are awarded.
           const { colonies } = get()
           set({
             gameStatus: 'victory',
+            failureReason: null,
             victoryName: null,
             victoryRecorded: false,
             victoryRecord: {
@@ -368,7 +377,7 @@ export const useGameStore = create<GameState & GameActions>()(
             }
           })
         } else {
-          set({ gameStatus: next })
+          set({ gameStatus: next, failureReason: nextReason })
         }
       },
 
@@ -770,6 +779,7 @@ export const useGameStore = create<GameState & GameActions>()(
         selectedDelegateId: state.selectedDelegateId,
         difficulty: state.difficulty,
         gameStatus: state.gameStatus,
+        failureReason: state.failureReason,
         victoryRecord: state.victoryRecord,
         victoryName: state.victoryName,
         victoryRecorded: state.victoryRecorded

@@ -9,6 +9,8 @@ const GameApp: React.FC = () => {
   const [restartPending, setRestartPending] = React.useState(false)
   const difficulty = useGameStore(state => state.difficulty)
   const gameStatus = useGameStore(state => state.gameStatus)
+  const failureReason = useGameStore(state => state.failureReason)
+  const resources = useGameStore(state => state.resources)
   const setDifficulty = useGameStore(state => state.setDifficulty)
   const debateResult = useGameStore(state => state.debateResult)
   const dismissDebateResult = useGameStore(state => state.dismissDebateResult)
@@ -170,7 +172,9 @@ const GameApp: React.FC = () => {
           <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '480px', textAlign: 'center' }}>
             <h2 style={{ margin: '0 0 12px 0' }}>❌ Failure</h2>
             <p style={{ fontSize: '16px', lineHeight: 1.5 }}>
-              Failure: The colonies were not united in time. {greenCount} of 13 colonies were green by {FAILURE_DEADLINE_LABEL}. {DIFFICULTY_SETTINGS[difficulty].label} required {DIFFICULTY_SETTINGS[difficulty].requiredGreenColonies}.
+              {failureReason === 'funds'
+                ? `Failure: The Committee of Five ran out of funds. Only $${resources.personalFunds} remained, and not even the shortest private meeting could be paid for. ${DIFFICULTY_SETTINGS[difficulty].label} required ${DIFFICULTY_SETTINGS[difficulty].requiredGreenColonies} colonies green by ${FAILURE_DEADLINE_LABEL}.`
+                : `Failure: The colonies were not united in time. ${greenCount} of 13 colonies were green by ${FAILURE_DEADLINE_LABEL}. ${DIFFICULTY_SETTINGS[difficulty].label} required ${DIFFICULTY_SETTINGS[difficulty].requiredGreenColonies}.`}
             </p>
             <p style={{ fontSize: '16px', fontWeight: 'bold' }}>You must restart the game to continue.</p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '16px' }}>

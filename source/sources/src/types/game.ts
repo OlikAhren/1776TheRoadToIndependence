@@ -50,6 +50,8 @@ export interface TravelEvent {
 
 export type Difficulty = 'easy' | 'medium' | 'hard' | 'extreme'
 export type GameStatus = 'playing' | 'failed' | 'victory'
+// Why the game ended in failure: the colonies were not united in time, or the money ran out.
+export type FailureReason = 'colonies' | 'funds' | null
 
 export interface GameState {
   currentDate: string
@@ -70,6 +72,7 @@ export interface GameState {
   selectedDelegateId?: string | null
   difficulty: Difficulty
   gameStatus: GameStatus
+  failureReason: FailureReason
   victoryRecord: VictoryRecord | null
   victoryName: string | null
   victoryRecorded: boolean
