@@ -199,7 +199,6 @@ const GameApp: React.FC = () => {
                 <div><strong>Difficulty:</strong> {victoryRecord.difficultyLabel} ({DIFFICULTY_SETTINGS[victoryRecord.difficultyKey].tier})</div>
                 <div><strong>Date:</strong> {victoryRecord.date}</div>
                 <div><strong>Colonies:</strong> {victoryRecord.greenColonies} of 13 green</div>
-                <div><strong>Remaining Postal Subsidies:</strong> ${victoryRecord.remainingSubsidies}</div>
                 <div><strong>Remaining Committee of Five Funds:</strong> ${victoryRecord.personalFunds}</div>
               </div>
             )}
