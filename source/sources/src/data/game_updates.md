@@ -249,6 +249,15 @@ The three delegates with no portrait available anywhere on Wikipedia/Wikimedia (
 
 **Attribution**: `CREDITS.md` lists every delegate, source file, article link and licence. The images are mostly public-domain 18th-century paintings and engravings, with some Creative Commons works.
 
+## Rule: No Further Contact With Fully Supportive Delegates
+**Location**: `src/store/GameStore.ts`, `src/components/DelegatePanel.tsx`
+
+A delegate who has reached **100% support** no longer needs to be contacted. Both the **Mail Correspondence** and **Meet in Private** buttons are greyed out for them, with the explanation "*Name* already fully supports independence — no further contact is needed."
+
+The store refuses the action as well, so the rule holds even if the interface is bypassed: `sendCorrespondence` and `meetPrivately` return "*Name* already fully supports independence — no further contact is needed." and change nothing (no cost, no rider movement, no date advance, no support roll). This also stops a fully supportive delegate from being dragged *down* by a negative support roll.
+
+**Public debates are deliberately exempt.** A debate still rolls every non-protected delegate in the state, including those already at 100%, so a negative roll can pull a delegate back down and drop a colony out of green. The owner's intent (2026-11-24) is that a debate can still "mess up public opinion", so this asymmetry between letters/meetings and debates is intended, not an oversight.
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared

@@ -76,6 +76,8 @@ export interface GameState {
   // Increments on every colony click so UI can react to repeat clicks of the same colony.
   colonySelectionCount: number
   debateResult: DebateResult | null  // transient popup data, never persisted
+  // Colonies that have already hosted a public debate this game (one debate each).
+  debatedColonies: string[]
   actionPopup: { title: string; message: string; tone: 'success' | 'error' } | null  // transient popup data, never persisted
 }
 

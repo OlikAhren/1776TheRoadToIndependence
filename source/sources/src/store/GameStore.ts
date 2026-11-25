@@ -174,6 +174,7 @@ const defaultGameState: GameState = {
   victoryRecorded: false,
   colonySelectionCount: 0,
   debateResult: null,
+  debatedColonies: [],
   actionPopup: null
 }
 
@@ -268,6 +269,7 @@ export const useGameStore = create<GameState & GameActions>()(
           victoryRecorded: false,
           colonySelectionCount: 0,
           debateResult: null,
+          debatedColonies: [],
           actionPopup: null
           // difficulty intentionally kept so the player can retry the same setting
         })
@@ -568,6 +570,9 @@ export const useGameStore = create<GameState & GameActions>()(
         }
         const { delegates, resources, currentDate, currentColony } = get()
         const targetDelegates = delegates.filter(d => d.colony === targetColonyName)
+        if (get().debatedColonies.includes(targetColonyName)) {
+          return { success: false, cost: 0, daysTravel: 0, message: `${targetColonyName} has already hosted a public debate.` }
+        }
         if (targetDelegates.length === 0) {
           return { success: false, cost: 0, daysTravel: 0, message: 'There are no delegates in that state to debate.' }
         }
@@ -628,7 +633,9 @@ export const useGameStore = create<GameState & GameActions>()(
             daysTravel: finalDays,
             delegateResults: rollDelegates.map(d => ({ name: d.name, change: changes.get(d.id)!.change, newSupport: changes.get(d.id)!.newSupport })),
             excludedProtectedMembers
-          }
+          },
+          // each colony may host only one public debate per game
+          debatedColonies: [...get().debatedColonies, targetColonyName]
         })
         get().checkEndConditions()
         return { success: true, cost: finalCost, daysTravel: finalDays, eventMessage }
@@ -732,7 +739,8 @@ export const useGameStore = create<GameState & GameActions>()(
         gameStatus: state.gameStatus,
         victoryRecord: state.victoryRecord,
         victoryName: state.victoryName,
-        victoryRecorded: state.victoryRecorded
+        victoryRecorded: state.victoryRecorded,
+        debatedColonies: state.debatedColonies
       })
     }
   )
