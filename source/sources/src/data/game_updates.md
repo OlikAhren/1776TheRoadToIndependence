@@ -265,6 +265,13 @@ Each colony may host **one public debate per game**. After a colony has hosted i
 
 The list of colonies that have hosted their debate lives in the saved game (persisted with the rest of the state) and is cleared by a restart.
 
+## Fix: Delegate Portraits Under Sub-Path Hosting
+**Location**: `src/data/delegateImages.json`, `src/components/DelegatePanel.tsx`, `tools/fetch_delegate_images.py`
+
+Portrait paths were stored as absolute (`/delegate-images/...`). On the local dev server the site root is the app root, so they worked; on **GitHub Pages**, where the game lives at `/<repo>/`, the browser resolved them against the **domain root** and every portrait 404'd (broken image icons on other machines).
+
+Paths are now **relative** (`delegate-images/...`) and rendered through Vite's `import.meta.env.BASE_URL`, so the browser resolves them against the current page URL. This works from a repository sub-path, from a custom domain, and from the local dev server alike.
+
 ## Feature 1: Auto-Return to Delegate List
 **Location**: `GameStore.ts` - `sendCorrespondence()` and `meetPrivately()` functions
 - After any action completes successfully, `selectedDelegateId` is automatically cleared

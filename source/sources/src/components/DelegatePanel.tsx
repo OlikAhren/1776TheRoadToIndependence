@@ -5,7 +5,7 @@ import delegateImages from '../data/delegateImages.json'
 import type { Delegate } from '../types/game'
 
 const DelegatePanel: React.FC = () => {
-  const { delegates, resources, getDelegateForColony, sendCorrespondence, meetPrivately, selectedColonyId, currentColony, colonies, getTravelTime, getDaysUntilDeadline, colonySelectionCount, organizePublicDebate, gameStatus, showActionPopup, debatedColonies } = useGameStore()
+  const { delegates, resources, getDelegateForColony, sendCorrespondence, meetPrivately, selectedColonyId, currentColony, colonies, getTravelTime, getDaysUntilDeadline, colonySelectionCount, organizePublicDebate, gameStatus, showActionPopup } = useGameStore()
   const [debateMessage, setDebateMessage] = React.useState<string | null>(null)
   const [selectedDelegate, setSelectedDelegate] = React.useState<string | null>(null)
   // The colony brief starts expanded for every colony the player visits.
@@ -56,11 +56,8 @@ const DelegatePanel: React.FC = () => {
   const debateBaseDays = currentColonyName ? currentRideTime + DEBATE_EXTRA_DAYS : 0
   const debateDaysRemaining = getDaysUntilDeadline()
   let debateDisabledReason: string | null = null
-  const alreadyDebated = debatedColonies.includes(currentColonyName)
   if (gameStatus !== 'playing') {
     debateDisabledReason = 'The game is over — restart to play again.'
-  } else if (alreadyDebated) {
-    debateDisabledReason = `${currentColonyName} has already hosted a public debate.`
   } else if (colonyDelegates.length === 0) {
     debateDisabledReason = 'There are no delegates in this state.'
   } else if (debateBaseDays > debateDaysRemaining) {
