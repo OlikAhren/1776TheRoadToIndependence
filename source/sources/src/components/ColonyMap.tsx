@@ -3,7 +3,7 @@ import { useGameStore } from '../store/GameStore'
 import type { Colony } from '../types/game'
 
 // Single source of truth for the map panel height (the delegate panel matches it).
-export const COLONY_MAP_HEIGHT = 1000
+export const COLONY_MAP_HEIGHT = 640
 
 const ColonyMap: React.FC = () => {
   const { colonies, selectedColonyId, selectColony, delegates } = useGameStore()
@@ -72,10 +72,10 @@ const ColonyMap: React.FC = () => {
       {/* Grid of colony info boxes - takes up remaining space */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gridTemplateRows: 'repeat(5, 1fr)', // Increased from 4 to 5 to fit all fields
-        gap: '14px',
-        height: 'calc(100% - 60px)'
+        gridTemplateColumns: 'repeat(5, 1fr)',
+        gridTemplateRows: 'repeat(3, auto)', // 13 colonies: 5 across, 3 rows down
+        gap: '10px',
+        alignContent: 'start'
       }}>
         {sortedColonies.map((colony: Colony) => {
           const isSelected = selectedColonyId === colony.id
@@ -96,72 +96,55 @@ const ColonyMap: React.FC = () => {
               style={{
                 cursor: 'pointer',
                 background: bgColor,
-                borderRadius: '12px',
-                padding: '9px',
+                borderRadius: '10px',
+                padding: '6px 7px',
                 boxShadow: isSelected 
                   ? `0 0 16px ${bgColor}, 0 6px 18px rgba(0,0,0,0.3)`
                   : `0 4px 10px rgba(0,0,0,0.2)`,
                 border: `2px solid ${isSelected ? '#FFD700' : '#2C1B18'}`,
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '8px',
+                gap: '4px',
                 transition: 'all 0.3s ease',
                 transform: (isHovered || isSelected) ? 'translateY(-3px)' : 'translateY(0)',
                 zIndex: (isHovered || isSelected) ? 5 : 1
               }}
             >
               {/* Colony name header */}
-              <div style={{ borderBottom: '2px solid rgba(0,0,0,0.15)', paddingBottom: '5px', flexShrink: 0 }}>
-                <h3 style={{ margin: 0, fontSize: '15px', fontWeight: 'bold', color: '#2C1B18' }}>
+              <div style={{ borderBottom: '2px solid rgba(0,0,0,0.15)', paddingBottom: '3px', flexShrink: 0 }}>
+                <h3 style={{ margin: 0, fontSize: '13px', fontWeight: 'bold', color: '#2C1B18', lineHeight: 1.15 }}>
                   {colony.name}
                 </h3>
               </div>
               
               {/* Delegate count */}
               <div style={{ flexShrink: 0 }}>
-                <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#2C1B18' }}>
+                <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#2C1B18', whiteSpace: 'nowrap' }}>
                   👥 {colony.delegateIds.length} Delegates
                 </span>
               </div>
               
               {/* Support level - shows fraction of delegates at 100% */}
               <div style={{ flexShrink: 0 }}>
-                <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#2C1B18' }}>
+                <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#2C1B18', whiteSpace: 'nowrap' }}>
                   📊 Support: {hundredPercentDelegates}/{totalDelegates}
                 </span>
               </div>
               
               {/* Postal Subsidies */}
               <div style={{ flexShrink: 0 }}>
-                <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#2C1B18' }}>
+                <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#2C1B18', whiteSpace: 'nowrap' }}>
                   💰 Subsidy: ${colony.postalSubsidies}
                 </span>
               </div>
               
               {/* Postal Riders */}
               <div style={{ flexShrink: 0 }}>
-                <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#2C1B18' }}>
+                <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#2C1B18', whiteSpace: 'nowrap' }}>
                   🐎 Riders: {colony.postalRiders}
                 </span>
               </div>
-              
-              {/* Spacer to push click hint to bottom */}
-              <div style={{ flex: 1 }} />
-              
-              {/* Click hint */}
-              <div style={{
-                fontSize: '9px',
-                color: '#444',
-                fontStyle: 'italic',
-                marginTop: 'auto',
-                borderTop: '1px dashed rgba(0,0,0,0.15)',
-                paddingTop: '5px',
-                textAlign: 'center',
-                flexShrink: 0
-              }}>
-                Click to view details
-              </div>
-            </div>
+</div>
           )
         })}
       </div>
