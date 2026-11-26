@@ -88,7 +88,7 @@ const GameApp: React.FC = () => {
   return (
     <div style={{ fontFamily: 'Georgia, serif', maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
       {/* Header */}
-      <header style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '22px' }}>
+      <header style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px' }}>
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '6px', color: '#2C1B18', fontSize: '13px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontWeight: 'bold' }}>Difficulty Setting</span>
@@ -118,7 +118,7 @@ const GameApp: React.FC = () => {
         </div>
         <div style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: '28px', fontWeight: 'bold', color: '#2C1B18', margin: '0' }}>1776: The Road To Independence</h1>
-          <p style={{ fontSize: '14px', opacity: 0.7, marginTop: '5px' }}>Manage colonial support through strategic correspondence and private meetings</p>
+          <p style={{ fontSize: '14px', opacity: 0.7, margin: '5px 0 0 0' }}>Manage colonial support through strategic correspondence and private meetings</p>
         </div>
         <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', gap: '8px', alignItems: 'flex-start' }}>
           <button
