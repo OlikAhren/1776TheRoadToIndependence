@@ -3,7 +3,7 @@ import { useGameStore } from '../store/GameStore'
 import type { Colony } from '../types/game'
 
 // Single source of truth for the map panel height (the delegate panel matches it).
-export const COLONY_MAP_HEIGHT = 800
+export const COLONY_MAP_HEIGHT = 880
 
 const ColonyMap: React.FC = () => {
   const { colonies, selectedColonyId, selectColony, delegates } = useGameStore()
@@ -56,13 +56,16 @@ const ColonyMap: React.FC = () => {
       border: '3px solid #1A237E',
       boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
       fontFamily: '"Georgia", serif',
-      padding: '10px 18px 24px 18px'
+      padding: '10px 18px 24px 18px',
+      display: 'flex',
+      flexDirection: 'column'
     }}>
       
       {/* Map Title - centered at top */}
       <div style={{
         textAlign: 'center',
-        marginBottom: '12px'
+        marginBottom: '12px',
+        flexShrink: 0
       }}>
         <h2 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold', color: '#2C1B18' }}>
           🗺️ The Thirteen Colonies - 1776
@@ -75,7 +78,8 @@ const ColonyMap: React.FC = () => {
         gridTemplateColumns: 'repeat(5, 1fr)',
         gridTemplateRows: 'repeat(3, auto)', // 13 colonies: 5 across, 3 rows down
         gap: '16px',
-        alignContent: 'start'
+        alignContent: 'start',
+        flexShrink: 0
       }}>
         {sortedColonies.map((colony: Colony) => {
           const isSelected = selectedColonyId === colony.id
@@ -147,6 +151,29 @@ const ColonyMap: React.FC = () => {
 </div>
           )
         })}
+      </div>
+
+      {/* Original Thirteen Colonies map */}
+      <div style={{
+        flex: 1,
+        minHeight: 0,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: '14px',
+        paddingTop: '4px'
+      }}>
+        <img
+          src="/original-thirteen-colonies.png"
+          alt="Map of the original thirteen colonies"
+          title="The Original Thirteen Colonies"
+          style={{
+            maxWidth: '100%',
+            maxHeight: '100%',
+            objectFit: 'contain',
+            display: 'block'
+          }}
+        />
       </div>
     </div>
   )
