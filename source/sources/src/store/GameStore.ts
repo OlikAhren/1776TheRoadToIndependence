@@ -96,7 +96,7 @@ const createColoniesMap = (): Colony[] => {
     "Virginia": 25,
     "Maryland": 25,
     "North Carolina": 25,
-    "South Carolina": 25,
+    "South Carolina": 20,
     "Georgia": 25,
     "Pennsylvania": 20,
     "New York": 20,
