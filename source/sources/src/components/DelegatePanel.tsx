@@ -318,7 +318,7 @@ const DelegatePanel: React.FC = () => {
       const sign = (result.supportChange ?? 0) >= 0 ? '+' : ''
       const supportIcon = (result.supportChange ?? 0) > 0 ? ' ✅' : ((result.supportChange ?? 0) < 0 ? ' ⚠️' : '')
       message += `Support for Independence: ${sign}${result.supportChange ?? 0}%${supportIcon}\n\n`
-      message += `Final Cost: $${result.cost}\n`
+      message += `Committee of Five Cost: $${result.cost}\n`
       message += `Final Travel Time: ${result.daysTravel} day(s)`
       showActionPopup(`Met with ${delegate.name}`, message, 'success')
     }
