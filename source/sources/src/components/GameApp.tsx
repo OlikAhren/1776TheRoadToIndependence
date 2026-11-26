@@ -38,7 +38,7 @@ const GameApp: React.FC = () => {
         <p style={{ fontSize: '14px', textAlign: 'center', fontStyle: 'italic' }}>No victories recorded yet.</p>
       ) : [...ledger].reverse().map((e, i) => (
         <div key={i} style={{ padding: '6px 0', borderBottom: '1px solid rgba(44,27,24,0.15)', fontSize: '13px' }}>
-          <strong>{e.name}</strong> — {e.difficultyLabel} · {e.date} · {e.greenColonies}/13 green · ${e.personalFunds}
+          <strong>{e.name}</strong> — Difficulty: {e.difficultyLabel} ({DIFFICULTY_SETTINGS[e.difficultyKey].tier}) · Finished: {e.date} · {e.greenColonies}/13 Colonies · ${e.personalFunds} Remaining
         </div>
       ))}
     </div>
