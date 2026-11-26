@@ -56,7 +56,7 @@ const ResourceHUD: React.FC = () => {
       {/* Committee of Five Funds */}
       <div style={{ textAlign: 'center' }}>
         <div style={{ fontSize: '11px', opacity: 0.7, marginBottom: '5px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Committee of Five Funds</div>
-        <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#D4AF37' }}>
+        <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#2E7D32' }}>
           ${resources.personalFunds}
         </div>
         <div style={{ fontSize: '9px', opacity: 0.6, marginTop: '3px' }}>
