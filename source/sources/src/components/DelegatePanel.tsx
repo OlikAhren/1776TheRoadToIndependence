@@ -1,9 +1,10 @@
 import React from 'react'
-import { useGameStore, DEFAULT_COLONY_ID, DEBATE_EXTRA_DAYS, DEBATE_COST_PER_DELEGATE, FAILURE_DEADLINE_LABEL } from '../store/GameStore'
+import { useGameStore, DEFAULT_COLONY_ID, DEBATE_EXTRA_DAYS, DEBATE_COST_PER_DELEGATE, FAILURE_DEADLINE_LABEL, APPROACH_BANDS } from '../store/GameStore'
 import colonyOverviews from '../data/colonyOverviews.json'
 import debateAngles from '../data/debateAngles.json'
 import delegateApproaches from '../data/delegateApproaches.json'
 import delegateBespoke from '../data/delegateBespokeApproaches.json'
+import delegateApproachOptions from '../data/delegateApproachOptions.json'
 import { hasPostDeadlineContent } from '../data/postDeadline'
 import delegateImages from '../data/delegateImages.json'
 import type { Delegate } from '../types/game'
@@ -47,7 +48,7 @@ const DelegatePanel: React.FC = () => {
   const [debatePromptOpen, setDebatePromptOpen] = React.useState(false)
   const [selectedAngle, setSelectedAngle] = React.useState(0)
   const [approachPrompt, setApproachPrompt] = React.useState<{ kind: 'mail' | 'meet'; delegateId: string } | null>(null)
-  const [approachChoice, setApproachChoice] = React.useState<'neutral' | 'good' | 'bad' | 'bespoke' | null>(null)
+  const [approachChoice, setApproachChoice] = React.useState<number | null>(null)
   React.useEffect(() => { setApproachPrompt(null); setApproachChoice(null) }, [selectedDelegate])
   const approachTable = delegateApproaches as unknown as Record<string, { tell: string; good: { text: string }; bad: { text: string } }>
   const currentColonyName = colonies.find(c => c.id === effectiveColonyId)?.name || ''
@@ -268,22 +269,45 @@ const DelegatePanel: React.FC = () => {
   const approachInfo = approachTable[delegate.profile]
   const bespokeInfo = (delegateBespoke as unknown as Record<string, { text: string; explanation: string } | undefined>)[delegate.id]
   const neutralApproachText = `Appeal to ${delegate.name}'s ${delegate.colony} values.`
-  const approachLine = (c: 'neutral' | 'good' | 'bad' | 'bespoke' | undefined) => {
-    if (c === 'bespoke') return bespokeInfo ? `Approach: ${bespokeInfo.text}\nExplanation: ${bespokeInfo.explanation}\n` : ''
-    if (c === 'neutral') return `Approach: ${neutralApproachText}\n`
-    return c && approachInfo ? `Approach: ${approachInfo[c].text}\n` : ''
+
+  // One option carries its own wording AND its own roll range, so the same option can behave
+  // differently when mailing and when meeting in person.
+  type ApproachOption = { text: string; band: 'neutral' | 'good' | 'bad' | 'legend'; min: number; max: number }
+  const perDelegateOptions = (delegateApproachOptions as unknown as Record<string, { mail?: ApproachOption[]; meet?: ApproachOption[] } | undefined>)[delegate.id]
+
+  // Fallback used only if a delegate has no entry in delegateApproachOptions.json: the old
+  // profile-based wording with the shared band ranges.
+  const fallbackOptions = (kind: 'mail' | 'meet'): ApproachOption[] => {
+    const bands = APPROACH_BANDS[kind === 'mail' ? 'mail' : 'meeting']
+    const opts: ApproachOption[] = [
+      { text: neutralApproachText, band: 'neutral', min: bands.neutral[0], max: bands.neutral[1] }
+    ]
+    if (approachInfo) {
+      opts.push({ text: approachInfo.good.text, band: 'good', min: bands.good[0], max: bands.good[1] })
+      opts.push({ text: approachInfo.bad.text, band: 'bad', min: bands.bad[0], max: bands.bad[1] })
+    }
+    if (bespokeInfo) {
+      opts.push({ text: bespokeInfo.text, band: 'legend', min: bands.legend[0], max: bands.legend[1] })
+    }
+    return opts
   }
-  const approachOptions: { value: 'neutral' | 'good' | 'bad' | 'bespoke'; text: string }[] = [
-    { value: 'neutral', text: neutralApproachText },
-    ...(approachInfo ? [{ value: 'good' as const, text: approachInfo.good.text }, { value: 'bad' as const, text: approachInfo.bad.text }] : []),
-    ...(bespokeInfo ? [{ value: 'bespoke' as const, text: bespokeInfo.text }] : []),
-  ]
+  const optionsFor = (kind: 'mail' | 'meet'): ApproachOption[] => {
+    const fromFile = perDelegateOptions?.[kind]
+    return fromFile && fromFile.length > 0 ? fromFile : fallbackOptions(kind)
+  }
+  const approachLine = (opt: ApproachOption | undefined) => {
+    if (!opt) return ''
+    let line = `Approach: ${opt.text}\n`
+    if (opt.band === 'legend' && bespokeInfo) line += `Explanation: ${bespokeInfo.explanation}\n`
+    return line
+  }
   const openApproach = (kind: 'mail' | 'meet') => {
-    if (!approachInfo && !bespokeInfo) { if (kind === 'mail') runMail(undefined); else runMeet(undefined); return }
-    setApproachChoice('neutral')
+    const opts = optionsFor(kind)
+    if (opts.length === 0) { if (kind === 'mail') runMail(undefined); else runMeet(undefined); return }
+    setApproachChoice(0)
     setApproachPrompt({ kind, delegateId: delegate.id })
   }
-  const runMail = (approach: 'neutral' | 'good' | 'bad' | 'bespoke' | undefined) => {
+  const runMail = (approach: ApproachOption | undefined) => {
     const result = sendCorrespondence(delegate.id, delegate.colony, approach)
     if (!result.success) {
       showActionPopup("Letter not sent", result.message || "Cannot send correspondence.", 'error')
@@ -299,7 +323,7 @@ const DelegatePanel: React.FC = () => {
             `Estimated delivery time: ${result.daysTravel} day(s)`, 'success')
     }
   }
-  const runMeet = (approach: 'neutral' | 'good' | 'bad' | 'bespoke' | undefined) => {
+  const runMeet = (approach: ApproachOption | undefined) => {
     const result = meetPrivately(delegate.id, approach)
     if (!result.success) {
       showActionPopup('Meeting not possible', result.message || `Insufficient personal funds! You need $${result.cost || 3} to meet privately.`, 'error')
@@ -326,7 +350,8 @@ const DelegatePanel: React.FC = () => {
   const confirmApproach = () => {
     if (!approachPrompt) return
     const kind = approachPrompt.kind
-    const choice = approachChoice ?? undefined
+    const opts = optionsFor(kind)
+    const choice = approachChoice === null ? undefined : opts[approachChoice]
     setApproachPrompt(null)
     setApproachChoice(null)
     if (kind === 'mail') runMail(choice); else runMeet(choice)
@@ -577,9 +602,9 @@ const DelegatePanel: React.FC = () => {
                 </div>
               )}
               <div role="radiogroup" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {approachOptions.map(o => (
-                  <label key={o.value} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', fontSize: '14px', lineHeight: 1.4 }}>
-                    <input type="radio" name="delegate-approach" checked={approachChoice === o.value} onChange={() => setApproachChoice(o.value)} style={{ marginTop: '3px' }} />
+                {optionsFor(approachPrompt.kind).map((o, oi) => (
+                  <label key={oi} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', fontSize: '14px', lineHeight: 1.4 }}>
+                    <input type="radio" name="delegate-approach" checked={approachChoice === oi} onChange={() => setApproachChoice(oi)} style={{ marginTop: '3px' }} />
                     <span>{o.text}</span>
                   </label>
                 ))}

@@ -1,0 +1,2870 @@
+{
+  "nh_josiah_bartlett": {
+    "mail": [
+      {
+        "text": "Appeal to Josiah Bartlett's New Hampshire values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Josiah Bartlett's New Hampshire values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "nh_william_whipple": {
+    "mail": [
+      {
+        "text": "Appeal to William Whipple's New Hampshire values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to William Whipple's New Hampshire values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "nh_matthew_thornton": {
+    "mail": [
+      {
+        "text": "Appeal to Matthew Thornton's New Hampshire values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Matthew Thornton's New Hampshire values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ma_john_hancock": {
+    "mail": [
+      {
+        "text": "Appeal to John Hancock's Massachusetts values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to his standing as the most visible patriot in the room.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to John Hancock's Massachusetts values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his standing as the most visible patriot in the room.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "ma_samuel_adams": {
+    "mail": [
+      {
+        "text": "Appeal to Samuel Adams's Massachusetts values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the plain-spoken patriot who answers the Crown with the voice of the people.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Samuel Adams's Massachusetts values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the plain-spoken patriot who answers the Crown with the voice of the people.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "ma_john_adams": {
+    "mail": [
+      {
+        "text": "Appeal to John Adams's Massachusetts values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to John Adams's Massachusetts values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ma_elbridge_gerry": {
+    "mail": [
+      {
+        "text": "Appeal to Elbridge Gerry's Massachusetts values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Elbridge Gerry's Massachusetts values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ma_robert_treat_paine": {
+    "mail": [
+      {
+        "text": "Appeal to Robert Treat Paine's Massachusetts values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Robert Treat Paine's Massachusetts values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ri_stephen_hopkins": {
+    "mail": [
+      {
+        "text": "Appeal to Stephen Hopkins's Rhode Island values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Stephen Hopkins's Rhode Island values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ri_william_ellery": {
+    "mail": [
+      {
+        "text": "Appeal to William Ellery's Rhode Island values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to William Ellery's Rhode Island values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ct_roger_sherman": {
+    "mail": [
+      {
+        "text": "Appeal to Roger Sherman's Connecticut values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the man who reasons compromise into consensus.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Roger Sherman's Connecticut values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the man who reasons compromise into consensus.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "ct_samuel_huntington": {
+    "mail": [
+      {
+        "text": "Appeal to Samuel Huntington's Connecticut values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Samuel Huntington's Connecticut values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ct_william_williams": {
+    "mail": [
+      {
+        "text": "Appeal to William Williams's Connecticut values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to William Williams's Connecticut values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ct_oliver_wolcott": {
+    "mail": [
+      {
+        "text": "Appeal to Oliver Wolcott's Connecticut values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Oliver Wolcott's Connecticut values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ny_william_floyd": {
+    "mail": [
+      {
+        "text": "Appeal to William Floyd's New York values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to William Floyd's New York values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ny_philip_livingston": {
+    "mail": [
+      {
+        "text": "Appeal to Philip Livingston's New York values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the New York statesman who holds the Congress together while the colonies decide.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Philip Livingston's New York values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the New York statesman who holds the Congress together while the colonies decide.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "ny_francis_lewis": {
+    "mail": [
+      {
+        "text": "Appeal to Francis Lewis's New York values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Francis Lewis's New York values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ny_lewis_morris": {
+    "mail": [
+      {
+        "text": "Appeal to Lewis Morris's New York values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Lewis Morris's New York values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "nj_richard_stockton": {
+    "mail": [
+      {
+        "text": "Appeal to Richard Stockton's New Jersey values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Richard Stockton's New Jersey values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "nj_john_witherspoon": {
+    "mail": [
+      {
+        "text": "Appeal to John Witherspoon's New Jersey values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to John Witherspoon's New Jersey values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "nj_francis_hopkinson": {
+    "mail": [
+      {
+        "text": "Appeal to Francis Hopkinson's New Jersey values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Francis Hopkinson's New Jersey values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "nj_john_hart": {
+    "mail": [
+      {
+        "text": "Appeal to John Hart's New Jersey values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to John Hart's New Jersey values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "nj_abraham_clark": {
+    "mail": [
+      {
+        "text": "Appeal to Abraham Clark's New Jersey values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Abraham Clark's New Jersey values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_robert_morris": {
+    "mail": [
+      {
+        "text": "Appeal to Robert Morris's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the merchant who staked his own fortune and his own credit on the Revolution.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Robert Morris's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the merchant who staked his own fortune and his own credit on the Revolution.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "pa_benjamin_rush": {
+    "mail": [
+      {
+        "text": "Appeal to Benjamin Rush's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Benjamin Rush's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_benjamin_franklin": {
+    "mail": [
+      {
+        "text": "Appeal to Benjamin Franklin's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the printer who has spent a lifetime on the public good.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Benjamin Franklin's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the printer who has spent a lifetime on the public good.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "pa_john_morton": {
+    "mail": [
+      {
+        "text": "Appeal to John Morton's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to John Morton's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_george_clymer": {
+    "mail": [
+      {
+        "text": "Appeal to George Clymer's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to George Clymer's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_james_smith": {
+    "mail": [
+      {
+        "text": "Appeal to James Smith's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to James Smith's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_george_taylor": {
+    "mail": [
+      {
+        "text": "Appeal to George Taylor's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to George Taylor's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_james_wilson": {
+    "mail": [
+      {
+        "text": "Appeal to James Wilson's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to James Wilson's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_george_ross": {
+    "mail": [
+      {
+        "text": "Appeal to George Ross's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to George Ross's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "de_caesar_rodney": {
+    "mail": [
+      {
+        "text": "Appeal to Caesar Rodney's Delaware values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Caesar Rodney's Delaware values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "de_george_read": {
+    "mail": [
+      {
+        "text": "Appeal to George Read's Delaware values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to George Read's Delaware values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "de_thomas_mckean": {
+    "mail": [
+      {
+        "text": "Appeal to Thomas McKean's Delaware values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Thomas McKean's Delaware values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "md_samuel_chase": {
+    "mail": [
+      {
+        "text": "Appeal to Samuel Chase's Maryland values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the patriot who would not be moved by the Governor's threats.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Samuel Chase's Maryland values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the patriot who would not be moved by the Governor's threats.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "md_william_paca": {
+    "mail": [
+      {
+        "text": "Appeal to William Paca's Maryland values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to William Paca's Maryland values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "md_thomas_stone": {
+    "mail": [
+      {
+        "text": "Appeal to Thomas Stone's Maryland values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Thomas Stone's Maryland values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "md_charles_carroll": {
+    "mail": [
+      {
+        "text": "Appeal to Charles Carroll's Maryland values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the man whose standing makes his assent worth having.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Charles Carroll's Maryland values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the man whose standing makes his assent worth having.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "va_george_wythe": {
+    "mail": [
+      {
+        "text": "Appeal to George Wythe's Virginia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to George Wythe's Virginia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "va_richard_henry_lee": {
+    "mail": [
+      {
+        "text": "Appeal to Richard Henry Lee's Virginia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the orator who first moved the Congress toward declaring the colonies free.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Richard Henry Lee's Virginia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the orator who first moved the Congress toward declaring the colonies free.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "va_thomas_jefferson": {
+    "mail": [
+      {
+        "text": "Appeal to Thomas Jefferson's Virginia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the philosopher who has spent his nights drafting a declaration of natural rights.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Thomas Jefferson's Virginia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the philosopher who has spent his nights drafting a declaration of natural rights.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "va_benjamin_harrison": {
+    "mail": [
+      {
+        "text": "Appeal to Benjamin Harrison's Virginia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Benjamin Harrison's Virginia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "va_thomas_nelson": {
+    "mail": [
+      {
+        "text": "Appeal to Thomas Nelson Jr.'s Virginia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the colonel who carries his county's militia and Virginia's cause alike.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Thomas Nelson Jr.'s Virginia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the colonel who carries his county's militia and Virginia's cause alike.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "va_francis_lightfoot_lee": {
+    "mail": [
+      {
+        "text": "Appeal to Francis Lightfoot Lee's Virginia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Francis Lightfoot Lee's Virginia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "va_carter_braxton": {
+    "mail": [
+      {
+        "text": "Appeal to Carter Braxton's Virginia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Carter Braxton's Virginia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "nc_william_hooper": {
+    "mail": [
+      {
+        "text": "Appeal to William Hooper's North Carolina values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the delegate who signed his own instructions and then defended them at home.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to William Hooper's North Carolina values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the delegate who signed his own instructions and then defended them at home.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "nc_joseph_hewes": {
+    "mail": [
+      {
+        "text": "Appeal to Joseph Hewes's North Carolina values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the pragmatist who votes the colony's interest, whatever the instructions say.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Joseph Hewes's North Carolina values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the pragmatist who votes the colony's interest, whatever the instructions say.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "nc_john_penn": {
+    "mail": [
+      {
+        "text": "Appeal to John Penn's North Carolina values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to John Penn's North Carolina values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Speak to the needs of the people and communities he represents.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his personal ambition and his own standing.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "sc_edward_rutledge": {
+    "mail": [
+      {
+        "text": "Appeal to Edward Rutledge's South Carolina values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the cautious man whose assent the rest of the South waits on.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Edward Rutledge's South Carolina values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Assure him that order, property and established institutions will be protected.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Urge him to act decisively and set aside his caution.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the cautious man whose assent the rest of the South waits on.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "sc_thomas_hayward": {
+    "mail": [
+      {
+        "text": "Appeal to Thomas Heyward Jr.'s South Carolina values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Thomas Heyward Jr.'s South Carolina values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "sc_thomas_lynch": {
+    "mail": [
+      {
+        "text": "Appeal to Thomas Lynch Jr.'s South Carolina values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Thomas Lynch Jr.'s South Carolina values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "sc_arthur_middleton": {
+    "mail": [
+      {
+        "text": "Appeal to Arthur Middleton's South Carolina values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Arthur Middleton's South Carolina values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ga_button_gwinnett": {
+    "mail": [
+      {
+        "text": "Appeal to Button Gwinnett's Georgia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      },
+      {
+        "text": "Appeal to the man who carries his new colony in the House.",
+        "band": "legend",
+        "min": -10,
+        "max": 15
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Button Gwinnett's Georgia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      },
+      {
+        "text": "Appeal to the man who carries his new colony in the House.",
+        "band": "legend",
+        "min": -15,
+        "max": 30
+      }
+    ]
+  },
+  "ga_lyman_hall": {
+    "mail": [
+      {
+        "text": "Appeal to Lyman Hall's Georgia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Lyman Hall's Georgia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ga_george_walton": {
+    "mail": [
+      {
+        "text": "Appeal to George Walton's Georgia values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to George Walton's Georgia values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Lay out the practical costs and benefits for his own colony.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to lofty ideals and to his sense of moral duty.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_john_dickinson": {
+    "mail": [
+      {
+        "text": "Appeal to John Dickinson's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to John Dickinson's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_charles_humphreys": {
+    "mail": [
+      {
+        "text": "Appeal to Charles Humphreys's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Charles Humphreys's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "pa_thomas_willing": {
+    "mail": [
+      {
+        "text": "Appeal to Thomas Willing's Pennsylvania values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Thomas Willing's Pennsylvania values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ny_robert_r Livingston": {
+    "mail": [
+      {
+        "text": "Appeal to Robert R. Livingston's New York values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Robert R. Livingston's New York values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ny_george_clinton": {
+    "mail": [
+      {
+        "text": "Appeal to George Clinton's New York values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to George Clinton's New York values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ny_john_alsop": {
+    "mail": [
+      {
+        "text": "Appeal to John Alsop's New York values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to John Alsop's New York values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Offer a moderate, reconcilable step and a way to go along with it.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Push him toward an extreme position and demand a firm answer.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "ny_henry_wisner": {
+    "mail": [
+      {
+        "text": "Appeal to Henry Wisner's New York values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to Henry Wisner's New York values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Make the appeal public and stirring — speak to his standing and influence.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his private doubts and to the hard losses of his trade.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  },
+  "md_john_rogers": {
+    "mail": [
+      {
+        "text": "Appeal to John Rogers's Maryland values.",
+        "band": "neutral",
+        "min": -1,
+        "max": 5
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -1,
+        "max": 10
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -10,
+        "max": 1
+      }
+    ],
+    "meet": [
+      {
+        "text": "Appeal to John Rogers's Maryland values.",
+        "band": "neutral",
+        "min": -5,
+        "max": 20
+      },
+      {
+        "text": "Appeal to his convictions and the principles he has already stated.",
+        "band": "good",
+        "min": -5,
+        "max": 25
+      },
+      {
+        "text": "Appeal to his business interests and what independence would pay him.",
+        "band": "bad",
+        "min": -25,
+        "max": 5
+      }
+    ]
+  }
+}

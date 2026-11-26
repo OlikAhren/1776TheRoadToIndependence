@@ -29,6 +29,20 @@ export const APPROACH_BANDS = {
 } as const
 const bespokeTable = delegateBespokeApproaches as unknown as Record<string, { band?: string }>
 // Single place that maps a chosen option id to a band for a given delegate.
+// An explicit approach: the wording the player saw plus the exact roll range it maps to.
+// Per-delegate and per-action (mail vs meeting) options carry their own range, so the game
+// no longer needs to infer one from the profile.
+export interface ApproachSpec {
+  text: string
+  band: ApproachBand
+  min: number
+  max: number
+}
+export const rollSupportRange = (min: number, max: number): number => {
+  const lo = Math.min(min, max)
+  const hi = Math.max(min, max)
+  return lo + Math.floor(Math.random() * (hi - lo + 1))
+}
 export const resolveApproachBand = (delegateId: string, approach?: unknown): ApproachBand => {
   if (approach === 'good') return 'good'
   if (approach === 'bad') return 'bad'
@@ -255,8 +269,8 @@ const MEETING_GOOD_LUCK_EVENTS = [
 interface GameActions {
   selectColony: (colonyId: string) => void
   setSelectedDelegateId: (delegateId: string | null) => void
-  sendCorrespondence: (delegateId: string, targetColony: string, approach?: ApproachChoice) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
-  meetPrivately: (delegateId: string, approach?: ApproachChoice) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
+  sendCorrespondence: (delegateId: string, targetColony: string, approach?: ApproachChoice | ApproachSpec) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
+  meetPrivately: (delegateId: string, approach?: ApproachChoice | ApproachSpec) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null; supportChange?: number }
   organizePublicDebate: (targetColonyName: string, angleIndex: number) => { success: boolean; cost: number; daysTravel: number; message?: string; eventMessage?: string | null }
   dismissDebateResult: () => void
   showActionPopup: (title: string, message: string, tone?: 'success' | 'error') => void
@@ -451,7 +465,9 @@ export const useGameStore = create<GameState & GameActions>()(
         const finalCost = finalTravelDays * 1 // $1 per day of travel
         
         // Calculate random support change for letter recipient (-1 to +5)
-        const supportChange = rollSupportChange('mail', resolveApproachBand(delegateId, approach))
+        const supportChange = approach && typeof approach === 'object'
+          ? rollSupportRange(approach.min, approach.max)
+          : rollSupportChange('mail', resolveApproachBand(delegateId, approach as ApproachChoice | undefined))
         const updatedDelegates = delegates.map(d => 
           d.id === delegateId ? { ...d, supportLevel: Math.min(100, Math.max(1, d.supportLevel + supportChange)) } : d
         )
@@ -565,7 +581,9 @@ export const useGameStore = create<GameState & GameActions>()(
         }
         
         // Calculate random support change (-5 to +20)
-        const supportChange = rollSupportChange('meeting', resolveApproachBand(delegateId, approach))
+        const supportChange = approach && typeof approach === 'object'
+          ? rollSupportRange(approach.min, approach.max)
+          : rollSupportChange('meeting', resolveApproachBand(delegateId, approach as ApproachChoice | undefined))
         const newSupportLevel = Math.min(100, Math.max(1, delegate.supportLevel + supportChange))
         
         // Deduct costs from PERSONAL FUNDS (not from any colony's postal subsidies)
