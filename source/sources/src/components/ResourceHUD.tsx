@@ -36,7 +36,7 @@ const ResourceHUD: React.FC = () => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: '15px 0 0 0',
+      padding: '10px 0 0 0',
       borderTop: '1px solid rgba(44,27,24,0.2)',
       gap: '20px',
       flexWrap: 'wrap'

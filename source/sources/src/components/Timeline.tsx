@@ -60,8 +60,8 @@ const Timeline: React.FC = () => {
   return (
     <div style={{
       width: '100%',
-      marginBottom: '20px',
-      padding: '15px',
+      marginBottom: '12px',
+      padding: '10px 12px',
       background: '#FFF8DC',
       borderRadius: '8px',
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
@@ -71,7 +71,7 @@ const Timeline: React.FC = () => {
         display: 'flex', 
         justifyContent: 'space-between', 
         alignItems: 'center',
-        marginBottom: '10px'
+        marginBottom: '6px'
       }}>
         <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#2C1B18' }}>Timeline Progress</span>
         <span style={{ fontSize: '14px', fontWeight: 'bold', color: '#2C1B18' }}>
@@ -89,8 +89,8 @@ const Timeline: React.FC = () => {
           🏛️
         </span>
 
-        <div style={{ flex: 1, minWidth: 0, position: 'relative', marginBottom: '44px' }}>
-          <div style={{ position: 'relative', height: '40px', background: '#ddd', borderRadius: '4px', overflow: 'hidden' }}>
+        <div style={{ flex: 1, minWidth: 0, position: 'relative', marginBottom: '30px' }}>
+          <div style={{ position: 'relative', height: '28px', background: '#ddd', borderRadius: '4px', overflow: 'hidden' }}>
             {/* Background track */}
             <div style={{ 
               position: 'absolute',
@@ -125,7 +125,7 @@ const Timeline: React.FC = () => {
               gap: '4px',
               whiteSpace: 'nowrap'
             }}>
-              <span style={{ fontSize: '19px', lineHeight: 1 }} title="Your ride across the timeline">🏇</span>
+              <span style={{ fontSize: '16px', lineHeight: 1 }} title="Your ride across the timeline">🏇</span>
               <div style={{
                 background: '#2C1B18',
                 color: 'white',
@@ -156,7 +156,7 @@ const Timeline: React.FC = () => {
                 style={{
                   position: 'absolute',
                   left: `${markerPercent}%`,
-                  top: 'calc(100% + 10px)',
+                  top: 'calc(100% + 6px)',
                   // keep each label inside the bar: start-aligned at the left end,
                   // end-aligned at the right end, so neither wraps or overlaps the emoji
                   transform: markerPercent === 0 ? 'translateX(0)' : 'translateX(-100%)',
