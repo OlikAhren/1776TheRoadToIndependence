@@ -273,7 +273,7 @@ const GameApp: React.FC = () => {
               </p>
             )}
             <p style={{ fontSize: '11px', textAlign: 'center', opacity: 0.8 }}>
-              {debateResult.daysTravel} day(s) elapsed · ${debateResult.cost} spent
+              {debateResult.daysTravel} day(s) elapsed · Committee of Five Cost: ${debateResult.cost}
             </p>
             <div style={{ marginTop: '12px' }}>
               {debateResult.delegateResults.map((r, i) => (
