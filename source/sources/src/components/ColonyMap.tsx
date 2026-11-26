@@ -56,13 +56,13 @@ const ColonyMap: React.FC = () => {
       border: '3px solid #1A237E',
       boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
       fontFamily: '"Georgia", serif',
-      padding: '18px 18px 24px 18px'
+      padding: '10px 18px 24px 18px'
     }}>
       
       {/* Map Title - centered at top */}
       <div style={{
         textAlign: 'center',
-        marginBottom: '14px'
+        marginBottom: '12px'
       }}>
         <h2 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold', color: '#2C1B18' }}>
           🗺️ The Thirteen Colonies - 1776

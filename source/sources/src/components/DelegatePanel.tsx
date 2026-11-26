@@ -96,7 +96,7 @@ const DelegatePanel: React.FC = () => {
         border: '3px solid #1A237E',
         boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
         fontFamily: '"Georgia", serif',
-        padding: '16px',
+        padding: '12px 16px 16px 16px',
         height: '100%',
         boxSizing: 'border-box',
         display: 'flex',
@@ -105,10 +105,10 @@ const DelegatePanel: React.FC = () => {
         <div style={{ flexShrink: 0 }}>
         {effectiveColonyId ? (
           <>
-            <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '15px', textAlign: 'center', color: '#2C1B18' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 'bold', margin: '0 0 8px 0', textAlign: 'center', color: '#2C1B18' }}>
               {currentColonyName} Delegates
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '15px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '8px' }}>
               <button
                 onClick={handleOrganizeDebate}
                 disabled={debateDisabledReason !== null}
@@ -162,14 +162,11 @@ const DelegatePanel: React.FC = () => {
                 </div>
               )}
             </div>
-            <p style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center', color: '#2C1B18' }}>
+            <p style={{ fontSize: '16px', margin: '0 0 6px 0', textAlign: 'center', color: '#2C1B18' }}>
               <span style={{ fontWeight: 'bold' }}>Current Ride Time:</span> {currentRideTime} Day{currentRideTime === 1 ? '' : 's'}
             </p>
-            <p style={{ fontSize: '12px', opacity: 0.7, marginBottom: '15px', textAlign: 'center', color: '#666' }}>
-              Click a delegate from {currentColonyName}
-            </p>
             {colonyOverview && (
-              <div style={{ marginBottom: '15px' }}>
+              <div style={{ marginBottom: '6px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
                   <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#2C1B18' }}>About {currentColonyName}</span>
                   <button
@@ -198,6 +195,9 @@ const DelegatePanel: React.FC = () => {
                 )}
               </div>
             )}
+            <p style={{ fontSize: '12px', opacity: 0.7, margin: '0 0 12px 0', textAlign: 'center', color: '#666' }}>
+              Click a delegate from {currentColonyName}
+            </p>
           </>
         ) : (
           <>
