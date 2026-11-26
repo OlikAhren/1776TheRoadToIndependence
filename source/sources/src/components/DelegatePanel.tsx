@@ -96,7 +96,7 @@ const DelegatePanel: React.FC = () => {
         border: '3px solid #1A237E',
         boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
         fontFamily: '"Georgia", serif',
-        padding: '20px',
+        padding: '16px',
         height: '100%',
         boxSizing: 'border-box',
         display: 'flex',

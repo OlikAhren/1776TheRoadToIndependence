@@ -3,7 +3,7 @@ import { useGameStore } from '../store/GameStore'
 import type { Colony } from '../types/game'
 
 // Single source of truth for the map panel height (the delegate panel matches it).
-export const COLONY_MAP_HEIGHT = 640
+export const COLONY_MAP_HEIGHT = 800
 
 const ColonyMap: React.FC = () => {
   const { colonies, selectedColonyId, selectColony, delegates } = useGameStore()
@@ -56,13 +56,13 @@ const ColonyMap: React.FC = () => {
       border: '3px solid #1A237E',
       boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
       fontFamily: '"Georgia", serif',
-      padding: '30px 20px 80px 20px'
+      padding: '18px 18px 24px 18px'
     }}>
       
       {/* Map Title - centered at top */}
       <div style={{
         textAlign: 'center',
-        marginBottom: '12px'
+        marginBottom: '14px'
       }}>
         <h2 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold', color: '#2C1B18' }}>
           🗺️ The Thirteen Colonies - 1776
@@ -74,7 +74,7 @@ const ColonyMap: React.FC = () => {
         display: 'grid',
         gridTemplateColumns: 'repeat(5, 1fr)',
         gridTemplateRows: 'repeat(3, auto)', // 13 colonies: 5 across, 3 rows down
-        gap: '10px',
+        gap: '16px',
         alignContent: 'start'
       }}>
         {sortedColonies.map((colony: Colony) => {
