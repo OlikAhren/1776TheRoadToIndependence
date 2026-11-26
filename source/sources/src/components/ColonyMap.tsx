@@ -81,6 +81,9 @@ const ColonyMap: React.FC = () => {
         <h2 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold', color: '#2C1B18' }}>
           🗺️ The Thirteen Colonies - 1776
         </h2>
+        <p style={{ fontSize: '12px', fontStyle: 'italic', opacity: 0.7, color: '#666', margin: '0' }}>
+          Click on a Colony to view delegates
+        </p>
       </div>
 
       {/* Grid of colony info boxes - takes up remaining space */}
