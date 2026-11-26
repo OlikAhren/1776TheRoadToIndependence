@@ -295,7 +295,7 @@ const DelegatePanel: React.FC = () => {
         : ''
       showActionPopup(`Letter sent to ${delegate.name}`, `✓ Letter sent to ${delegate.name}!\n` + approachLine(approach) + mailEvent + (mailEvent ? '' : '\n') +
             `Support for Independence: ${sign}${result.supportChange ?? 0}%${supportIcon}\n\n` + 
-            `Final Cost: $${result.cost}\n` + 
+            `${delegate.colony} Postal Subsidy Cost: $${result.cost}\n` + 
             `Estimated delivery time: ${result.daysTravel} day(s)`, 'success')
     }
   }
