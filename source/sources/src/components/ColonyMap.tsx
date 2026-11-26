@@ -2,6 +2,13 @@ import React, { useState } from 'react'
 import { useGameStore } from '../store/GameStore'
 import type { Colony } from '../types/game'
 
+// Display order for the colony grid: left to right, top to bottom.
+const COLONY_DISPLAY_ORDER = [
+  'New Hampshire', 'Massachusetts', 'New York', 'Rhode Island', 'Connecticut',
+  'Pennsylvania', 'New Jersey', 'Maryland', 'Delaware', 'Virginia',
+  'North Carolina', 'South Carolina', 'Georgia'
+]
+
 // Single source of truth for the map panel height (the delegate panel matches it).
 export const COLONY_MAP_HEIGHT = 880
 
@@ -43,7 +50,11 @@ const ColonyMap: React.FC = () => {
   }
 
   // Sort colonies alphabetically
-  const sortedColonies = [...colonies].sort((a, b) => a.name.localeCompare(b.name))
+  const sortedColonies = [...colonies].sort((a, b) => {
+    const ai = COLONY_DISPLAY_ORDER.indexOf(a.name)
+    const bi = COLONY_DISPLAY_ORDER.indexOf(b.name)
+    return (ai === -1 ? COLONY_DISPLAY_ORDER.length : ai) - (bi === -1 ? COLONY_DISPLAY_ORDER.length : bi)
+  })
 
   return (
     <div className="colony-map" style={{ 
