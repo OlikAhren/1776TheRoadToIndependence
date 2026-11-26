@@ -162,11 +162,11 @@ const DelegatePanel: React.FC = () => {
                 </div>
               )}
             </div>
-            <p style={{ fontSize: '16px', margin: '0 0 6px 0', textAlign: 'center', color: '#2C1B18' }}>
+            <p style={{ fontSize: '16px', margin: '6px 0 10px 0', textAlign: 'center', color: '#2C1B18' }}>
               <span style={{ fontWeight: 'bold' }}>Current Ride Time:</span> {currentRideTime} Day{currentRideTime === 1 ? '' : 's'}
             </p>
             {colonyOverview && (
-              <div style={{ marginBottom: '6px' }}>
+              <div style={{ marginBottom: '10px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
                   <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#2C1B18' }}>About {currentColonyName}</span>
                   <button
