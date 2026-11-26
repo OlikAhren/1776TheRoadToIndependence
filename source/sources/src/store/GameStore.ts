@@ -5,6 +5,12 @@ import { containsBlockedWord } from '../data/wordFilter'
 import delegatesData from '../data/delegates.json'
 import debateAnglesData from '../data/debateAngles.json'
 import delegateBespokeApproaches from '../data/delegateBespokeApproaches.json'
+import supportBaselineOld from '../data/supportBaselineOld.json'
+
+// Previous starting support values for the delegates the owner revised. Used by the save
+// migration: a saved delegate still sitting on its old baseline gets moved to the new one,
+// while a delegate the player already worked on keeps its progress.
+const SUPPORT_BASELINE_OLD = supportBaselineOld as unknown as Record<string, number>
 
 // ---- Approach bands (TUNE HERE) -------------------------------------------------------
 // Support-roll range [min, max] (inclusive) per action. Four bands, all sharing the neutral shape:
@@ -754,7 +760,7 @@ export const useGameStore = create<GameState & GameActions>()(
     }),
     {
       name: 'declaration1776-save',
-      version: 6,
+      version: 7,
       migrate: (persisted: unknown) => {
         const p = (persisted ?? {}) as Record<string, any>
         if (Array.isArray(p.delegates)) {
@@ -762,8 +768,36 @@ export const useGameStore = create<GameState & GameActions>()(
             if (!d) return d
             let n = d
             if (n.id === 'ma_john_hancock') n = { ...n, committeeOfFive: false, continentalCongressPresident: true }
+            // Refresh a delegate that is still on its old starting value; leave any delegate the
+            // player has already moved (support differs from the old baseline) untouched.
+            const oldBase = SUPPORT_BASELINE_OLD[n.id]
+            const newBase = initialDelegates.find(x => x.id === n.id)?.supportLevel
+            if (oldBase !== undefined && newBase !== undefined && newBase !== oldBase && n.supportLevel === oldBase) {
+              n = { ...n, supportLevel: newBase }
+            }
             return isProtectedDelegate(n) ? { ...n, supportLevel: 100 } : n
           })
+        }
+        // Same idea for the starting postal subsidies: a colony still sitting on its old opening
+        // balance is moved to the new one, a colony the player has spent from is left alone.
+        if (Array.isArray(p.colonies)) {
+          p.colonies = p.colonies.map((c: any) => {
+            if (!c) return c
+            if (c.name === 'South Carolina' && c.postalSubsidies === 25) {
+              return { ...c, postalSubsidies: 20 }
+            }
+            return c
+          })
+          // Keep each colony's average support in step with the refreshed delegate values.
+          if (Array.isArray(p.delegates)) {
+            p.colonies = p.colonies.map((c: any) => {
+              if (!c) return c
+              const cd = p.delegates.filter((d: any) => d.colony === c.name)
+              if (cd.length === 0) return c
+              const avg = Math.round(cd.reduce((sum: number, d: any) => sum + (d.supportLevel ?? 0), 0) / cd.length)
+              return { ...c, supportLevel: avg }
+            })
+          }
         }
         delete p.victoryReward
         return p as any
