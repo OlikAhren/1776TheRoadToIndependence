@@ -164,7 +164,7 @@ const ColonyMap: React.FC = () => {
         paddingTop: '4px'
       }}>
         <img
-          src="/original-thirteen-colonies.png"
+          src={`${import.meta.env.BASE_URL}original-thirteen-colonies.png`}
           alt="Map of the original thirteen colonies"
           title="The Original Thirteen Colonies"
           style={{
