@@ -37,8 +37,8 @@ const GameApp: React.FC = () => {
       {ledger.length === 0 ? (
         <p style={{ fontSize: '14px', textAlign: 'center', fontStyle: 'italic' }}>No victories recorded yet.</p>
       ) : [...ledger].reverse().map((e, i) => (
-        <div key={i} style={{ padding: '6px 0', borderBottom: '1px solid rgba(44,27,24,0.15)', fontSize: '13px' }}>
-          <strong>{e.name}</strong> — {e.difficultyLabel} ({DIFFICULTY_SETTINGS[e.difficultyKey].tier}) · {e.greenColonies}/13 · Finished: {e.date} · ${e.personalFunds} Remaining
+        <div key={i} style={{ padding: '6px 0', borderBottom: '1px solid rgba(44,27,24,0.15)', fontSize: '13px', whiteSpace: 'nowrap' }}>
+          <strong>{e.name}</strong> — {e.difficultyLabel} ({DIFFICULTY_SETTINGS[e.difficultyKey].tier}) · {e.greenColonies}/13 Colonies · Finished: {e.date} · ${e.personalFunds} Remaining
         </div>
       ))}
     </div>
@@ -190,7 +190,7 @@ const GameApp: React.FC = () => {
           aria-modal="true"
           style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}
         >
-          <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #D4AF37', borderRadius: '10px', padding: '28px', maxWidth: '520px', width: '90%', maxHeight: '85vh', overflowY: 'auto', textAlign: 'center' }}>
+          <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #D4AF37', borderRadius: '10px', padding: '28px', maxWidth: '820px', width: '90%', maxHeight: '85vh', overflowY: 'auto', textAlign: 'center' }}>
             <h2 style={{ margin: '0 0 12px 0', color: '#B8860B' }}>🏆 Victory!</h2>
             <p style={{ fontSize: '16px', lineHeight: 1.5 }}>The Declaration is signed!</p>
             {victoryRecord && (
@@ -240,7 +240,7 @@ const GameApp: React.FC = () => {
           aria-label="Hall of Fame"
           style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}
         >
-          <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '520px', width: '90%', maxHeight: '85vh', overflowY: 'auto' }}>
+          <div style={{ fontFamily: 'Georgia, serif', backgroundColor: '#FFF8E7', color: '#2C1B18', border: '3px solid #2C1B18', borderRadius: '10px', padding: '28px', maxWidth: '820px', width: '90%', maxHeight: '85vh', overflowY: 'auto' }}>
             <h2 style={{ margin: '0 0 12px 0', textAlign: 'center' }}>Hall of Fame</h2>
             {renderLedger()}
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
